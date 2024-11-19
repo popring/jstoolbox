@@ -1,6 +1,9 @@
 {
   "HomePage": {
-    "title": "你好世界！",
-    "about": "去关于页面看看"
+    "title": "JS Toolbox",
+    "about": "查找 JavaScript 中积极维护且流行的库。"
+  },
+  "CategoryPage": {
+    "title": "类别"
   }
 }

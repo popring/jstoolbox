@@ -13,7 +13,7 @@ export default async function Header() {
   return (
     <header className='w-full h-16'>
       <div className='flex justify-end relative items-center h-full pr-5'>
-        <LanguageSelect languageOptions={languageOptions} locale={locale} />
+        <LanguageSelect languageOptions={languageOptions} defaultLocale={locale} />
       </div>
     </header>
   );

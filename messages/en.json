@@ -1,6 +1,10 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "title": "JS Toolbox",
+    "about": "Find actively maintained and popular libraries in the JavaScript."
+  },
+  "CategoryPage": {
+    "title": "Category",
+    "about": "Find actively maintained and popular libraries in the JavaScript."
   }
 }

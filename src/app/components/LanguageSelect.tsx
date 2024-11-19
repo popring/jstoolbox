@@ -14,10 +14,10 @@ interface Params {
     value: string;
     label: string;
   }[];
-  locale: string;
+  defaultLocale: string;
 }
 
-export default function LanguageSelect({ languageOptions, locale }: Params) {
+export default function LanguageSelect({ languageOptions, defaultLocale: locale }: Params) {
   const handleLanguageChange = (language: string) => {
     document.cookie = `locale=${language}; path=/`;
     window.location.reload();

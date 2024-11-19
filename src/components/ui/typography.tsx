@@ -20,6 +20,10 @@ export function TypographyH3(params: Params) {
 
 export function TypographyP(params: Params) {
   return (
-    <p className='leading-7 [&:not(:first-child)]:mt-6'>{params.children}</p>
+    <p className='leading-7 [&:not(:first-child)]:mt-3'>{params.children}</p>
   );
+}
+
+export function TypographyLarge(params: Params) {
+  return <div className='text-lg font-semibold'>{params.children}</div>;
 }
