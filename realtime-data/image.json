@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "react-medium-image-zoom",
+    "description": "Accessible medium.com-style image zoom for React",
+    "npm": {
+      "name": "react-medium-image-zoom",
+      "url": "https://www.npmjs.com/package/react-medium-image-zoom",
+      "downloads": 500617,
+      "firstReleased": "2016-07-14T14:23:59.420Z",
+      "lastReleased": "2024-11-12T03:04:18.397Z",
+      "website": "https://github.com/rpearce/react-medium-image-zoom",
+      "description": "Accessible medium.com-style image zoom for React"
+    },
+    "github": {
+      "url": "https://github.com/rpearce/react-medium-image-zoom",
+      "stars": 1899,
+      "issuesTotal": 6,
+      "issuesResolved": 28
+    },
+    "website": "https://github.com/rpearce/react-medium-image-zoom"
+  },
+  {
+    "id": 2,
+    "name": "photoswipe",
+    "description": "JavaScript gallery",
+    "npm": {
+      "name": "photoswipe",
+      "url": "https://www.npmjs.com/package/photoswipe",
+      "downloads": 1019639,
+      "firstReleased": "2014-12-09T22:12:41.512Z",
+      "lastReleased": "2024-05-24T15:15:47.496Z",
+      "website": "https://photoswipe.com",
+      "description": "JavaScript gallery"
+    },
+    "github": {
+      "url": "github.com/dimsemenov/Photoswipe",
+      "stars": 24251,
+      "issuesTotal": 625,
+      "issuesResolved": 10
+    },
+    "website": "https://photoswipe.com"
+  },
+  {
+    "id": 3,
+    "name": "react",
+    "description": "React is a JavaScript library for building user interfaces.",
+    "npm": {
+      "name": "react",
+      "url": "https://www.npmjs.com/package/react",
+      "downloads": 113340744,
+      "firstReleased": "2011-10-26T17:46:21.942Z",
+      "lastReleased": "2024-11-18T16:20:40.467Z",
+      "website": "https://reactjs.org/",
+      "description": "React is a JavaScript library for building user interfaces."
+    },
+    "github": {
+      "url": "github.com/facebook/react",
+      "stars": 229416,
+      "issuesTotal": 861,
+      "issuesResolved": 13
+    },
+    "website": "https://reactjs.org/"
+  },
+  {
+    "id": 4,
+    "name": "lightbox2",
+    "description": "The original Lightbox script. Uses jQuery.",
+    "npm": {
+      "name": "lightbox2",
+      "url": "https://www.npmjs.com/package/lightbox2",
+      "downloads": 185354,
+      "firstReleased": "2015-12-14T04:00:37.472Z",
+      "lastReleased": "2024-10-03T18:17:25.625Z",
+      "website": "http://lokeshdhakar.com/projects/lightbox2/",
+      "description": "The original Lightbox script. Uses jQuery."
+    },
+    "github": {
+      "url": "github.com/lokesh/lightbox2",
+      "stars": 6231,
+      "issuesTotal": 63,
+      "issuesResolved": 21
+    },
+    "website": "http://lokeshdhakar.com/projects/lightbox2/"
+  }
+]

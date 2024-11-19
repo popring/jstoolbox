@@ -1,0 +1,10 @@
+{
+  "name": "icon",
+  "description": "icon图标库",
+  "packages":[
+    "@heroicons/react",
+    "@heroicons/vue",
+    "@icon-park/react",
+    "@icon-park/vue"
+  ]
+}

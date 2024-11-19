@@ -1,0 +1,10 @@
+{
+  "name": "image",
+  "description": "展示图片",
+  "packages":[
+    "react-medium-image-zoom",
+    "photoswipe",
+    "react",
+    "lightbox2"
+  ]
+}
