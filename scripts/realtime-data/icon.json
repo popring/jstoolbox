@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "name": "@heroicons/react",
+    "description": "<p align=\"center\">   <a href=\"https://heroicons.com\" target=\"_blank\">     <picture>       <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/tailwindlabs/heroicons/HEAD/.github/logo-dark.svg\">       <source media=\"(pref",
+    "npm": {
+      "name": "@heroicons/react",
+      "url": "https://www.npmjs.com/package/@heroicons/react",
+      "downloads": 4279948,
+      "firstReleased": "2021-01-25T17:54:39.138Z",
+      "lastReleased": "2024-11-18T15:38:44.558Z"
+    },
+    "github": {
+      "url": "https://github.com/tailwindlabs/heroicons",
+      "stars": 21655,
+      "issuesTotal": 3,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/tailwindlabs/heroicons#readme"
+  },
+  {
+    "id": 2,
+    "name": "@heroicons/vue",
+    "description": "<p align=\"center\">   <a href=\"https://heroicons.com\" target=\"_blank\">     <picture>       <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/tailwindlabs/heroicons/HEAD/.github/logo-dark.svg\">       <source media=\"(pref",
+    "npm": {
+      "name": "@heroicons/vue",
+      "url": "https://www.npmjs.com/package/@heroicons/vue",
+      "downloads": 669186,
+      "firstReleased": "2021-01-26T12:21:00.534Z",
+      "lastReleased": "2024-11-18T15:38:51.322Z"
+    },
+    "github": {
+      "url": "https://github.com/tailwindlabs/heroicons",
+      "stars": 21655,
+      "issuesTotal": 3,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/tailwindlabs/heroicons#readme"
+  },
+  {
+    "id": 3,
+    "name": "@icon-park/react",
+    "description": "React Icons for IconPark",
+    "npm": {
+      "name": "@icon-park/react",
+      "url": "https://www.npmjs.com/package/@icon-park/react",
+      "downloads": 29158,
+      "firstReleased": "2020-08-27T09:26:40.798Z",
+      "lastReleased": "2022-07-04T15:44:12.609Z"
+    },
+    "github": {
+      "url": "https://github.com/bytedance/IconPark",
+      "stars": 8354,
+      "issuesTotal": 713,
+      "issuesResolved": 0
+    },
+    "website": "http://iconpark.bytedance.com/"
+  },
+  {
+    "id": 4,
+    "name": "@icon-park/vue",
+    "description": "Vue Icons for IconPark",
+    "npm": {
+      "name": "@icon-park/vue",
+      "url": "https://www.npmjs.com/package/@icon-park/vue",
+      "downloads": 9841,
+      "firstReleased": "2020-08-27T09:26:41.694Z",
+      "lastReleased": "2022-07-04T15:43:57.504Z"
+    },
+    "github": {
+      "url": "https://github.com/bytedance/IconPark",
+      "stars": 8354,
+      "issuesTotal": 713,
+      "issuesResolved": 0
+    },
+    "website": "http://iconpark.bytedance.com/"
+  },
+  {
+    "id": 5,
+    "name": "simple-icons",
+    "description": "SVG icons for popular brands https://simpleicons.org",
+    "npm": {
+      "name": "simple-icons",
+      "url": "https://www.npmjs.com/package/simple-icons",
+      "downloads": 234885,
+      "firstReleased": "2017-09-17T02:11:26.598Z",
+      "lastReleased": "2024-11-17T01:11:12.027Z"
+    },
+    "github": {
+      "url": "https://github.com/simple-icons/simple-icons",
+      "stars": 21062,
+      "issuesTotal": 1028,
+      "issuesResolved": 0
+    },
+    "website": "https://simpleicons.org"
+  }
+]

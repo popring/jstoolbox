@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "sass",
+    "description": "A pure JavaScript implementation of Sass.",
+    "npm": {
+      "name": "sass",
+      "url": "https://www.npmjs.com/package/sass",
+      "downloads": 64782221,
+      "firstReleased": "2017-06-06T20:36:44.615Z",
+      "lastReleased": "2024-11-15T01:30:56.712Z"
+    },
+    "github": {
+      "url": "https://github.com/sass/dart-sass",
+      "stars": 3972,
+      "issuesTotal": 70,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/sass/dart-sass"
+  },
+  {
+    "id": 2,
+    "name": "less",
+    "description": "Leaner CSS",
+    "npm": {
+      "name": "less",
+      "url": "https://www.npmjs.com/package/less",
+      "downloads": 26895761,
+      "firstReleased": "2011-01-23T22:28:07.815Z",
+      "lastReleased": "2024-05-06T13:39:54.525Z"
+    },
+    "github": {
+      "url": "https://github.com/less/less.js",
+      "stars": 17033,
+      "issuesTotal": 217,
+      "issuesResolved": 0
+    },
+    "website": "http://lesscss.org"
+  },
+  {
+    "id": 3,
+    "name": "stylus",
+    "description": "Robust, expressive, and feature-rich CSS superset",
+    "npm": {
+      "name": "stylus",
+      "url": "https://www.npmjs.com/package/stylus",
+      "downloads": 11847790,
+      "firstReleased": "2011-01-31T18:22:09.655Z",
+      "lastReleased": "2024-10-20T07:12:10.674Z"
+    },
+    "github": {
+      "url": "https://github.com/stylus/stylus",
+      "stars": 11198,
+      "issuesTotal": 268,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/stylus/stylus"
+  },
+  {
+    "id": 4,
+    "name": "postcss",
+    "description": "Tool for transforming styles with JS plugins",
+    "npm": {
+      "name": "postcss",
+      "url": "https://www.npmjs.com/package/postcss",
+      "downloads": 344250693,
+      "firstReleased": "2013-11-04T19:57:14.218Z",
+      "lastReleased": "2024-11-11T19:59:09.312Z"
+    },
+    "github": {
+      "url": "https://github.com/postcss/postcss",
+      "stars": 28524,
+      "issuesTotal": 22,
+      "issuesResolved": 0
+    },
+    "website": "https://postcss.org/"
+  },
+  {
+    "id": 5,
+    "name": "tailwindcss",
+    "description": "A utility-first CSS framework for rapidly building custom user interfaces.",
+    "npm": {
+      "name": "tailwindcss",
+      "url": "https://www.npmjs.com/package/tailwindcss",
+      "downloads": 46820441,
+      "firstReleased": "2017-10-06T15:05:20.621Z",
+      "lastReleased": "2024-11-14T18:45:02.765Z"
+    },
+    "github": {
+      "url": "https://github.com/tailwindlabs/tailwindcss",
+      "stars": 83190,
+      "issuesTotal": 96,
+      "issuesResolved": 0
+    },
+    "website": "https://tailwindcss.com"
+  },
+  {
+    "id": 6,
+    "name": "@emotion/css",
+    "description": "The Next Generation of CSS-in-JS.",
+    "npm": {
+      "name": "@emotion/css",
+      "url": "https://www.npmjs.com/package/@emotion/css",
+      "downloads": 12111678,
+      "firstReleased": "2018-02-09T14:09:33.098Z",
+      "lastReleased": "2024-11-20T07:58:28.045Z"
+    },
+    "github": {
+      "url": "https://github.com/emotion-js/emotion",
+      "stars": 17506,
+      "issuesTotal": 337,
+      "issuesResolved": 0
+    },
+    "website": "https://emotion.sh"
+  }
+]

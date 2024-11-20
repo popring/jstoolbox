@@ -1,10 +1,9 @@
 {
   "name": "image",
-  "description": "展示图片",
+  "description": "show image",
   "packages":[
     "react-medium-image-zoom",
     "photoswipe",
-    "react",
     "lightbox2"
   ]
 }

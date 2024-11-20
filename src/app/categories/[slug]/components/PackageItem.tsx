@@ -43,10 +43,10 @@ export default function PackageItem(props: Props) {
 
     return (
       <div className='flex flex-wrap gap-4 items-center mt-6'>
-        {list.map((item) => (
+        {list.map((item, idx) => (
           <Link
             href={item.url}
-            key={item.url}
+            key={idx}
             target="_blank"
             className='flex gap-2 px-3 py-1 rounded-md hover:bg-amber-100'
           >
@@ -74,11 +74,11 @@ export default function PackageItem(props: Props) {
         label: 'Stars',
         value: github.stars.toLocaleString(),
       },
-      {
-        label: 'Issus closure rate',
-        value:
-          ((github.issusResolved / github.issusTotal) * 100).toFixed(2) + '%',
-      },
+      // {
+      //   label: 'Issus closure rate',
+      //   value:
+      //     ((github.issusResolved / github.issusTotal) * 100).toFixed(2) + '%',
+      // },
       {
         label: 'Age',
         value: dayjs(npm.firstReleased).toNow(true),

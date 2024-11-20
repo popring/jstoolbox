@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "antd",
+    "description": "An enterprise-class UI design language and React components implementation",
+    "npm": {
+      "name": "antd",
+      "url": "https://www.npmjs.com/package/antd",
+      "downloads": 6869866,
+      "firstReleased": "2015-06-23T08:52:43.206Z",
+      "lastReleased": "2024-11-13T14:46:43.007Z"
+    },
+    "github": {
+      "url": "https://github.com/ant-design/ant-design",
+      "stars": 92574,
+      "issuesTotal": 1240,
+      "issuesResolved": 0
+    },
+    "website": "https://ant.design"
+  },
+  {
+    "id": 2,
+    "name": "element-plus",
+    "description": "A Component Library for Vue 3",
+    "npm": {
+      "name": "element-plus",
+      "url": "https://www.npmjs.com/package/element-plus",
+      "downloads": 1096754,
+      "firstReleased": "2019-06-12T09:50:42.427Z",
+      "lastReleased": "2024-11-15T10:37:58.163Z"
+    },
+    "github": {
+      "url": "https://github.com/element-plus/element-plus",
+      "stars": 24603,
+      "issuesTotal": 1850,
+      "issuesResolved": 0
+    },
+    "website": "https://element-plus.org/"
+  },
+  {
+    "id": 3,
+    "name": "@radix-ui/themes",
+    "description": "[![Radix Themes Logo](https://radix-ui.com/social/themes.png)](https://radix-ui.com/themes)",
+    "npm": {
+      "name": "@radix-ui/themes",
+      "url": "https://www.npmjs.com/package/@radix-ui/themes",
+      "downloads": 512376,
+      "firstReleased": "2023-06-15T12:33:22.683Z",
+      "lastReleased": "2024-11-12T23:51:49.313Z"
+    },
+    "github": {
+      "url": "https://github.com/radix-ui/themes",
+      "stars": 5686,
+      "issuesTotal": 96,
+      "issuesResolved": 0
+    },
+    "website": "https://radix-ui.com/themes"
+  },
+  {
+    "id": 4,
+    "name": "@nextui-org/react",
+    "description": "🚀 Beautiful and modern React UI library.",
+    "npm": {
+      "name": "@nextui-org/react",
+      "url": "https://www.npmjs.com/package/@nextui-org/react",
+      "downloads": 667338,
+      "firstReleased": "2021-06-19T14:50:18.870Z",
+      "lastReleased": "2024-11-17T18:32:01.802Z"
+    },
+    "github": {
+      "url": "https://github.com/nextui-org/nextui",
+      "stars": 22030,
+      "issuesTotal": 450,
+      "issuesResolved": 0
+    },
+    "website": "https://nextui.org"
+  },
+  {
+    "id": 5,
+    "name": "@mui/material",
+    "description": "Material UI is an open-source React component library that implements Google's Material Design. It's comprehensive and can be used in production out of the box.",
+    "npm": {
+      "name": "@mui/material",
+      "url": "https://www.npmjs.com/package/@mui/material",
+      "downloads": 18721057,
+      "firstReleased": "2021-09-02T07:46:48.738Z",
+      "lastReleased": "2024-11-13T15:29:40.448Z"
+    },
+    "github": {
+      "url": "https://github.com/mui/material-ui",
+      "stars": 93984,
+      "issuesTotal": 1900,
+      "issuesResolved": 0
+    },
+    "website": "https://mui.com/material-ui/"
+  },
+  {
+    "id": 6,
+    "name": "antd-mobile",
+    "description": "<div align=\"center\">",
+    "npm": {
+      "name": "antd-mobile",
+      "url": "https://www.npmjs.com/package/antd-mobile",
+      "downloads": 203178,
+      "firstReleased": "2016-07-13T08:49:08.763Z",
+      "lastReleased": "2024-10-29T07:10:34.571Z"
+    },
+    "github": {
+      "url": "https://github.com/ant-design/ant-design-mobile",
+      "stars": 11666,
+      "issuesTotal": 228,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/ant-design/ant-design-mobile#readme"
+  },
+  {
+    "id": 7,
+    "name": "@varlet/ui",
+    "description": "A material like components library",
+    "npm": {
+      "name": "@varlet/ui",
+      "url": "https://www.npmjs.com/package/@varlet/ui",
+      "downloads": 8783,
+      "firstReleased": "2020-11-03T15:38:12.995Z",
+      "lastReleased": "2024-11-12T04:46:43.382Z"
+    },
+    "github": {
+      "url": "https://github.com/varletjs/varlet",
+      "stars": 5005,
+      "issuesTotal": 14,
+      "issuesResolved": 0
+    },
+    "website": "https://varletjs.org"
+  },
+  {
+    "id": 8,
+    "name": "vant",
+    "description": "Mobile UI Components built on Vue",
+    "npm": {
+      "name": "vant",
+      "url": "https://www.npmjs.com/package/vant",
+      "downloads": 243451,
+      "firstReleased": "2017-04-19T07:53:37.187Z",
+      "lastReleased": "2024-11-17T13:22:15.051Z"
+    },
+    "github": {
+      "url": "https://github.com/vant-ui/vant",
+      "stars": 23337,
+      "issuesTotal": 96,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/vant-ui/vant#readme"
+  },
+  {
+    "id": 9,
+    "name": "@douyinfe/semi-ui",
+    "description": "A modern, comprehensive, flexible design system and UI library. Connect DesignOps & DevOps. Quickly build beautiful React apps. Maintained by Douyin-fe team.",
+    "npm": {
+      "name": "@douyinfe/semi-ui",
+      "url": "https://www.npmjs.com/package/@douyinfe/semi-ui",
+      "downloads": 26418,
+      "firstReleased": "2021-10-25T14:53:23.985Z",
+      "lastReleased": "2024-11-19T06:18:38.257Z"
+    },
+    "github": {
+      "url": "https://github.com/DouyinFE/semi-design",
+      "stars": 8480,
+      "issuesTotal": 189,
+      "issuesResolved": 0
+    },
+    "website": "https://semi.design"
+  },
+  {
+    "id": 10,
+    "name": "@arco-design/web-react",
+    "description": "Arco Design React UI Library.",
+    "npm": {
+      "name": "@arco-design/web-react",
+      "url": "https://www.npmjs.com/package/@arco-design/web-react",
+      "downloads": 102457,
+      "firstReleased": "2021-10-25T03:45:37.730Z",
+      "lastReleased": "2024-10-28T07:27:59.741Z"
+    },
+    "github": {
+      "url": "https://github.com/arco-design/arco-design",
+      "stars": 4957,
+      "issuesTotal": 285,
+      "issuesResolved": 0
+    },
+    "website": "https://arco.design"
+  }
+]

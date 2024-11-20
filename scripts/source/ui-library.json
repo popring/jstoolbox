@@ -1,0 +1,16 @@
+{
+  "name": "ui-library",
+  "description": "ui library",
+  "packages": [
+    "antd",
+    "element-plus",
+    "@radix-ui/themes",
+    "@nextui-org/react",
+    "@mui/material",
+    "antd-mobile",
+    "@varlet/ui",
+    "vant",
+    "@douyinfe/semi-ui",
+    "@arco-design/web-react"
+  ]
+}

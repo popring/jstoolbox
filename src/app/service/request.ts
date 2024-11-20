@@ -12,18 +12,13 @@ export function request<T>(url: string, options: Options): Promise<T> {
     ...options,
   };
 
-  // 动态填充 URL 中的占位符 {key}
+  // fill {key}
   const filledUrl = url.replace(/\{(\w+)\}/g, (_, key) => {
     if (params && key in params) {
       return params[key];
     }
   });
 
-  console.log(
-    '%c [ filledUrl ]-27',
-    'font-size:13px; background:#8c3152; color:#d07596;',
-    filledUrl
-  );
   return fetch(`http://localhost:3000${filledUrl}`, payload).then((res) => {
     return res.json();
   });

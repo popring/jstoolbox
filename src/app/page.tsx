@@ -1,13 +1,16 @@
-import { TypographyH1, TypographyP } from '@/components/ui/typography';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import JSIcon from '@/assets/js-icon.svg';
 import { WrenchIcon } from '@heroicons/react/24/outline';
+import { use } from 'react';
+
+import JSIcon from '@/assets/js-icon.svg';
+import { TypographyH1, TypographyP } from '@/components/ui/typography';
+import { getCategories } from './service/categories';
 
 export default function HomePage() {
   const t = useTranslations('HomePage');
-  const categories = new Array(100).fill(0);
+  const { categories } = use(getCategories());
   return (
     <div>
       <div className='flex flex-col justify-center items-center relative h-48'>
@@ -23,14 +26,14 @@ export default function HomePage() {
       </div>
       <main className='p-10'>
         <div className='flex flex-col gap-4 mt-10 lg:gap-8 sm:grid sm:grid-cols-2 lg:grid-cols-3'>
-          {categories.map((_, idx) => (
+          {categories.map((cate, idx) => (
             <Link
               key={idx}
-              href='/categories/image'
+              href={`/categories/${cate}`}
               className='flex items-center py-4 px-5 rounded-lg shadow hover:bg-amber-100 transition-all text-slate-700'
             >
               <WrenchIcon className='size-5' />
-              <span className='ml-2'>Image</span>
+              <span className='ml-2'>{cate}</span>
             </Link>
           ))}
         </div>

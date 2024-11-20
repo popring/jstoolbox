@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 import './globals.css';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Footer from './components/Footer';
 
 dayjs.extend(relativeTime);
@@ -20,11 +20,10 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <Header />
+        {/* <Header /> */}
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
-        
         <Footer />
       </body>
     </html>

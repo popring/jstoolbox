@@ -2,15 +2,22 @@ import axios from 'axios';
 import fs from 'fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'url';
+import { Octokit } from 'octokit';
+import { merge } from 'lodash-es';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const SOURCE_DIR = join(__dirname, '../source/')
+const SOURCE_DIR = join(__dirname, './source/');
+const DIST_DIR = join(__dirname, './realtime-data/');
 
-// 定义接口
+const octokit = new Octokit({
+  auth: GITHUB_TOKEN,
+});
+
+// Define interface
 class PackageInfo {
-  constructor(id, name, description, npm, github, website) {
+  constructor(id, name, npm, github, website, description) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -21,22 +28,12 @@ class PackageInfo {
 }
 
 class Npm {
-  constructor(
-    name,
-    url,
-    downloads,
-    firstReleased,
-    lastReleased,
-    website,
-    description
-  ) {
+  constructor(name, url, downloads, firstReleased, lastReleased) {
     this.name = name;
     this.url = url;
     this.downloads = downloads;
     this.firstReleased = firstReleased;
     this.lastReleased = lastReleased;
-    this.website = website;
-    this.description = description;
   }
 }
 
@@ -49,31 +46,29 @@ class Github {
   }
 }
 
-// 记录日志
 const logError = async (message) => {
   const logPath = join(__dirname, 'error.log');
   const logMessage = `${new Date().toISOString()} - ${message}\n`;
   await fs.appendFile(logPath, logMessage);
 };
 
-// 爬取 NPM 数据并获取 GitHub 仓库 URL
 const fetchNpmData = async (packageName) => {
   try {
     const npmUrl = `https://registry.npmjs.org/${packageName}`;
     const response = await axios.get(npmUrl);
     const data = response.data;
 
-    const { name, description, homepage, repository } = data;
+    const { name, description, homepage, repository = {} } = data;
     let githubUrl;
-    const match =
-      (repository.url || '').match(
-        /(?<=git[+\w]*:\/\/(?:[^/]+\/)?)(.*?)(?=\.git)/
-      )?.[0] || '';
-    if (match.includes('github.com') && match) {
-      githubUrl = match;
-    }
-    if (homepage.includes('github.com')) {
-      githubUrl = homepage;
+    if (repository.url?.includes('github.com')) {
+      const { groups: { user, repo } = {} } =
+        (repository.url || '').match(
+          /github\.com[:\/](?<user>.+?)\/(?<repo>.+?)(?=\.git|$)/
+        ) || {};
+
+      if (user && repo) {
+        githubUrl = `https://github.com/${user}/${repo}`;
+      }
     }
     const downloads = await fetchNpmDownloads(packageName);
     const firstReleased = data.time.created;
@@ -85,11 +80,11 @@ const fetchNpmData = async (packageName) => {
         `https://www.npmjs.com/package/${name}`,
         downloads,
         firstReleased,
-        lastReleased,
-        homepage,
-        description
+        lastReleased
       ),
       githubUrl,
+      website: homepage,
+      description,
     };
   } catch (error) {
     throw new Error(
@@ -98,38 +93,38 @@ const fetchNpmData = async (packageName) => {
   }
 };
 
-// 获取 NPM 下载量
 const fetchNpmDownloads = async (packageName) => {
   try {
     const url = `https://api.npmjs.org/downloads/point/last-month/${packageName}`;
     const response = await axios.get(url);
     return response.data.downloads || 0;
   } catch (e) {
-    console.error('获取 NPM 下载量失败:', e.message);
+    console.error('Failed to fetch NPM downloads:', e.message);
   }
 };
 
-// 爬取 GitHub 数据
 const fetchGithubData = async (githubUrl = '') => {
   try {
     if (!GITHUB_TOKEN) {
-      throw new Error('GitHub Token 未配置，请在环境变量中设置 GITHUB_TOKEN');
+      throw new Error(
+        'GitHub Token is not configured. Please set GITHUB_TOKEN in the environment variables.'
+      );
     }
 
-    const Authorization = `Bearer ${GITHUB_TOKEN}`;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [_, owner, repoName] =
       githubUrl.match(/github\.com\/([^/]+)\/([^/]+)/) || [];
-    if (!owner || !repoName) throw new Error(`无效的 GitHub URL: ${githubUrl}`);
+    if (!owner || !repoName)
+      throw new Error(`Invalid GitHub URL: ${githubUrl}`);
 
-    const repoUrl = `https://api.github.com/repos/${owner}/${repoName}`;
-    const issuesUrl = `${repoUrl}/issues?state=all`;
-
-    const repoResponse = await axios.get(repoUrl, {
-      headers: { Authorization },
+    const repoResponse = await octokit.rest.repos.get({
+      owner,
+      repo: repoName,
     });
-    const issuesResponse = await axios.get(issuesUrl, {
-      headers: { Authorization },
+    const issuesResponse = await octokit.rest.issues.list({
+      owner,
+      repo: repoName,
+      state: 'all',
     });
 
     const stars = repoResponse.data.stargazers_count;
@@ -144,81 +139,89 @@ const fetchGithubData = async (githubUrl = '') => {
   }
 };
 
-// 汇总数据
 const fetchPackageInfo = async (packageName, id) => {
-  const { npm, githubUrl } = await fetchNpmData(packageName);
+  const { npm, githubUrl, website, description } = await fetchNpmData(
+    packageName
+  );
   const githubData = await fetchGithubData(githubUrl);
 
   return new PackageInfo(
     id,
     packageName,
-    npm.description,
     npm,
     githubData,
-    npm.website
+    website,
+    description
   );
 };
 
-// 爬取多个包信息
 const fetchMultiplePackages = async (packages) => {
   let errors = 0;
   const results = [];
 
   for (let i = 0; i < packages.length; i++) {
     const packageName = packages[i];
-    console.log(`开始爬取：${packageName} (${i + 1}/${packages.length})`);
+    console.log(`Start fetching: ${packageName} (${i + 1}/${packages.length})`);
 
     try {
       const packageInfo = await fetchPackageInfo(packageName, i + 1);
       results.push(packageInfo);
-      console.log(`爬取成功：${packageName}`);
+      console.log(`Fetch successful: ${packageName}`);
     } catch (error) {
       errors++;
-      console.error(`爬取失败：${packageName} - ${error.message}`);
-      await logError(`爬取失败：${packageName} - ${error.message}`);
+      console.error(`Fetch failed: ${packageName} - ${error.message}`);
+      await logError(`Fetch failed: ${packageName} - ${error.message}`);
 
       if (errors >= 10) {
-        console.error('错误次数超过 10 次，停止爬取！');
+        console.error('Error count exceeded 10. Stopping fetch process!');
         break;
       }
     }
 
     const progress = Math.round(((i + 1) / packages.length) * 100);
-    console.log(`爬取进度：${progress}%`);
+    console.log(`Fetch progress: ${progress}%`);
   }
 
   return results;
 };
 
-// 读取要爬取的包信息
 const readPackagesFromJson = async () => {
   const files = await fs.readdir(SOURCE_DIR);
   const map = {};
   for (const file of files) {
-    const pkgJSON = await fs.readFile(
-      join(SOURCE_DIR, file),
-      'utf-8'
-    );
+    const pkgJSON = await fs.readFile(join(SOURCE_DIR, file), 'utf-8');
     const pkgData = JSON.parse(pkgJSON);
     map[pkgData.name] = pkgData.packages;
   }
   return map;
 };
 
-// 保存数据
 const saveDataToLocal = async (pkgName, data) => {
   try {
-    await fs.writeFile(
-      join(__dirname, `../realtime-data/${pkgName}.json`),
-      JSON.stringify(data, null, 2)
-    );
-    console.log('数据已保存到 packageData.json');
+    let newData = data;
+    const filePath = join(DIST_DIR, `${pkgName}.json`);
+
+    try {
+      const origin = await fs.readFile(filePath, 'utf-8');
+      if (origin) {
+        const originData = JSON.parse(origin);
+        newData = merge(originData, data);
+      }
+    } catch (readError) {
+      if (readError.code !== 'ENOENT') {
+        throw readError;
+      }
+    }
+
+    await fs.mkdir(dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(newData, null, 2));
+    console.log(`Data saved to ${filePath}`);
   } catch (error) {
-    console.error('保存数据失败:', error.message);
+    console.error('Failed to save data:', error.message);
+    await logError(`Failed to save data: ${pkgName} - ${error.message}`);
   }
 };
 
-// 主函数
 const main = async () => {
   const mapJson = await readPackagesFromJson();
   for (const [packageName, packages] of Object.entries(mapJson)) {
@@ -227,4 +230,6 @@ const main = async () => {
   }
 };
 
-main().catch((error) => console.error('程序运行出错:', error.message));
+main().catch((error) =>
+  console.error('Program encountered an error:', error.message)
+);

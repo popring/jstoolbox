@@ -2,8 +2,5 @@
   "HomePage": {
     "title": "JS Toolbox",
     "about": "查找 JavaScript 中积极维护且流行的库。"
-  },
-  "CategoryPage": {
-    "title": "类别"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "name": "animation",
+  "description": "animation library",
+  "packages": [
+    "framer-motion",
+    "react-spring",
+    "react-motion",
+    "animate.css"
+  ]
+}

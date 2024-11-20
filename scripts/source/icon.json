@@ -1,10 +1,11 @@
 {
   "name": "icon",
-  "description": "icon图标库",
+  "description": "icon library",
   "packages":[
     "@heroicons/react",
     "@heroicons/vue",
     "@icon-park/react",
-    "@icon-park/vue"
+    "@icon-park/vue",
+    "simple-icons"
   ]
 }

@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "name": "framer-motion",
+    "description": "A simple and powerful JavaScript animation library",
+    "npm": {
+      "name": "framer-motion",
+      "url": "https://www.npmjs.com/package/framer-motion",
+      "downloads": 20244651,
+      "firstReleased": "2019-01-14T13:04:29.347Z",
+      "lastReleased": "2024-11-18T16:44:34.848Z"
+    },
+    "github": {
+      "url": "https://github.com/framer/motion",
+      "stars": 25528,
+      "issuesTotal": 246,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/framer/motion#readme"
+  },
+  {
+    "id": 2,
+    "name": "react-spring",
+    "description": "<p align=\"center\">   <img src=\"https://i.imgur.com/QZownhg.png\" width=\"240\" /> </p>",
+    "npm": {
+      "name": "react-spring",
+      "url": "https://www.npmjs.com/package/react-spring",
+      "downloads": 3195723,
+      "firstReleased": "2018-03-07T15:58:57.531Z",
+      "lastReleased": "2024-07-21T14:41:12.658Z"
+    },
+    "github": {
+      "url": "https://github.com/pmndrs/react-spring",
+      "stars": 28235,
+      "issuesTotal": 109,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/pmndrs/react-spring#readme"
+  },
+  {
+    "id": 3,
+    "name": "react-motion",
+    "description": "A spring that solves your animation problems.",
+    "npm": {
+      "name": "react-motion",
+      "url": "https://www.npmjs.com/package/react-motion",
+      "downloads": 1796658,
+      "firstReleased": "2015-07-07T23:57:00.832Z",
+      "lastReleased": "2022-06-26T02:36:12.652Z"
+    },
+    "github": {
+      "url": "https://github.com/chenglou/react-motion",
+      "stars": 21692,
+      "issuesTotal": 193,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/chenglou/react-motion#readme"
+  },
+  {
+    "id": 4,
+    "name": "animate.css",
+    "description": "[![GitHub Version](https://img.shields.io/github/release/daneden/animate.css.svg?style=for-the-badge)](https://github.com/daneden/animate.css) [![Github Star](https://img.shields.io/github/stars/daneden/animate.css.svg?style=for-the-badge)](https://github",
+    "npm": {
+      "name": "animate.css",
+      "url": "https://www.npmjs.com/package/animate.css",
+      "downloads": 1994404,
+      "firstReleased": "2014-06-03T01:13:14.613Z",
+      "lastReleased": "2022-11-18T07:54:08.622Z"
+    },
+    "github": {
+      "url": "https://github.com/animate-css/animate.css",
+      "stars": 80876,
+      "issuesTotal": 49,
+      "issuesResolved": 0
+    },
+    "website": "https://animate.style/"
+  }
+]

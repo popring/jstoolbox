@@ -1,0 +1,12 @@
+{
+  "name": "css",
+  "description": "CSS Preprocessors",
+  "packages": [
+    "sass",
+    "less",
+    "stylus",
+    "postcss",
+    "tailwindcss",
+    "@emotion/css"
+  ]
+}
