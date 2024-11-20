@@ -1,0 +1,40 @@
+{
+  "animation": [
+    "framer-motion",
+    "react-spring",
+    "react-motion",
+    "animate.css"
+  ],
+  "css": [
+    "sass",
+    "less",
+    "stylus",
+    "postcss",
+    "tailwindcss",
+    "@emotion/css"
+  ],
+  "icon": [
+    "@heroicons/react",
+    "@heroicons/vue",
+    "@icon-park/react",
+    "@icon-park/vue",
+    "simple-icons"
+  ],
+  "image": [
+    "react-medium-image-zoom",
+    "photoswipe",
+    "lightbox2"
+  ],
+  "ui-library": [
+    "antd",
+    "element-plus",
+    "@radix-ui/themes",
+    "@nextui-org/react",
+    "@mui/material",
+    "antd-mobile",
+    "@varlet/ui",
+    "vant",
+    "@douyinfe/semi-ui",
+    "@arco-design/web-react"
+  ]
+}

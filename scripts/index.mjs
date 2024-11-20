@@ -8,8 +8,8 @@ import { merge } from 'lodash-es';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const SOURCE_DIR = join(__dirname, './source/');
-const DIST_DIR = join(__dirname, './realtime-data/');
+const SOURCE_DIR = join(__dirname, '../public/source/');
+const DIST_DIR = join(__dirname, '../public/realtime-data/');
 
 const octokit = new Octokit({
   auth: GITHUB_TOKEN,
@@ -224,10 +224,13 @@ const saveDataToLocal = async (pkgName, data) => {
 
 const main = async () => {
   const mapJson = await readPackagesFromJson();
+  const cateMap = {};
   for (const [packageName, packages] of Object.entries(mapJson)) {
     const packageInfos = await fetchMultiplePackages(packages);
     await saveDataToLocal(packageName, packageInfos);
+    cateMap[packageName] = packageInfos.map((info) => (info.name));
   }
+  await saveDataToLocal('index', cateMap);
 };
 
 main().catch((error) =>
