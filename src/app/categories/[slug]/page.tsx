@@ -2,8 +2,8 @@ import { use } from "react";
 
 import { TypographyH3, TypographyP } from "@/components/ui/typography";
 
-import StarChart from "./components/StarChart";
-import PackageItem from "./components/PackageItem";
+import StarChart from "@/components/page/categories/StarChart";
+import PackageItem from "@/components/page/categories/PackageItem";
 
 import { getCategory } from "@/app/service/categories";
 

@@ -1,5 +1,4 @@
 import { PackageInfo } from '@/app/types/categories';
-// import { readCategoriesName, readCategoryDetail } from '@/lib/fs';
 import { notFound } from 'next/navigation';
 import { request } from './request';
 

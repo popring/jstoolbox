@@ -5,7 +5,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 
 import "./globals.css";
 // import Header from './components/Header';
-import Footer from "./components/Footer";
+import Footer from "@/components/page/Footer";
 
 dayjs.extend(relativeTime);
 
