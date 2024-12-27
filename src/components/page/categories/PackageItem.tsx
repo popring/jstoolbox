@@ -90,16 +90,16 @@ export default function PackageItem(props: Props) {
     ];
 
     return (
-      <div className='flex gap-x-6 mt-6 justify-around overflow-y-auto'>
+      <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mt-6'>
         {tags.map((item) => (
           <div
-            className='flex flex-col justify-center items-center flex-shrink-0'
+            className='flex flex-col justify-center items-center p-2 rounded-lg bg-slate-800/30'
             key={item.label}
           >
-            <div className='font-semibold text-lg text-slate-200'>
+            <div className='font-semibold text-sm md:text-lg text-slate-200'>
               {item.label}
             </div>
-            <div className='text-md text-slate-300'>{item.value}</div>
+            <div className='text-sm md:text-md text-slate-300'>{item.value}</div>
           </div>
         ))}
       </div>
@@ -109,7 +109,7 @@ export default function PackageItem(props: Props) {
   return (
     <Card className='p-4  bg-slate-800/50 text-slate-600 backdrop-blur-sm  border-slate-700'>
       <div className='text-2xl text-slate-200'>{name}</div>
-      <div className='mt-1 text-slate-300'>{description}</div>
+      <div className='mt-1 text-slate-300 break-words'>{description}</div>
 
       {renderUrlList()}
 
