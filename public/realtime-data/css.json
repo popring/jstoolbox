@@ -6,13 +6,13 @@
     "npm": {
       "name": "sass",
       "url": "https://www.npmjs.com/package/sass",
-      "downloads": 64782221,
+      "downloads": 62861606,
       "firstReleased": "2017-06-06T20:36:44.615Z",
-      "lastReleased": "2024-11-15T01:30:56.712Z"
+      "lastReleased": "2025-02-14T00:34:21.778Z"
     },
     "github": {
       "url": "https://github.com/sass/dart-sass",
-      "stars": 3972,
+      "stars": 4034,
       "issuesTotal": 70,
       "issuesResolved": 0
     },
@@ -25,14 +25,14 @@
     "npm": {
       "name": "less",
       "url": "https://www.npmjs.com/package/less",
-      "downloads": 26895761,
+      "downloads": 26846017,
       "firstReleased": "2011-01-23T22:28:07.815Z",
-      "lastReleased": "2024-05-06T13:39:54.525Z"
+      "lastReleased": "2025-01-19T18:46:59.842Z"
     },
     "github": {
       "url": "https://github.com/less/less.js",
-      "stars": 17033,
-      "issuesTotal": 217,
+      "stars": 17043,
+      "issuesTotal": 219,
       "issuesResolved": 0
     },
     "website": "http://lesscss.org"
@@ -44,14 +44,14 @@
     "npm": {
       "name": "stylus",
       "url": "https://www.npmjs.com/package/stylus",
-      "downloads": 11847790,
+      "downloads": 10966031,
       "firstReleased": "2011-01-31T18:22:09.655Z",
       "lastReleased": "2024-10-20T07:12:10.674Z"
     },
     "github": {
       "url": "https://github.com/stylus/stylus",
-      "stars": 11198,
-      "issuesTotal": 268,
+      "stars": 11215,
+      "issuesTotal": 274,
       "issuesResolved": 0
     },
     "website": "https://github.com/stylus/stylus"
@@ -63,14 +63,14 @@
     "npm": {
       "name": "postcss",
       "url": "https://www.npmjs.com/package/postcss",
-      "downloads": 344250693,
+      "downloads": 344596943,
       "firstReleased": "2013-11-04T19:57:14.218Z",
-      "lastReleased": "2024-11-11T19:59:09.312Z"
+      "lastReleased": "2025-02-10T20:51:47.119Z"
     },
     "github": {
       "url": "https://github.com/postcss/postcss",
-      "stars": 28524,
-      "issuesTotal": 22,
+      "stars": 28657,
+      "issuesTotal": 23,
       "issuesResolved": 0
     },
     "website": "https://postcss.org/"
@@ -82,14 +82,14 @@
     "npm": {
       "name": "tailwindcss",
       "url": "https://www.npmjs.com/package/tailwindcss",
-      "downloads": 46820441,
+      "downloads": 53491201,
       "firstReleased": "2017-10-06T15:05:20.621Z",
-      "lastReleased": "2024-11-14T18:45:02.765Z"
+      "lastReleased": "2025-02-17T12:57:22.057Z"
     },
     "github": {
       "url": "https://github.com/tailwindlabs/tailwindcss",
-      "stars": 83193,
-      "issuesTotal": 96,
+      "stars": 85717,
+      "issuesTotal": 117,
       "issuesResolved": 0
     },
     "website": "https://tailwindcss.com"
@@ -101,14 +101,14 @@
     "npm": {
       "name": "@emotion/css",
       "url": "https://www.npmjs.com/package/@emotion/css",
-      "downloads": 12111678,
+      "downloads": 11340603,
       "firstReleased": "2018-02-09T14:09:33.098Z",
       "lastReleased": "2024-11-20T07:58:28.045Z"
     },
     "github": {
       "url": "https://github.com/emotion-js/emotion",
-      "stars": 17508,
-      "issuesTotal": 337,
+      "stars": 17634,
+      "issuesTotal": 347,
       "issuesResolved": 0
     },
     "website": "https://emotion.sh"

@@ -6,14 +6,14 @@
     "npm": {
       "name": "react-medium-image-zoom",
       "url": "https://www.npmjs.com/package/react-medium-image-zoom",
-      "downloads": 518610,
+      "downloads": 569873,
       "firstReleased": "2016-07-14T14:23:59.420Z",
-      "lastReleased": "2024-11-12T03:04:18.397Z"
+      "lastReleased": "2024-12-29T18:18:24.254Z"
     },
     "github": {
       "url": "https://github.com/rpearce/react-medium-image-zoom",
-      "stars": 1899,
-      "issuesTotal": 6,
+      "stars": 1944,
+      "issuesTotal": 7,
       "issuesResolved": 0
     },
     "website": "https://github.com/rpearce/react-medium-image-zoom"
@@ -25,14 +25,14 @@
     "npm": {
       "name": "photoswipe",
       "url": "https://www.npmjs.com/package/photoswipe",
-      "downloads": 1053366,
+      "downloads": 1071359,
       "firstReleased": "2014-12-09T22:12:41.512Z",
       "lastReleased": "2024-05-24T15:15:47.496Z"
     },
     "github": {
       "url": "https://github.com/dimsemenov/Photoswipe",
-      "stars": 24252,
-      "issuesTotal": 625,
+      "stars": 24465,
+      "issuesTotal": 623,
       "issuesResolved": 0
     },
     "website": "https://photoswipe.com"
@@ -44,14 +44,14 @@
     "npm": {
       "name": "lightbox2",
       "url": "https://www.npmjs.com/package/lightbox2",
-      "downloads": 191652,
+      "downloads": 134870,
       "firstReleased": "2015-12-14T04:00:37.472Z",
       "lastReleased": "2024-10-03T18:17:25.625Z"
     },
     "github": {
       "url": "https://github.com/lokesh/lightbox2",
-      "stars": 6232,
-      "issuesTotal": 63,
+      "stars": 6272,
+      "issuesTotal": 65,
       "issuesResolved": 0
     },
     "website": "http://lokeshdhakar.com/projects/lightbox2/"

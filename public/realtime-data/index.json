@@ -1,8 +1,8 @@
 {
   "animation": [
     "framer-motion",
-    "react-spring",
     "react-motion",
+    "animate.css",
     "animate.css"
   ],
   "css": [
@@ -36,5 +36,14 @@
     "vant",
     "@douyinfe/semi-ui",
     "@arco-design/web-react"
+  ],
+  "editor": [
+    "lexical",
+    "tiptap",
+    "remirror",
+    "slate",
+    "quill",
+    "ckeditor",
+    "tinymce"
   ]
 }

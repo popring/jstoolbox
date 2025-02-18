@@ -1,0 +1,13 @@
+{
+  "name": "editor",
+  "description": "editor",
+  "packages": [
+    "lexical",
+    "tiptap",
+    "remirror",
+    "slate",
+    "quill",
+    "ckeditor",
+    "tinymce"
+  ]
+}

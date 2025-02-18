@@ -6,14 +6,14 @@
     "npm": {
       "name": "@heroicons/react",
       "url": "https://www.npmjs.com/package/@heroicons/react",
-      "downloads": 4279948,
+      "downloads": 4533041,
       "firstReleased": "2021-01-25T17:54:39.138Z",
-      "lastReleased": "2024-11-18T15:38:44.558Z"
+      "lastReleased": "2024-12-26T21:49:59.546Z"
     },
     "github": {
       "url": "https://github.com/tailwindlabs/heroicons",
-      "stars": 21655,
-      "issuesTotal": 3,
+      "stars": 22033,
+      "issuesTotal": 4,
       "issuesResolved": 0
     },
     "website": "https://github.com/tailwindlabs/heroicons#readme"
@@ -25,14 +25,14 @@
     "npm": {
       "name": "@heroicons/vue",
       "url": "https://www.npmjs.com/package/@heroicons/vue",
-      "downloads": 669186,
+      "downloads": 607116,
       "firstReleased": "2021-01-26T12:21:00.534Z",
-      "lastReleased": "2024-11-18T15:38:51.322Z"
+      "lastReleased": "2024-12-26T21:50:06.833Z"
     },
     "github": {
       "url": "https://github.com/tailwindlabs/heroicons",
-      "stars": 21655,
-      "issuesTotal": 3,
+      "stars": 22033,
+      "issuesTotal": 4,
       "issuesResolved": 0
     },
     "website": "https://github.com/tailwindlabs/heroicons#readme"
@@ -44,14 +44,14 @@
     "npm": {
       "name": "@icon-park/react",
       "url": "https://www.npmjs.com/package/@icon-park/react",
-      "downloads": 29158,
+      "downloads": 15752,
       "firstReleased": "2020-08-27T09:26:40.798Z",
       "lastReleased": "2022-07-04T15:44:12.609Z"
     },
     "github": {
       "url": "https://github.com/bytedance/IconPark",
-      "stars": 8354,
-      "issuesTotal": 713,
+      "stars": 8543,
+      "issuesTotal": 732,
       "issuesResolved": 0
     },
     "website": "http://iconpark.bytedance.com/"
@@ -63,14 +63,14 @@
     "npm": {
       "name": "@icon-park/vue",
       "url": "https://www.npmjs.com/package/@icon-park/vue",
-      "downloads": 9841,
+      "downloads": 795,
       "firstReleased": "2020-08-27T09:26:41.694Z",
       "lastReleased": "2022-07-04T15:43:57.504Z"
     },
     "github": {
       "url": "https://github.com/bytedance/IconPark",
-      "stars": 8354,
-      "issuesTotal": 713,
+      "stars": 8543,
+      "issuesTotal": 732,
       "issuesResolved": 0
     },
     "website": "http://iconpark.bytedance.com/"
@@ -82,14 +82,14 @@
     "npm": {
       "name": "simple-icons",
       "url": "https://www.npmjs.com/package/simple-icons",
-      "downloads": 234885,
+      "downloads": 236889,
       "firstReleased": "2017-09-17T02:11:26.598Z",
-      "lastReleased": "2024-11-17T01:11:12.027Z"
+      "lastReleased": "2025-02-16T05:48:17.464Z"
     },
     "github": {
       "url": "https://github.com/simple-icons/simple-icons",
-      "stars": 21063,
-      "issuesTotal": 1028,
+      "stars": 21941,
+      "issuesTotal": 1068,
       "issuesResolved": 0
     },
     "website": "https://simpleicons.org"
