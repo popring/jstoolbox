@@ -1,59 +1,186 @@
-import Image from "next/image";
-import Link from "next/link";
-import { WrenchIcon } from "@heroicons/react/24/outline";
-import { use } from "react";
+import { Search, ChevronRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
+import { use } from 'react';
+import { getCategories } from './service/categories';
 
-import { JSIcon } from "@/assets";
-import { getCategories } from "./service/categories";
-
-export default function HomePage() {
+export default function Home() {
   const { categories } = use(getCategories());
 
   return (
-    <div className="min-h-screen bg-slate-950 overflow-hidden">
-      <div className="relative flex flex-col justify-center items-center min-h-[50vh] md:h-[60vh] px-4 md:px-10 animate-in fade-in slide-in-from-bottom-5 duration-500">
-        {/* 背景装饰 */}
-        <div className="absolute inset-0">
-          <div className="absolute w-[300px] md:w-[500px] h-[300px] md:h-[500px] -top-24 md:-top-48 -right-12 md:-right-24 bg-[#f7df1e]/10 rounded-full blur-[100px] animate-pulse" />
-          <div className="absolute w-[300px] md:w-[500px] h-[300px] md:h-[500px] -bottom-24 md:-bottom-48 -left-12 md:-left-24 bg-[#f7df1e]/10 rounded-full blur-[100px] animate-pulse" />
-        </div>
-        
-        <Image
-          alt="icon"
-          src={JSIcon}
-          width={120}
-          height={120}
-          className="relative animate-float md:w-[180px] md:h-[180px] w-[120px] h-[120px]"
-        />
-        <h1 className="mt-6 md:mt-8 text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#f7df1e] via-amber-400 to-[#f7df1e] bg-clip-text text-transparent bg-300% animate-gradient text-center">
-          JS Toolbox
-        </h1>
-        <p className="mt-3 md:mt-4 text-base md:text-xl text-slate-400 text-center max-w-xs md:max-w-none px-4">
-          Find the perfect JavaScript packages to enhance your development workflow
-        </p>
-      </div>
+    <div className='min-h-screen bg-gradient-to-b from-black to-slate-900'>
+      {/* Hero Section */}
+      <div className='container mx-auto px-4 pt-20 pb-16 text-center'>
+        <div className='animate-fade-in-up'>
+          <div className='relative mx-auto mb-8 h-24 w-24 overflow-hidden rounded-xl bg-yellow-400 shadow-lg shadow-yellow-400/20'>
+            <div className='absolute inset-0 flex items-center justify-center'>
+              <span className='text-6xl font-bold text-black'>JS</span>
+            </div>
+          </div>
 
-      <main className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 animate-in fade-in duration-700">
-            {categories.map((cate, idx) => (
-              <Link
-                key={idx}
-                href={`/categories/${cate}`}
-                className="group p-4 md:p-6 rounded-xl bg-gradient-to-br from-slate-900/90 to-slate-950/90 border border-slate-800 hover:border-[#f7df1e]/30 transition-all duration-500 animate-in fade-in slide-in-from-bottom-5 fill-mode-both backdrop-blur-sm"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="flex items-center gap-2 md:gap-3">
-                  <WrenchIcon className="size-4 md:size-5 text-[#f7df1e] transition-all duration-500 group-hover:rotate-12" />
-                  <span className="text-base md:text-lg text-slate-200 group-hover:text-[#f7df1e] transition-all duration-500">
-                    {cate}
-                  </span>
-                </div>
-              </Link>
-            ))}
+          <h1 className='mb-4 bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl'>
+            JS Toolbox
+          </h1>
+
+          <p className='mx-auto mb-8 max-w-2xl text-lg text-slate-300 sm:text-xl'>
+            Find the perfect JavaScript packages to enhance your development
+            workflow
+          </p>
+
+          {/* Search Bar */}
+          <div className='mx-auto mb-12 max-w-md'>
+            <div className='relative'>
+              <Search className='absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400' />
+              <input
+                type='text'
+                placeholder='Search for JavaScript packages...'
+                className='w-full rounded-full border border-slate-700 bg-slate-800/50 py-3 pl-10 pr-4 text-slate-200 outline-none backdrop-blur-sm transition-all focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20'
+              />
+            </div>
           </div>
         </div>
-      </main>
+
+        {/* Categories */}
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6'>
+          {categories.map((category) => (
+            <CategoryCard
+              key={category}
+              href={`/categories/${category}`}
+              title={category}
+              icon={<Sparkles className='h-5 w-5' />}
+              description='Motion libraries & effects'
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Section */}
+      <div className='container mx-auto px-4 py-16'>
+        <div className='mb-8 flex items-center justify-between'>
+          <h2 className='text-2xl font-bold text-white'>Featured Packages</h2>
+          <Link
+            href='/featured'
+            className='flex items-center text-sm text-yellow-400 hover:text-yellow-300'
+          >
+            View all <ChevronRight className='ml-1 h-4 w-4' />
+          </Link>
+        </div>
+
+        <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+          <FeaturedCard
+            title='Three.js'
+            description='3D library that makes WebGL easy to use'
+            stars={88000}
+            category='Animation'
+          />
+          <FeaturedCard
+            title='Tailwind CSS'
+            description='Utility-first CSS framework for rapid UI development'
+            stars={72000}
+            category='CSS'
+          />
+          <FeaturedCard
+            title='React Query'
+            description='Hooks for fetching, caching and updating data'
+            stars={35000}
+            category='Data Fetching'
+          />
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className='border-t border-slate-800 bg-black py-8'>
+        <div className='container mx-auto px-4 text-center text-sm text-slate-500'>
+          <p>© {new Date().getFullYear()} JS Toolbox. All rights reserved.</p>
+          <div className='mt-2 flex justify-center space-x-4'>
+            <Link href='/about' className='hover:text-slate-300'>
+              About
+            </Link>
+            <Link href='/contact' className='hover:text-slate-300'>
+              Contact
+            </Link>
+            <Link href='/privacy' className='hover:text-slate-300'>
+              Privacy
+            </Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
+}
+
+function CategoryCard({
+  href,
+  title,
+  icon,
+  description,
+}: {
+  href: string;
+  title: string;
+  icon: React.ReactNode;
+  description: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className='group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-yellow-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-yellow-500/5'
+    >
+      <div className='flex flex-col items-center text-center'>
+        <div className='mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500 transition-all duration-300 group-hover:bg-yellow-500 group-hover:text-black'>
+          {icon}
+        </div>
+        <h3 className='mb-1 font-medium text-white'>{title}</h3>
+        <p className='text-xs text-slate-400'>{description}</p>
+      </div>
+      <div className='absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-400 to-yellow-500 transition-all duration-300 group-hover:w-full'></div>
+    </Link>
+  );
+}
+
+function FeaturedCard({
+  title,
+  description,
+  stars,
+  category,
+}: {
+  title: string;
+  description: string;
+  stars: number;
+  category: string;
+}) {
+  return (
+    <div className='overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 transition-all duration-300 hover:border-slate-700 hover:shadow-lg'>
+      <div className='p-6'>
+        <div className='mb-1 text-xs font-medium text-yellow-500'>
+          {category}
+        </div>
+        <h3 className='mb-2 text-xl font-semibold text-white'>{title}</h3>
+        <p className='mb-4 text-sm text-slate-400'>{description}</p>
+        <div className='flex items-center text-xs text-slate-500'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            className='mr-1 h-4 w-4 fill-current text-yellow-500'
+            viewBox='0 0 20 20'
+          >
+            <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
+          </svg>
+          {formatNumber(stars)} stars
+        </div>
+      </div>
+      <div className='flex items-center justify-between border-t border-slate-800 px-6 py-3'>
+        <span className='text-xs text-slate-500'>
+          Weekly downloads: {formatNumber(Math.floor(stars * 7.5))}
+        </span>
+        <Link
+          href={`/package/${title.toLowerCase().replace(/\s+/g, '-')}`}
+          className='text-xs font-medium text-yellow-500 hover:text-yellow-400'
+        >
+          View details
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function formatNumber(num: number) {
+  return num >= 1000 ? `${(num / 1000).toFixed(1)}k` : num;
 }

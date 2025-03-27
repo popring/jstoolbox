@@ -6,7 +6,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 
 import './globals.css';
 // import Header from './components/Header';
-import Footer from '@/components/page/Footer';
+// import Footer from '@/components/page/Footer';
 
 dayjs.extend(relativeTime);
 
@@ -32,7 +32,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <div className='bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950'>
               {children}
-              <Footer />
+              {/* <Footer /> */}
             </div>
           </NextIntlClientProvider>
         {/* </ThemeProvider> */}
