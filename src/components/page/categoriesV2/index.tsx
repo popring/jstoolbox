@@ -18,7 +18,7 @@ import {
   Clock,
   Calendar,
 } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+// import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 // Format date to show age in years or months
@@ -103,10 +103,10 @@ function StatCard({
 
 function PackageItem({ info }: { info: any }) {
   // Calculate issue resolution percentage with safety checks
-  const issuesTotal = info?.github?.issuesTotal || 0;
-  const issuesResolved = info?.github?.issuesResolved || 0;
-  const issueResolutionPercentage =
-    issuesTotal > 0 ? Math.round((issuesResolved / issuesTotal) * 100) : 0;
+  // const issuesTotal = info?.github?.issuesTotal || 0;
+  // const issuesResolved = info?.github?.issuesResolved || 0;
+  // const issueResolutionPercentage =
+  //   issuesTotal > 0 ? Math.round((issuesResolved / issuesTotal) * 100) : 0;
 
   // Format dates with safety checks
   const age = info?.npm?.firstReleased
@@ -205,7 +205,7 @@ function PackageItem({ info }: { info: any }) {
       </div>
 
       {/* Issues Section - Only show if there are issues */}
-      {issuesTotal > 0 && (
+      {/* {issuesTotal > 0 && (
         <div className='bg-zinc-800/30 rounded-lg p-3 md:p-4'>
           <div className='flex items-center justify-between mb-2'>
             <div className='flex items-center gap-2'>
@@ -238,7 +238,7 @@ function PackageItem({ info }: { info: any }) {
             </span>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
