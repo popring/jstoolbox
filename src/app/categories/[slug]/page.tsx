@@ -1,8 +1,9 @@
 import React, { use } from 'react';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
-import { getCategory, groupPackagesByRepository, getCategories } from '@/app/service/categories';
+import { getCategory, groupPackagesByRepository } from '@/app/service/categories';
 import { CategoryContent } from '@/app/categories/[slug]/CategoryContent';
 import { notFound } from 'next/navigation';
+import { getCategoriesNames } from '@/lib/fs';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -11,13 +12,14 @@ interface Props {
 // Generate static paths for all available categories
 export async function generateStaticParams() {
   try {
-    const { categories } = await getCategories();
+    // 使用本地文件读取获取分类列表
+    const categories = getCategoriesNames();
     return categories.map((slug) => ({
       slug,
     }));
   } catch (error) {
     console.error('Error generating static params:', error);
-    // Fallback to known categories if API fails
+    // Fallback to known categories if file reading fails
     const fallbackCategories = [
       'ui-library',
       'build-tools',

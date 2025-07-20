@@ -1,25 +1,45 @@
 import { PackageInfo, GroupedPackageInfo } from '@/app/types/categories';
 import { notFound } from 'next/navigation';
 import { request } from './request';
+import { readCategoryDetail, getCategoriesNames } from '@/lib/fs';
 
 // 缓存分组结果
 const groupedCache = new Map<string, GroupedPackageInfo[]>();
 
 async function getCategories(): Promise<{ categories: string[] }> {
-  // const categories = await readCategoriesName();
-  const res = await request.get('/realtime-data/index.json');
-
-  return { categories: Object.keys(res.data) };
+  // 在服务端使用本地文件读取
+  if (typeof window === 'undefined') {
+    const categories = getCategoriesNames();
+    return { categories };
+  }
+  
+  // 在客户端使用 API 请求（如果需要实时数据）
+  try {
+    const res = await request.get('/realtime-data/index.json');
+    return { categories: Object.keys(res.data) };
+  } catch (error) {
+    console.error('Error fetching categories from API:', error);
+    // 如果 API 失败，回退到本地文件读取
+    const categories = getCategoriesNames();
+    return { categories };
+  }
 }
 
 async function getCategory(slug: string): Promise<{ data: PackageInfo[] }> {
   try {
-    // const res = await readCategoryDetail(slug);
+    // 在服务端使用本地文件读取
+    if (typeof window === 'undefined') {
+      const data = readCategoryDetail(slug);
+      return { data };
+    }
+    
+    // 在客户端使用 API 请求
     const res = await request.get(`/realtime-data/${slug}.json`);
     return {
       data: res.data,
     };
-  } catch {
+  } catch (error) {
+    console.error(`Error loading category ${slug}:`, error);
     notFound();
   }
 }
