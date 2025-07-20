@@ -1,10 +1,9 @@
-import type React from 'react';
-
-import { use } from 'react';
+import React, { use } from 'react';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
-import { getCategory } from '@/app/service/categories';
+import { getCategory, groupPackagesByRepository } from '@/app/service/categories';
 import { Card } from '@/components/ui/card';
-import { PackageItem, SimpleStarChart } from '@/components/page/categoriesV2';
+import { SimpleStarChart } from '@/components/page/categoriesV2';
+import { ViewToggle } from '@/app/categories/[slug]/ViewToggle';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -19,9 +18,13 @@ export default function CategoryPage(props: Props) {
       return (b?.github?.stars || 0) - (a?.github?.stars || 0);
     });
 
-    const chartData = packageInfoList.slice(0, 5).map((item) => ({
-      packageName: item?.name || 'Unknown',
-      star: item?.github?.stars || 0,
+    // 分组包信息
+    const groupedPackages = groupPackagesByRepository(packageInfoList);
+
+    // 为图表准备数据（使用分组后的数据）
+    const chartData = groupedPackages.slice(0, 5).map((group) => ({
+      packageName: group.repositoryName,
+      star: group.repositoryStars,
     }));
 
     return (
@@ -43,6 +46,7 @@ export default function CategoryPage(props: Props) {
               to create stunning web experiences
             </TypographyP>
 
+            {/* 统一的内容容器 */}
             <div className='mt-8 md:mt-12 w-full max-w-[1200px] flex flex-col gap-6 md:gap-8 pb-12'>
               {/* Enhanced chart card with better styling */}
               <Card className='bg-gradient-to-br from-zinc-900/90 to-zinc-950/90 border border-zinc-800 rounded-xl p-4 md:p-8 backdrop-blur-sm shadow-lg shadow-black/20 hover:border-yellow-900/50 transition-all duration-300'>
@@ -58,18 +62,11 @@ export default function CategoryPage(props: Props) {
                 </div>
               </Card>
 
-              {/* Enhanced package list with better spacing */}
-              <div className='flex flex-col gap-4 md:gap-5'>
-                {packageInfoList.map((item, idx) => (
-                  <div
-                    key={item?.id || item?.name || idx}
-                    className='animate-in fade-in slide-in-from-bottom-5 duration-500'
-                    style={{ animationDelay: `${idx * 100}ms` }}
-                  >
-                    <PackageItem info={item} />
-                  </div>
-                ))}
-              </div>
+              {/* View Toggle and Package List - 现在在同一个容器内 */}
+              <ViewToggle 
+                groupedPackages={groupedPackages}
+                packageInfoList={packageInfoList}
+              />
             </div>
           </div>
         </div>

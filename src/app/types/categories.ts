@@ -21,3 +21,17 @@ export interface Npm {
   firstReleased: string;
   lastReleased: string;
 }
+
+// 新增：分组后的包信息
+export interface GroupedPackageInfo {
+  repositoryName: string;
+  repositoryUrl: string;
+  repositoryStars: number;
+  repositoryIssuesTotal: number;
+  repositoryIssuesResolved: number;
+  website: string;
+  packages: PackageInfo[];
+  totalDownloads: number;
+  firstReleased: string;
+  lastReleased: string;
+}

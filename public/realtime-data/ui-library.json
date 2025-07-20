@@ -6,14 +6,14 @@
     "npm": {
       "name": "antd",
       "url": "https://www.npmjs.com/package/antd",
-      "downloads": 6465973,
+      "downloads": 8187953,
       "firstReleased": "2015-06-23T08:52:43.206Z",
-      "lastReleased": "2025-02-17T09:54:11.486Z"
+      "lastReleased": "2025-07-15T05:10:48.888Z"
     },
     "github": {
       "url": "https://github.com/ant-design/ant-design",
-      "stars": 93726,
-      "issuesTotal": 1276,
+      "stars": 95415,
+      "issuesTotal": 1273,
       "issuesResolved": 0
     },
     "website": "https://ant.design"
@@ -25,14 +25,14 @@
     "npm": {
       "name": "element-plus",
       "url": "https://www.npmjs.com/package/element-plus",
-      "downloads": 900903,
+      "downloads": 1278628,
       "firstReleased": "2019-06-12T09:50:42.427Z",
-      "lastReleased": "2025-02-07T11:28:39.580Z"
+      "lastReleased": "2025-07-11T12:48:40.728Z"
     },
     "github": {
       "url": "https://github.com/element-plus/element-plus",
-      "stars": 25155,
-      "issuesTotal": 1947,
+      "stars": 26251,
+      "issuesTotal": 2006,
       "issuesResolved": 0
     },
     "website": "https://element-plus.org/"
@@ -44,14 +44,14 @@
     "npm": {
       "name": "@radix-ui/themes",
       "url": "https://www.npmjs.com/package/@radix-ui/themes",
-      "downloads": 641057,
+      "downloads": 954456,
       "firstReleased": "2023-06-15T12:33:22.683Z",
-      "lastReleased": "2025-01-23T23:42:22.249Z"
+      "lastReleased": "2025-02-27T01:22:46.948Z"
     },
     "github": {
       "url": "https://github.com/radix-ui/themes",
-      "stars": 6218,
-      "issuesTotal": 101,
+      "stars": 7176,
+      "issuesTotal": 144,
       "issuesResolved": 0
     },
     "website": "https://radix-ui.com/themes"
@@ -63,14 +63,14 @@
     "npm": {
       "name": "@nextui-org/react",
       "url": "https://www.npmjs.com/package/@nextui-org/react",
-      "downloads": 519244,
+      "downloads": 350298,
       "firstReleased": "2021-06-19T14:50:18.870Z",
       "lastReleased": "2025-01-18T18:57:59.734Z"
     },
     "github": {
       "url": "https://github.com/nextui-org/nextui",
-      "stars": 23096,
-      "issuesTotal": 267,
+      "stars": 24903,
+      "issuesTotal": 237,
       "issuesResolved": 0
     },
     "website": "https://nextui.org"
@@ -82,14 +82,14 @@
     "npm": {
       "name": "@mui/material",
       "url": "https://www.npmjs.com/package/@mui/material",
-      "downloads": 19319959,
+      "downloads": 24205333,
       "firstReleased": "2021-09-02T07:46:48.738Z",
-      "lastReleased": "2025-02-11T17:33:31.033Z"
+      "lastReleased": "2025-07-08T02:50:14.938Z"
     },
     "github": {
       "url": "https://github.com/mui/material-ui",
-      "stars": 94786,
-      "issuesTotal": 1846,
+      "stars": 96168,
+      "issuesTotal": 1760,
       "issuesResolved": 0
     },
     "website": "https://mui.com/material-ui/"
@@ -101,14 +101,14 @@
     "npm": {
       "name": "antd-mobile",
       "url": "https://www.npmjs.com/package/antd-mobile",
-      "downloads": 162501,
+      "downloads": 170765,
       "firstReleased": "2016-07-13T08:49:08.763Z",
-      "lastReleased": "2024-10-29T07:10:34.571Z"
+      "lastReleased": "2025-06-23T15:22:01.712Z"
     },
     "github": {
       "url": "https://github.com/ant-design/ant-design-mobile",
-      "stars": 11730,
-      "issuesTotal": 250,
+      "stars": 11849,
+      "issuesTotal": 260,
       "issuesResolved": 0
     },
     "website": "https://github.com/ant-design/ant-design-mobile#readme"
@@ -120,14 +120,14 @@
     "npm": {
       "name": "@varlet/ui",
       "url": "https://www.npmjs.com/package/@varlet/ui",
-      "downloads": 5789,
+      "downloads": 5053,
       "firstReleased": "2020-11-03T15:38:12.995Z",
-      "lastReleased": "2025-02-15T14:39:34.930Z"
+      "lastReleased": "2025-06-22T14:35:32.180Z"
     },
     "github": {
       "url": "https://github.com/varletjs/varlet",
-      "stars": 5103,
-      "issuesTotal": 7,
+      "stars": 5209,
+      "issuesTotal": 25,
       "issuesResolved": 0
     },
     "website": "https://varletjs.org"
@@ -139,14 +139,14 @@
     "npm": {
       "name": "vant",
       "url": "https://www.npmjs.com/package/vant",
-      "downloads": 175945,
+      "downloads": 171502,
       "firstReleased": "2017-04-19T07:53:37.187Z",
-      "lastReleased": "2025-02-09T12:57:09.478Z"
+      "lastReleased": "2025-07-12T07:53:10.449Z"
     },
     "github": {
       "url": "https://github.com/vant-ui/vant",
-      "stars": 23623,
-      "issuesTotal": 113,
+      "stars": 23956,
+      "issuesTotal": 158,
       "issuesResolved": 0
     },
     "website": "https://github.com/vant-ui/vant#readme"
@@ -158,14 +158,14 @@
     "npm": {
       "name": "@douyinfe/semi-ui",
       "url": "https://www.npmjs.com/package/@douyinfe/semi-ui",
-      "downloads": 19244,
+      "downloads": 21114,
       "firstReleased": "2021-10-25T14:53:23.985Z",
-      "lastReleased": "2025-02-17T13:10:18.249Z"
+      "lastReleased": "2025-07-14T08:12:09.591Z"
     },
     "github": {
       "url": "https://github.com/DouyinFE/semi-design",
-      "stars": 8854,
-      "issuesTotal": 235,
+      "stars": 9281,
+      "issuesTotal": 287,
       "issuesResolved": 0
     },
     "website": "https://semi.design"
@@ -177,16 +177,16 @@
     "npm": {
       "name": "@arco-design/web-react",
       "url": "https://www.npmjs.com/package/@arco-design/web-react",
-      "downloads": 51956,
+      "downloads": 55322,
       "firstReleased": "2021-10-25T03:45:37.730Z",
-      "lastReleased": "2025-02-07T06:52:33.447Z"
+      "lastReleased": "2025-07-15T07:24:21.463Z"
     },
     "github": {
       "url": "https://github.com/arco-design/arco-design",
-      "stars": 5102,
-      "issuesTotal": 306,
+      "stars": 5344,
+      "issuesTotal": 351,
       "issuesResolved": 0
     },
-    "website": "https://arco.design"
+    "website": "https://arco.design/"
   }
 ]

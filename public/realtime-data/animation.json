@@ -6,17 +6,36 @@
     "npm": {
       "name": "framer-motion",
       "url": "https://www.npmjs.com/package/framer-motion",
-      "downloads": 22644095,
+      "downloads": 35172277,
       "firstReleased": "2019-01-14T13:04:29.347Z",
-      "lastReleased": "2025-02-14T15:16:41.321Z"
+      "lastReleased": "2025-07-15T13:04:46.653Z"
     },
     "github": {
       "url": "https://github.com/motiondivision/motion",
-      "stars": 27313,
-      "issuesTotal": 254,
+      "stars": 29214,
+      "issuesTotal": 290,
       "issuesResolved": 0
     },
     "website": "https://github.com/motiondivision/motion#readme"
+  },
+  {
+    "id": 2,
+    "name": "react-spring",
+    "description": "<p align=\"center\">   <img src=\"https://i.imgur.com/QZownhg.png\" width=\"240\" /> </p>",
+    "npm": {
+      "name": "react-spring",
+      "url": "https://www.npmjs.com/package/react-spring",
+      "downloads": 3735474,
+      "firstReleased": "2018-03-07T15:58:57.531Z",
+      "lastReleased": "2025-05-21T07:54:24.522Z"
+    },
+    "github": {
+      "url": "https://github.com/pmndrs/react-spring",
+      "stars": 28784,
+      "issuesTotal": 125,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/pmndrs/react-spring#readme"
   },
   {
     "id": 3,
@@ -25,14 +44,14 @@
     "npm": {
       "name": "react-motion",
       "url": "https://www.npmjs.com/package/react-motion",
-      "downloads": 1691750,
+      "downloads": 2050188,
       "firstReleased": "2015-07-07T23:57:00.832Z",
       "lastReleased": "2022-06-26T02:36:12.652Z"
     },
     "github": {
       "url": "https://github.com/chenglou/react-motion",
-      "stars": 21745,
-      "issuesTotal": 193,
+      "stars": 21774,
+      "issuesTotal": 192,
       "issuesResolved": 0
     },
     "website": "https://github.com/chenglou/react-motion#readme"
@@ -44,35 +63,35 @@
     "npm": {
       "name": "animate.css",
       "url": "https://www.npmjs.com/package/animate.css",
-      "downloads": 1774331,
+      "downloads": 1865497,
       "firstReleased": "2014-06-03T01:13:14.613Z",
       "lastReleased": "2022-11-18T07:54:08.622Z"
     },
     "github": {
       "url": "https://github.com/animate-css/animate.css",
-      "stars": 81318,
-      "issuesTotal": 53,
+      "stars": 81933,
+      "issuesTotal": 60,
       "issuesResolved": 0
     },
     "website": "https://animate.style/"
   },
   {
-    "id": 4,
-    "name": "animate.css",
-    "description": "[![GitHub Version](https://img.shields.io/github/release/daneden/animate.css.svg?style=for-the-badge)](https://github.com/daneden/animate.css) [![Github Star](https://img.shields.io/github/stars/daneden/animate.css.svg?style=for-the-badge)](https://github",
+    "id": 5,
+    "name": "gsap",
+    "description": "GSAP is a framework-agnostic JavaScript animation library that turns developers into animation superheroes. Build high-performance animations that work in **every** major browser. Animate CSS, SVG, canvas, React, Vue, WebGL, colors, strings, motion paths,",
     "npm": {
-      "name": "animate.css",
-      "url": "https://www.npmjs.com/package/animate.css",
-      "downloads": 1994404,
-      "firstReleased": "2014-06-03T01:13:14.613Z",
-      "lastReleased": "2022-11-18T07:54:08.622Z"
+      "name": "gsap",
+      "url": "https://www.npmjs.com/package/gsap",
+      "downloads": 3344700,
+      "firstReleased": "2014-08-25T22:03:19.830Z",
+      "lastReleased": "2025-06-09T04:08:55.137Z"
     },
     "github": {
-      "url": "https://github.com/animate-css/animate.css",
-      "stars": 80877,
-      "issuesTotal": 49,
+      "url": "https://github.com/greensock/GSAP",
+      "stars": 22462,
+      "issuesTotal": 9,
       "issuesResolved": 0
     },
-    "website": "https://animate.style/"
+    "website": "https://gsap.com"
   }
 ]

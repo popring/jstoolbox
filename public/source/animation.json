@@ -5,6 +5,7 @@
     "framer-motion",
     "react-spring",
     "react-motion",
-    "animate.css"
+    "animate.css",
+    "gsap"
   ]
 }

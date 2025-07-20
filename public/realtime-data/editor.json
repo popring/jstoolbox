@@ -6,14 +6,14 @@
     "npm": {
       "name": "lexical",
       "url": "https://www.npmjs.com/package/lexical",
-      "downloads": 2661857,
+      "downloads": 4239004,
       "firstReleased": "2014-06-13T06:09:12.460Z",
-      "lastReleased": "2025-02-17T02:49:38.565Z"
+      "lastReleased": "2025-07-18T03:11:09.909Z"
     },
     "github": {
       "url": "https://github.com/facebook/lexical",
-      "stars": 20558,
-      "issuesTotal": 516,
+      "stars": 21612,
+      "issuesTotal": 529,
       "issuesResolved": 0
     },
     "website": "https://github.com/facebook/lexical#readme"
@@ -25,14 +25,14 @@
     "npm": {
       "name": "tiptap",
       "url": "https://www.npmjs.com/package/tiptap",
-      "downloads": 145987,
+      "downloads": 149391,
       "firstReleased": "2018-08-21T20:52:50.452Z",
       "lastReleased": "2022-05-21T22:26:46.771Z"
     },
     "github": {
       "url": "https://github.com/ueberdosis/tiptap",
-      "stars": 28811,
-      "issuesTotal": 555,
+      "stars": 31521,
+      "issuesTotal": 656,
       "issuesResolved": 0
     },
     "website": "https://tiptap.dev"
@@ -44,90 +44,90 @@
     "npm": {
       "name": "remirror",
       "url": "https://www.npmjs.com/package/remirror",
-      "downloads": 173794,
+      "downloads": 180276,
       "firstReleased": "2019-01-21T10:36:28.386Z",
-      "lastReleased": "2024-08-01T15:13:42.254Z"
+      "lastReleased": "2025-04-24T05:50:03.268Z"
     },
     "github": {
       "url": "https://github.com/remirror/remirror",
-      "stars": 2807,
-      "issuesTotal": 197,
+      "stars": 2935,
+      "issuesTotal": 206,
       "issuesResolved": 0
     },
     "website": "https://github.com/remirror/remirror/tree/HEAD/packages/remirror"
   },
   {
-    "id": 5,
+    "id": 4,
     "name": "slate",
     "description": "A completely customizable framework for building rich text editors.",
     "npm": {
       "name": "slate",
       "url": "https://www.npmjs.com/package/slate",
-      "downloads": 4136644,
+      "downloads": 5565004,
       "firstReleased": "2012-02-09T15:42:43.660Z",
-      "lastReleased": "2024-12-07T20:27:22.639Z"
+      "lastReleased": "2025-06-25T15:55:31.630Z"
     },
     "github": {
       "url": "https://github.com/ianstormtaylor/slate",
-      "stars": 30368,
-      "issuesTotal": 679,
+      "stars": 30941,
+      "issuesTotal": 680,
       "issuesResolved": 0
     },
     "website": "https://github.com/ianstormtaylor/slate#readme"
   },
   {
-    "id": 7,
+    "id": 5,
     "name": "quill",
     "description": "Your powerful, rich text editor",
     "npm": {
       "name": "quill",
       "url": "https://www.npmjs.com/package/quill",
-      "downloads": 6818268,
+      "downloads": 9188821,
       "firstReleased": "2012-03-25T16:10:13.367Z",
       "lastReleased": "2025-01-20T11:04:13.632Z"
     },
     "github": {
       "url": "https://github.com/slab/quill",
-      "stars": 44609,
-      "issuesTotal": 508,
+      "stars": 45748,
+      "issuesTotal": 573,
       "issuesResolved": 0
     },
     "website": "https://quilljs.com"
   },
   {
-    "id": 9,
+    "id": 6,
     "name": "ckeditor",
     "description": "JavaScript WYSIWYG web text editor.",
     "npm": {
       "name": "ckeditor",
       "url": "https://www.npmjs.com/package/ckeditor",
-      "downloads": 139286,
+      "downloads": 159843,
       "firstReleased": "2016-01-26T13:09:24.402Z",
       "lastReleased": "2023-05-23T15:50:54.404Z"
     },
     "github": {
       "url": "https://github.com/ckeditor/ckeditor-releases",
-      "stars": 522,
-      "issuesTotal": 6,
+      "stars": 523,
+      "issuesTotal": 7,
       "issuesResolved": 0
     },
     "website": "http://ckeditor.com"
   },
   {
-    "id": 10,
+    "id": 7,
     "name": "tinymce",
     "description": "Web based JavaScript HTML WYSIWYG editor control.",
     "npm": {
       "name": "tinymce",
       "url": "https://www.npmjs.com/package/tinymce",
-      "downloads": 2674420,
+      "downloads": 2857004,
       "firstReleased": "2014-05-06T10:59:32.298Z",
-      "lastReleased": "2025-01-22T03:57:07.291Z"
+      "lastReleased": "2025-05-29T02:36:59.281Z"
     },
     "github": {
       "url": "https://github.com/tinymce/tinymce",
-      "stars": 15288,
-      "issuesTotal": 543,
+      "stars": 15695,
+      "issuesTotal": 488,
       "issuesResolved": 0
     },
     "website": "https://www.tiny.cloud/"
