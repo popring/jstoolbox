@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/page/Header';
 import StructuredData from './structured-data';
+import Script from 'next/script';
 // import Footer from '@/components/page/Footer';
 
 dayjs.extend(relativeTime);
@@ -96,6 +97,16 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#0f172a" />
         <meta name="google-site-verification" content="X8RWmwG_4GCnTnhgEAhdQnGaS9K5piQdIx_QqYkDYlQ" />
       </head>
+      {/* Google tag (gtag.js) */}
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-EVXMWG8Q3Z"></Script>
+      <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EVXMWG8Q3Z');
+        `
+      }} />
       <body>
         <StructuredData />
         <Header />
