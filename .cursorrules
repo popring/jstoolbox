@@ -1,0 +1,60 @@
+# JS Toolbox - English Version
+
+## Project Overview
+This is an English version of JS Toolbox, a JavaScript tools and libraries collection website. The project is built with Next.js and focuses on providing a comprehensive directory of JavaScript development tools.
+
+## Language Requirements
+- All code comments, documentation, and user-facing text should be in English
+- Variable names, function names, and component names should use English
+- File names and directory names should use English
+- API responses and error messages should be in English
+
+## Code Style Guidelines
+- Use TypeScript for type safety
+- Follow React best practices with functional components and hooks
+- Use Tailwind CSS for styling
+- Implement responsive design principles
+- Follow Next.js 13+ App Router conventions
+
+## Component Structure
+- Components should be organized in the `src/components` directory
+- Page components should be in `src/app` following Next.js App Router structure
+- Use proper TypeScript interfaces for props and data structures
+- Implement proper error handling and loading states
+
+## Content Management
+- All text content should be in English
+- No internationalization is needed for this English-only version
+- Content should be directly written in components and pages
+- Maintain consistent English terminology throughout the application
+
+## Data Management
+- Use proper data fetching patterns with Next.js
+- Implement caching strategies where appropriate
+- Handle loading and error states gracefully
+- Use TypeScript interfaces for all data structures
+
+## UI/UX Guidelines
+- Follow modern web design principles
+- Ensure accessibility compliance (WCAG guidelines)
+- Implement dark/light theme support
+- Use consistent spacing and typography
+- Provide smooth animations and transitions
+
+## Performance Considerations
+- Optimize images and assets
+- Implement proper code splitting
+- Use Next.js built-in optimizations
+- Monitor and optimize Core Web Vitals
+
+## Testing
+- Write unit tests for utility functions
+- Implement component testing where appropriate
+- Ensure responsive design works across devices
+- Test accessibility features
+
+## Deployment
+- The project is deployed on Vercel
+- Ensure all environment variables are properly configured
+- Monitor build performance and bundle size
+- Implement proper SEO meta tags and structured data 

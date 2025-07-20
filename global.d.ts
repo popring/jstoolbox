@@ -1,8 +1,6 @@
-import zh from './messages/zh.json';
- 
-type Messages = typeof zh;
- 
+// Global type definitions for JS Toolbox
 declare global {
-  // Use type safe message keys with `next-intl`
-  interface IntlMessages extends Messages {}
+  // Add any global type definitions here if needed
 }
+
+export {};

@@ -6,16 +6,22 @@ import {
 import Link from 'next/link';
 // import { LinkButton } from '@/components/ui/link-button';
 import { formatDownloads } from '@/lib/utils';
-import { use } from 'react';
-import { getCategories } from './service/categories';
+
+// Static categories data for build time
+const staticCategories = [
+  'ui-library',
+  'build-tools', 
+  'testing',
+  'state-management',
+  'data-fetching',
+  'utilities'
+];
 
 export default function Home() {
-  const { categories } = use(getCategories());
-
   return (
     <div className='min-h-screen bg-gradient-to-b from-black to-slate-900'>
       {/* Hero Section */}
-      <div className='container mx-auto px-4 pt-20 pb-16 text-center'>
+      <div className='container mx-auto px-4 pt-28 pb-16 text-center'>
         <div className='animate-fade-in-up'>
           <div className='relative mx-auto mb-8 h-24 w-24 overflow-hidden rounded-xl bg-yellow-400 shadow-lg shadow-yellow-400/20'>
             <div className='absolute inset-0 flex items-center justify-center'>
@@ -47,7 +53,7 @@ export default function Home() {
 
         {/* Categories */}
         <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6'>
-          {categories.map((category) => (
+          {staticCategories.map((category) => (
             <CategoryCard
               key={category}
               href={`/categories/${category}`}
