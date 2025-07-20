@@ -21,6 +21,8 @@ import {
 // import { Badge } from '@/components/ui/badge';
 import { LinkButton } from '@/components/ui/link-button';
 import { formatDownloads } from '@/lib/utils';
+import { SortField } from './SortSelector';
+import { formatValueBySortField, getYAxisLabel } from '@/lib/chartUtils';
 
 // Format date to show age in years or months
 function formatAge(dateString: string) {
@@ -241,7 +243,13 @@ function PackageItem({ info }: { info: any }) {
   );
 }
 
-function SimpleStarChart({ chartData }: { chartData: any[] }) {
+function SimpleStarChart({ 
+  chartData, 
+  sortField = 'stars'
+}: { 
+  chartData: any[]; 
+  sortField?: SortField;
+}) {
   if (!chartData || chartData.length === 0) {
     return (
       <div className='flex items-center justify-center h-full text-zinc-500'>
@@ -267,16 +275,12 @@ function SimpleStarChart({ chartData }: { chartData: any[] }) {
         <YAxis
           stroke='#525252'
           tick={{ fill: '#a1a1aa' }}
-          tickFormatter={(value) =>
-            value >= 1000 ? `${(value / 1000).toFixed(0)}k` : value
-          }
+          tickFormatter={(value) => formatValueBySortField(value, sortField)}
         />
         <Tooltip
           formatter={(value: number) => [
-            value >= 1000
-              ? `${(value / 1000).toFixed(1)}k stars`
-              : `${value} stars`,
-            'GitHub Stars',
+            formatValueBySortField(value, sortField),
+            getYAxisLabel(sortField),
           ]}
           contentStyle={{
             backgroundColor: '#18181b',
@@ -286,7 +290,7 @@ function SimpleStarChart({ chartData }: { chartData: any[] }) {
           labelStyle={{ color: '#e4e4e7' }}
         />
         <Bar
-          dataKey='star'
+          dataKey='value'
           fill='url(#colorGradient)'
           radius={[4, 4, 0, 0]}
           barSize={60}

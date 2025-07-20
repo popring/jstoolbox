@@ -1,3 +1,5 @@
+'use client';
+
 import { SortField, SortDirection } from '@/components/page/categoriesV2/SortSelector';
 
 export interface UserPreferences {

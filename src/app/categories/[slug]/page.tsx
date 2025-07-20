@@ -1,9 +1,7 @@
 import React, { use } from 'react';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
 import { getCategory, groupPackagesByRepository } from '@/app/service/categories';
-import { Card } from '@/components/ui/card';
-import { SimpleStarChart } from '@/components/page/categoriesV2';
-import { ViewToggle } from '@/app/categories/[slug]/ViewToggle';
+import { CategoryContent } from './CategoryContent';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -20,12 +18,6 @@ export default function CategoryPage(props: Props) {
 
     // 分组包信息
     const groupedPackages = groupPackagesByRepository(packageInfoList);
-
-    // 为图表准备数据（使用分组后的数据）
-    const chartData = groupedPackages.slice(0, 5).map((group) => ({
-      packageName: group.repositoryName,
-      star: group.repositoryStars,
-    }));
 
     return (
       <div className='min-h-screen bg-gradient-to-b from-zinc-950 to-zinc-900'>
@@ -48,24 +40,11 @@ export default function CategoryPage(props: Props) {
 
             {/* 统一的内容容器 */}
             <div className='mt-8 md:mt-12 w-full max-w-[1200px] flex flex-col gap-6 md:gap-8 pb-12'>
-              {/* Enhanced chart card with better styling */}
-              <Card className='bg-gradient-to-br from-zinc-900/90 to-zinc-950/90 border border-zinc-800 rounded-xl p-4 md:p-8 backdrop-blur-sm shadow-lg shadow-black/20 hover:border-yellow-900/50 transition-all duration-300'>
-                <h2 className='text-xl md:text-2xl font-semibold text-zinc-100 mb-3'>
-                  Top {params?.slug || 'Libraries'} by GitHub Stars
-                </h2>
-                <p className='text-zinc-400 mb-6 text-sm md:text-base'>
-                  Compare the most popular options to find the right tool for
-                  your project
-                </p>
-                <div className='h-[250px] md:h-[400px] w-full'>
-                  <SimpleStarChart chartData={chartData} />
-                </div>
-              </Card>
-
-              {/* View Toggle and Package List - 现在在同一个容器内 */}
-              <ViewToggle 
+              {/* 将交互逻辑移到客户端组件 */}
+              <CategoryContent 
                 groupedPackages={groupedPackages}
                 packageInfoList={packageInfoList}
+                categorySlug={params?.slug}
               />
             </div>
           </div>

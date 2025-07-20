@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { PreferencesManager, UserPreferences } from '@/lib/preferences';
 
