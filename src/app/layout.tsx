@@ -94,22 +94,14 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0f172a" />
         <meta name="msapplication-TileColor" content="#0f172a" />
+        <meta name="google-site-verification" content="X8RWmwG_4GCnTnhgEAhdQnGaS9K5piQdIx_QqYkDYlQ" />
       </head>
       <body>
         <StructuredData />
         <Header />
-        {/* ThemeProvider 报错 */}
-        {/* <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        > */}
           <div className='bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950'>
             {children}
-            {/* <Footer /> */}
           </div>
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );
