@@ -109,7 +109,7 @@
     "pixi.js",
     "phaser",
     "konva",
-    "fabric.js",
+    "fabric",
     "d3"
   ],
   "state-management": [

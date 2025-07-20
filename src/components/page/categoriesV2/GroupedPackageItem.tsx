@@ -15,6 +15,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { LinkButton } from '@/components/ui/link-button';
+import { formatDownloads } from '@/lib/utils';
 import { GroupedPackageInfo } from '@/app/types/categories';
 import { useState } from 'react';
 
@@ -143,9 +144,8 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
           {group.repositoryUrl && (
             <LinkButton
               href={group.repositoryUrl}
-              variant='outline'
+              variant='darkDeeper'
               size='sm'
-              className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
             >
               <Github className='h-4 w-4' />
               <span className='hidden sm:inline'>GitHub</span>
@@ -154,9 +154,8 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
           {group.website && (
             <LinkButton
               href={group.website}
-              variant='outline'
+              variant='darkDeeper'
               size='sm'
-              className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
             >
               <ExternalLink className='h-4 w-4' />
               <span className='hidden sm:inline'>Website</span>
@@ -169,7 +168,7 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
         <StatCard
           icon={<Download className='h-5 w-5 text-yellow-500' />}
           label='Total Downloads'
-          value={group.totalDownloads.toLocaleString()}
+          value={formatDownloads(group.totalDownloads)}
         />
         <StatCard
           icon={<Star className='h-5 w-5 text-yellow-500' />}
@@ -267,7 +266,7 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
                     </span>
                     {pkg.npm?.downloads && (
                       <Badge variant='outline' className='text-xs bg-zinc-700/50 text-zinc-300 border-zinc-600'>
-                        {(pkg.npm.downloads / 1000).toFixed(1)}k downloads
+                        {formatDownloads(pkg.npm.downloads)} downloads
                       </Badge>
                     )}
                   </div>

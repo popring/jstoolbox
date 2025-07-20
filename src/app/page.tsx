@@ -1,6 +1,11 @@
-import { Search, ChevronRight, Sparkles } from 'lucide-react';
+import {
+  Search,
+  // ChevronRight,
+  Sparkles,
+} from 'lucide-react';
 import Link from 'next/link';
-import { LinkButton } from '@/components/ui/link-button';
+// import { LinkButton } from '@/components/ui/link-button';
+import { formatDownloads } from '@/lib/utils';
 import { use } from 'react';
 import { getCategories } from './service/categories';
 
@@ -58,29 +63,29 @@ export default function Home() {
       <div className='container mx-auto px-4 py-16'>
         <div className='mb-8 flex items-center justify-between'>
           <h2 className='text-2xl font-bold text-white'>Featured Packages</h2>
-          <Link
+          {/* <Link
             href='/featured'
             className='flex items-center text-sm text-yellow-400 hover:text-yellow-300'
           >
             View all <ChevronRight className='ml-1 h-4 w-4' />
-          </Link>
+          </Link> */}
         </div>
 
         <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
           <FeaturedCard
-            title='Three.js'
+            title='three'
             description='3D library that makes WebGL easy to use'
             stars={88000}
             category='Animation'
           />
           <FeaturedCard
-            title='tailwindcss'
+            title='tailwind'
             description='Utility-first CSS framework for rapid UI development'
             stars={72000}
             category='CSS'
           />
           <FeaturedCard
-            title='React Query'
+            title='react-query'
             description='Hooks for fetching, caching and updating data'
             stars={35000}
             category='Data Fetching'
@@ -184,16 +189,8 @@ function FeaturedCard({
       </div>
       <div className='flex items-center justify-between border-t border-slate-800 px-6 py-3'>
         <span className='text-xs text-slate-500'>
-          Weekly downloads: {formatNumber(Math.floor(stars * 7.5))}
+          Weekly downloads: {formatDownloads(Math.floor(stars * 7.5))}
         </span>
-        <LinkButton
-          href={`/package/${title.toLowerCase().replace(/\s+/g, '-')}`}
-          variant='ghost'
-          size='sm'
-          className='text-xs font-medium text-yellow-500 hover:text-yellow-400 p-0 h-auto'
-        >
-          View details
-        </LinkButton>
       </div>
     </div>
   );

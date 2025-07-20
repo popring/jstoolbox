@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 // import { Badge } from '@/components/ui/badge';
 import { LinkButton } from '@/components/ui/link-button';
+import { formatDownloads } from '@/lib/utils';
 
 // Format date to show age in years or months
 function formatAge(dateString: string) {
@@ -134,9 +135,8 @@ function PackageItem({ info }: { info: any }) {
           {info?.github?.url && (
             <LinkButton
               href={info.github.url}
-              variant='outline'
+              variant='darkDeeper'
               size='sm'
-              className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
             >
               <Github className='h-4 w-4' />
               <span className='hidden sm:inline'>GitHub</span>
@@ -145,9 +145,8 @@ function PackageItem({ info }: { info: any }) {
           {info?.npm?.url && (
             <LinkButton
               href={info.npm.url}
-              variant='outline'
+              variant='darkDeeper'
               size='sm'
-              className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
             >
               <Download className='h-4 w-4' />
               <span className='hidden sm:inline'>NPM</span>
@@ -156,9 +155,8 @@ function PackageItem({ info }: { info: any }) {
           {info?.website && (
             <LinkButton
               href={info.website}
-              variant='outline'
+              variant='darkDeeper'
               size='sm'
-              className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
             >
               <ExternalLink className='h-4 w-4' />
               <span className='hidden sm:inline'>Website</span>
@@ -171,7 +169,7 @@ function PackageItem({ info }: { info: any }) {
         <StatCard
           icon={<Download className='h-5 w-5 text-yellow-500' />}
           label='Downloads'
-          value={(info?.npm?.downloads || 0).toLocaleString()}
+          value={formatDownloads(info?.npm?.downloads || 0)}
         />
         <StatCard
           icon={<Star className='h-5 w-5 text-yellow-500' />}

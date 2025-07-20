@@ -4,9 +4,9 @@
   "packages": [
     "sass",
     "less",
-    "stylus",
     "postcss",
     "tailwindcss",
-    "@emotion/css"
+    "@emotion/css",
+    "unocss"
   ]
 }

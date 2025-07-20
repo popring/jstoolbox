@@ -9,7 +9,7 @@
     "pixi.js",
     "phaser",
     "konva",
-    "fabric.js",
+    "fabric",
     "d3"
   ]
 } 
