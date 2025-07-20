@@ -1,23 +1,51 @@
 import {
-  Search,
   // ChevronRight,
-  Sparkles,
 } from 'lucide-react';
 import Link from 'next/link';
 // import { LinkButton } from '@/components/ui/link-button';
 import { formatDownloads } from '@/lib/utils';
+import { getCategories } from './service/categories';
 
-// Static categories data for build time
-const staticCategories = [
-  'ui-library',
-  'build-tools', 
-  'testing',
-  'state-management',
-  'data-fetching',
-  'utilities'
-];
+// 分类图标映射
+const categoryIcons: Record<string, string> = {
+  'ui-library': '🎨',
+  'build-tools': '🔧',
+  'testing': '🧪',
+  'state-management': '📊',
+  'data-fetching': '🌐',
+  'utilities': '🛠️',
+  'animation': '✨',
+  'css': '🎨',
+  'icon': '🎯',
+  'image': '🖼️',
+  'editor': '✏️',
+  'dev-tools': '⚙️',
+  'form-handling': '📝',
+  'graphics': '🎮',
+};
 
-export default function Home() {
+// 分类描述映射
+const categoryDescriptions: Record<string, string> = {
+  'ui-library': 'UI component libraries',
+  'build-tools': 'Build and bundling tools',
+  'testing': 'Testing frameworks & tools',
+  'state-management': 'State management solutions',
+  'data-fetching': 'Data fetching libraries',
+  'utilities': 'Utility libraries',
+  'animation': 'Animation libraries',
+  'css': 'CSS frameworks & tools',
+  'icon': 'Icon libraries',
+  'image': 'Image handling libraries',
+  'editor': 'Rich text editors',
+  'dev-tools': 'Development tools',
+  'form-handling': 'Form handling libraries',
+  'graphics': 'Graphics & 3D libraries',
+};
+
+export default async function Home() {
+  // 获取所有分类
+  const { categories } = await getCategories();
+
   return (
     <div className='min-h-screen bg-gradient-to-b from-black to-slate-900'>
       {/* Hero Section */}
@@ -38,28 +66,17 @@ export default function Home() {
             workflow
           </p>
 
-          {/* Search Bar */}
-          <div className='mx-auto mb-12 max-w-md'>
-            <div className='relative'>
-              <Search className='absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400' />
-              <input
-                type='text'
-                placeholder='Search for JavaScript packages...'
-                className='w-full rounded-full border border-slate-700 bg-slate-800/50 py-3 pl-10 pr-4 text-slate-200 outline-none backdrop-blur-sm transition-all focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/20'
-              />
-            </div>
-          </div>
         </div>
 
         {/* Categories */}
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6'>
-          {staticCategories.map((category) => (
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+          {categories.map((category) => (
             <CategoryCard
               key={category}
               href={`/categories/${category}`}
               title={category}
-              icon={<Sparkles className='h-5 w-5' />}
-              description='Motion libraries & effects'
+              icon={categoryIcons[category] || '📦'}
+              description={categoryDescriptions[category] || 'JavaScript tools'}
             />
           ))}
         </div>
@@ -143,7 +160,7 @@ function CategoryCard({
 }: {
   href: string;
   title: string;
-  icon: React.ReactNode;
+  icon: string;
   description: string;
 }) {
   return (
@@ -152,10 +169,10 @@ function CategoryCard({
       className='group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-yellow-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-yellow-500/5'
     >
       <div className='flex flex-col items-center text-center'>
-        <div className='mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500 transition-all duration-300 group-hover:bg-yellow-500 group-hover:text-black'>
+        <div className='mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500 transition-all duration-300 group-hover:bg-yellow-500 group-hover:text-black text-2xl'>
           {icon}
         </div>
-        <h3 className='mb-1 font-medium text-white'>{title}</h3>
+        <h3 className='mb-1 font-medium text-white capitalize'>{title.replace('-', ' ')}</h3>
         <p className='text-xs text-slate-400'>{description}</p>
       </div>
       <div className='absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-400 to-yellow-500 transition-all duration-300 group-hover:w-full'></div>

@@ -1,6 +1,6 @@
 import React, { use } from 'react';
 import { TypographyH3, TypographyP } from '@/components/ui/typography';
-import { getCategory, groupPackagesByRepository } from '@/app/service/categories';
+import { getCategory, groupPackagesByRepository, getCategories } from '@/app/service/categories';
 import { CategoryContent } from '@/app/categories/[slug]/CategoryContent';
 import { notFound } from 'next/navigation';
 
@@ -8,27 +8,58 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// Generate static paths for known categories
+// Generate static paths for all available categories
 export async function generateStaticParams() {
-  const categories = [
-    'ui-library',
-    'build-tools',
-    'testing',
-    'state-management',
-    'data-fetching',
-    'utilities'
-  ];
-
-  return categories.map((slug) => ({
-    slug,
-  }));
+  try {
+    const { categories } = await getCategories();
+    return categories.map((slug) => ({
+      slug,
+    }));
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    // Fallback to known categories if API fails
+    const fallbackCategories = [
+      'ui-library',
+      'build-tools',
+      'testing',
+      'state-management',
+      'data-fetching',
+      'utilities',
+      'animation',
+      'css',
+      'icon',
+      'image',
+      'editor',
+      'dev-tools',
+      'form-handling',
+      'graphics'
+    ];
+    return fallbackCategories.map((slug) => ({
+      slug,
+    }));
+  }
 }
 
 export default function CategoryPage(props: Props) {
   const params = use(props.params);
   
-  // Validate slug
-  const validSlugs = ['ui-library', 'build-tools', 'testing', 'state-management', 'data-fetching', 'utilities'];
+  // Validate slug - we'll validate against actual categories later
+  const validSlugs = [
+    'ui-library',
+    'build-tools',
+    'testing',
+    'state-management',
+    'data-fetching',
+    'utilities',
+    'animation',
+    'css',
+    'icon',
+    'image',
+    'editor',
+    'dev-tools',
+    'form-handling',
+    'graphics'
+  ];
   if (!validSlugs.includes(params.slug)) {
     notFound();
   }

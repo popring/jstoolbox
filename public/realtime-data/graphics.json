@@ -134,21 +134,22 @@
   },
   {
     "id": 8,
-    "name": "fabric.js",
+    "name": "fabric",
+    "description": "Object model for HTML5 canvas, and SVG-to-canvas parser. Backed by jsdom and node-canvas.",
     "npm": {
-      "name": "fabric.js",
-      "url": "https://www.npmjs.com/package/fabric.js",
-      "downloads": 41,
-      "firstReleased": "2017-03-28T19:52:58.026Z",
-      "lastReleased": "2022-06-17T23:12:46.194Z"
+      "name": "fabric",
+      "url": "https://www.npmjs.com/package/fabric",
+      "downloads": 1230950,
+      "firstReleased": "2011-08-16T20:17:15.294Z",
+      "lastReleased": "2025-06-06T05:15:29.983Z"
     },
     "github": {
-      "url": "https://github.com/bringhub/fabric.js",
-      "stars": 0,
-      "issuesTotal": 0,
+      "url": "https://github.com/fabricjs/fabric.js",
+      "stars": 30228,
+      "issuesTotal": 452,
       "issuesResolved": 0
     },
-    "website": "https://github.com/bringhub/fabric.js#readme"
+    "website": "http://fabricjs.com/"
   },
   {
     "id": 9,
