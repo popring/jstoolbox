@@ -1,0 +1,15 @@
+{
+  "name": "graphics",
+  "description": "2D/3D graphics and visualization libraries",
+  "packages": [
+    "three",
+    "babylonjs",
+    "playcanvas",
+    "aframe",
+    "pixi.js",
+    "phaser",
+    "konva",
+    "fabric.js",
+    "d3"
+  ]
+} 

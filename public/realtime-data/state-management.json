@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "@reduxjs/toolkit",
+    "description": "The official, opinionated, batteries-included toolset for efficient Redux development",
+    "npm": {
+      "name": "@reduxjs/toolkit",
+      "url": "https://www.npmjs.com/package/@reduxjs/toolkit",
+      "downloads": 23509564,
+      "firstReleased": "2019-11-13T03:51:53.373Z",
+      "lastReleased": "2025-05-14T18:09:47.983Z"
+    },
+    "github": {
+      "url": "https://github.com/reduxjs/redux-toolkit",
+      "stars": 11023,
+      "issuesTotal": 268,
+      "issuesResolved": 0
+    },
+    "website": "https://redux-toolkit.js.org"
+  },
+  {
+    "id": 2,
+    "name": "zustand",
+    "description": "🐻 Bear necessities for state management in React",
+    "npm": {
+      "name": "zustand",
+      "url": "https://www.npmjs.com/package/zustand",
+      "downloads": 36238320,
+      "firstReleased": "2019-04-09T13:47:37.089Z",
+      "lastReleased": "2025-06-26T14:15:06.189Z"
+    },
+    "github": {
+      "url": "https://github.com/pmndrs/zustand",
+      "stars": 53605,
+      "issuesTotal": 5,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/pmndrs/zustand"
+  },
+  {
+    "id": 3,
+    "name": "jotai",
+    "description": "👻 Primitive and flexible state management for React",
+    "npm": {
+      "name": "jotai",
+      "url": "https://www.npmjs.com/package/jotai",
+      "downloads": 7400706,
+      "firstReleased": "2020-08-11T22:29:21.284Z",
+      "lastReleased": "2025-05-27T07:19:48.143Z"
+    },
+    "github": {
+      "url": "https://github.com/pmndrs/jotai",
+      "stars": 20234,
+      "issuesTotal": 6,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/pmndrs/jotai"
+  },
+  {
+    "id": 4,
+    "name": "valtio",
+    "description": "🧙 Valtio makes proxy-state simple for React and Vanilla",
+    "npm": {
+      "name": "valtio",
+      "url": "https://www.npmjs.com/package/valtio",
+      "downloads": 3242381,
+      "firstReleased": "2020-11-16T22:30:20.723Z",
+      "lastReleased": "2025-05-09T13:53:14.501Z"
+    },
+    "github": {
+      "url": "https://github.com/pmndrs/valtio",
+      "stars": 9761,
+      "issuesTotal": 3,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/pmndrs/valtio"
+  },
+  {
+    "id": 5,
+    "name": "pinia",
+    "description": "Intuitive, type safe and flexible Store for Vue",
+    "npm": {
+      "name": "pinia",
+      "url": "https://www.npmjs.com/package/pinia",
+      "downloads": 9173653,
+      "firstReleased": "2019-11-18T21:04:15.804Z",
+      "lastReleased": "2025-06-04T09:40:42.562Z"
+    },
+    "github": {
+      "url": "https://github.com/vuejs/pinia",
+      "stars": 14044,
+      "issuesTotal": 42,
+      "issuesResolved": 0
+    },
+    "website": "https://pinia.vuejs.org"
+  },
+  {
+    "id": 6,
+    "name": "recoil",
+    "description": "Recoil - A state management library for React",
+    "npm": {
+      "name": "recoil",
+      "url": "https://www.npmjs.com/package/recoil",
+      "downloads": 2334990,
+      "firstReleased": "2020-05-05T21:22:00.565Z",
+      "lastReleased": "2024-02-12T18:48:39.318Z"
+    },
+    "github": {
+      "url": "https://github.com/facebookexperimental/Recoil",
+      "stars": 19604,
+      "issuesTotal": 323,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/facebookexperimental/Recoil#readme"
+  },
+  {
+    "id": 7,
+    "name": "mobx",
+    "description": "Simple, scalable state management.",
+    "npm": {
+      "name": "mobx",
+      "url": "https://www.npmjs.com/package/mobx",
+      "downloads": 8171155,
+      "firstReleased": "2016-02-19T15:37:41.757Z",
+      "lastReleased": "2025-03-17T19:55:37.340Z"
+    },
+    "github": {
+      "url": "https://github.com/mobxjs/mobx",
+      "stars": 27972,
+      "issuesTotal": 72,
+      "issuesResolved": 0
+    },
+    "website": "https://mobx.js.org/"
+  },
+  {
+    "id": 8,
+    "name": "xstate",
+    "description": "Finite State Machines and Statecharts for the Modern Web.",
+    "npm": {
+      "name": "xstate",
+      "url": "https://www.npmjs.com/package/xstate",
+      "downloads": 9462199,
+      "firstReleased": "2017-05-24T05:00:41.121Z",
+      "lastReleased": "2025-07-06T04:42:10.358Z"
+    },
+    "github": {
+      "url": "https://github.com/statelyai/xstate",
+      "stars": 28495,
+      "issuesTotal": 163,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/statelyai/xstate/tree/main/packages/core#readme"
+  },
+  {
+    "id": 9,
+    "name": "effector",
+    "description": "Business logic with ease",
+    "npm": {
+      "name": "effector",
+      "url": "https://www.npmjs.com/package/effector",
+      "downloads": 197358,
+      "firstReleased": "2018-01-17T03:17:09.763Z",
+      "lastReleased": "2025-07-07T15:14:44.577Z"
+    },
+    "github": {
+      "url": "https://github.com/effector/effector",
+      "stars": 4737,
+      "issuesTotal": 143,
+      "issuesResolved": 0
+    },
+    "website": "https://effector.dev"
+  },
+  {
+    "id": 10,
+    "name": "rematch",
+    "description": "Pattern matching for JavaScript/TypeScript",
+    "npm": {
+      "name": "rematch",
+      "url": "https://www.npmjs.com/package/rematch",
+      "downloads": 245,
+      "firstReleased": "2016-09-15T03:31:28.298Z",
+      "lastReleased": "2022-06-26T11:04:42.489Z"
+    },
+    "github": {
+      "url": "https://github.com/jiaweihli/rematch",
+      "stars": 18,
+      "issuesTotal": 0,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/jiaweihli/rematch#readme"
+  }
+]

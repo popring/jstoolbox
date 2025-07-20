@@ -1,5 +1,6 @@
 import { Search, ChevronRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { LinkButton } from '@/components/ui/link-button';
 import { use } from 'react';
 import { getCategories } from './service/categories';
 
@@ -73,7 +74,7 @@ export default function Home() {
             category='Animation'
           />
           <FeaturedCard
-            title='Tailwind CSS'
+            title='tailwindcss'
             description='Utility-first CSS framework for rapid UI development'
             stars={72000}
             category='CSS'
@@ -91,17 +92,32 @@ export default function Home() {
       <footer className='border-t border-slate-800 bg-black py-8'>
         <div className='container mx-auto px-4 text-center text-sm text-slate-500'>
           <p>© {new Date().getFullYear()} JS Toolbox. All rights reserved.</p>
-          <div className='mt-2 flex justify-center space-x-4'>
-            <Link href='/about' className='hover:text-slate-300'>
+          {/* <div className='mt-2 flex justify-center space-x-4'>
+            <LinkButton
+              href='/about'
+              variant='ghost'
+              size='sm'
+              className='text-slate-500 hover:text-slate-300 p-0 h-auto'
+            >
               About
-            </Link>
-            <Link href='/contact' className='hover:text-slate-300'>
+            </LinkButton>
+            <LinkButton
+              href='/contact'
+              variant='ghost'
+              size='sm'
+              className='text-slate-500 hover:text-slate-300 p-0 h-auto'
+            >
               Contact
-            </Link>
-            <Link href='/privacy' className='hover:text-slate-300'>
+            </LinkButton>
+            <LinkButton
+              href='/privacy'
+              variant='ghost'
+              size='sm'
+              className='text-slate-500 hover:text-slate-300 p-0 h-auto'
+            >
               Privacy
-            </Link>
-          </div>
+            </LinkButton>
+          </div> */}
         </div>
       </footer>
     </div>
@@ -170,12 +186,14 @@ function FeaturedCard({
         <span className='text-xs text-slate-500'>
           Weekly downloads: {formatNumber(Math.floor(stars * 7.5))}
         </span>
-        <Link
+        <LinkButton
           href={`/package/${title.toLowerCase().replace(/\s+/g, '-')}`}
-          className='text-xs font-medium text-yellow-500 hover:text-yellow-400'
+          variant='ghost'
+          size='sm'
+          className='text-xs font-medium text-yellow-500 hover:text-yellow-400 p-0 h-auto'
         >
           View details
-        </Link>
+        </LinkButton>
       </div>
     </div>
   );

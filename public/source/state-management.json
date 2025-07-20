@@ -1,0 +1,15 @@
+{
+  "name": "state-management",
+  "packages": [
+    "@reduxjs/toolkit",
+    "zustand",
+    "jotai",
+    "valtio",
+    "pinia",
+    "recoil",
+    "mobx",
+    "xstate",
+    "effector",
+    "rematch"
+  ]
+} 

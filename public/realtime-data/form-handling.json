@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "react-hook-form",
+    "description": "Performant, flexible and extensible forms library for React Hooks",
+    "npm": {
+      "name": "react-hook-form",
+      "url": "https://www.npmjs.com/package/react-hook-form",
+      "downloads": 55387894,
+      "firstReleased": "2019-03-20T21:30:15.019Z",
+      "lastReleased": "2025-07-04T22:24:59.090Z"
+    },
+    "github": {
+      "url": "https://github.com/react-hook-form/react-hook-form",
+      "stars": 43516,
+      "issuesTotal": 69,
+      "issuesResolved": 0
+    },
+    "website": "https://react-hook-form.com"
+  },
+  {
+    "id": 2,
+    "name": "formik",
+    "description": "Build forms in React, without the tears",
+    "npm": {
+      "name": "formik",
+      "url": "https://www.npmjs.com/package/formik",
+      "downloads": 13285434,
+      "firstReleased": "2017-06-14T19:53:09.868Z",
+      "lastReleased": "2024-11-17T06:17:50.544Z"
+    },
+    "github": {
+      "url": "https://github.com/jaredpalmer/formik",
+      "stars": 34254,
+      "issuesTotal": 830,
+      "issuesResolved": 0
+    },
+    "website": "https://formik.org"
+  },
+  {
+    "id": 3,
+    "name": "final-form",
+    "description": "🏁 Framework agnostic, high performance, subscription-based form state management",
+    "npm": {
+      "name": "final-form",
+      "url": "https://www.npmjs.com/package/final-form",
+      "downloads": 2048112,
+      "firstReleased": "2017-08-03T08:54:14.208Z",
+      "lastReleased": "2025-06-07T08:43:52.555Z"
+    },
+    "github": {
+      "url": "https://github.com/final-form/final-form",
+      "stars": 3021,
+      "issuesTotal": 115,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/final-form/final-form#readme"
+  },
+  {
+    "id": 4,
+    "name": "zod",
+    "description": "TypeScript-first schema declaration and validation library with static type inference",
+    "npm": {
+      "name": "zod",
+      "url": "https://www.npmjs.com/package/zod",
+      "downloads": 147106795,
+      "firstReleased": "2020-03-07T21:19:15.387Z",
+      "lastReleased": "2025-07-11T20:14:25.924Z"
+    },
+    "github": {
+      "url": "https://github.com/colinhacks/zod",
+      "stars": 39113,
+      "issuesTotal": 555,
+      "issuesResolved": 0
+    },
+    "website": "https://zod.dev"
+  },
+  {
+    "id": 5,
+    "name": "yup",
+    "description": "Dead simple Object schema validation",
+    "npm": {
+      "name": "yup",
+      "url": "https://www.npmjs.com/package/yup",
+      "downloads": 33807826,
+      "firstReleased": "2014-10-18T15:33:17.295Z",
+      "lastReleased": "2024-12-17T17:43:03.043Z"
+    },
+    "github": {
+      "url": "https://github.com/jquense/yup",
+      "stars": 23463,
+      "issuesTotal": 241,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/jquense/yup"
+  },
+  {
+    "id": 6,
+    "name": "vee-validate",
+    "description": "Painless forms for Vue.js",
+    "npm": {
+      "name": "vee-validate",
+      "url": "https://www.npmjs.com/package/vee-validate",
+      "downloads": 2905858,
+      "firstReleased": "2016-08-15T03:35:55.598Z",
+      "lastReleased": "2025-06-07T13:36:24.407Z"
+    },
+    "github": {
+      "url": "https://github.com/logaretm/vee-validate",
+      "stars": 11076,
+      "issuesTotal": 124,
+      "issuesResolved": 0
+    },
+    "website": "https://vee-validate.logaretm.com/"
+  },
+  {
+    "id": 7,
+    "name": "@hookform/resolvers",
+    "description": "React Hook Form validation resolvers: Yup, Joi, Superstruct, Zod, Vest, Class Validator, io-ts, Nope, computed-types, TypeBox, arktype, Typanion, Effect-TS and VineJS",
+    "npm": {
+      "name": "@hookform/resolvers",
+      "url": "https://www.npmjs.com/package/@hookform/resolvers",
+      "downloads": 39791351,
+      "firstReleased": "2020-05-20T11:33:35.328Z",
+      "lastReleased": "2025-06-09T07:53:18.365Z"
+    },
+    "github": {
+      "url": "https://github.com/react-hook-form/resolvers",
+      "stars": 2052,
+      "issuesTotal": 37,
+      "issuesResolved": 0
+    },
+    "website": "https://react-hook-form.com"
+  },
+  {
+    "id": 8,
+    "name": "react-jsonschema-form",
+    "description": "A simple React component capable of building HTML forms out of a JSON schema.",
+    "npm": {
+      "name": "react-jsonschema-form",
+      "url": "https://www.npmjs.com/package/react-jsonschema-form",
+      "downloads": 392224,
+      "firstReleased": "2015-12-17T17:01:03.485Z",
+      "lastReleased": "2023-02-28T03:21:06.088Z"
+    },
+    "github": {
+      "url": "https://github.com/mozilla-services/react-jsonschema-form",
+      "stars": 15048,
+      "issuesTotal": 288,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/mozilla-services/react-jsonschema-form#readme"
+  },
+  {
+    "id": 9,
+    "name": "formstate",
+    "description": "Painless and simple MobX form management",
+    "npm": {
+      "name": "formstate",
+      "url": "https://www.npmjs.com/package/formstate",
+      "downloads": 33808,
+      "firstReleased": "2016-12-11T07:18:15.123Z",
+      "lastReleased": "2022-07-20T01:33:30.943Z"
+    },
+    "github": {
+      "url": "https://github.com/formstate/formstate",
+      "stars": 370,
+      "issuesTotal": 10,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/formstate/formstate#readme"
+  },
+  {
+    "id": 10,
+    "name": "react-final-form",
+    "description": "🏁 High performance subscription-based form state management for React",
+    "npm": {
+      "name": "react-final-form",
+      "url": "https://www.npmjs.com/package/react-final-form",
+      "downloads": 1679226,
+      "firstReleased": "2017-08-03T08:55:16.750Z",
+      "lastReleased": "2025-06-07T08:48:46.647Z"
+    },
+    "github": {
+      "url": "https://github.com/final-form/react-final-form",
+      "stars": 7414,
+      "issuesTotal": 391,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/final-form/react-final-form#readme"
+  }
+]

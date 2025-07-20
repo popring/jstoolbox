@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { LinkButton } from '@/components/ui/link-button';
 import { GroupedPackageInfo } from '@/app/types/categories';
 import { useState } from 'react';
 
@@ -140,26 +141,26 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
         </div>
         <div className='flex gap-2 shrink-0'>
           {group.repositoryUrl && (
-            <Button
+            <LinkButton
+              href={group.repositoryUrl}
               variant='outline'
               size='sm'
               className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
-              onClick={() => window.open(group.repositoryUrl, '_blank')}
             >
               <Github className='h-4 w-4' />
               <span className='hidden sm:inline'>GitHub</span>
-            </Button>
+            </LinkButton>
           )}
           {group.website && (
-            <Button
+            <LinkButton
+              href={group.website}
               variant='outline'
               size='sm'
               className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
-              onClick={() => window.open(group.website, '_blank')}
             >
               <ExternalLink className='h-4 w-4' />
               <span className='hidden sm:inline'>Website</span>
-            </Button>
+            </LinkButton>
           )}
         </div>
       </div>
@@ -276,15 +277,15 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
                 </div>
                 <div className='flex gap-1 ml-3'>
                   {pkg.npm?.url && (
-                    <Button
+                    <LinkButton
+                      href={pkg.npm.url}
                       variant='ghost'
                       size='sm'
                       className='h-8 w-8 p-0 text-zinc-400 hover:text-yellow-400 hover:bg-zinc-700/50'
-                      onClick={() => window.open(pkg.npm.url, '_blank')}
                       title='View on NPM'
                     >
                       <Download className='h-3 w-3' />
-                    </Button>
+                    </LinkButton>
                   )}
                 </div>
               </div>

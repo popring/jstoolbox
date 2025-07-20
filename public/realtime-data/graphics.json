@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "name": "three",
+    "description": "JavaScript 3D library",
+    "npm": {
+      "name": "three",
+      "url": "https://www.npmjs.com/package/three",
+      "downloads": 8827482,
+      "firstReleased": "2012-12-07T19:51:25.349Z",
+      "lastReleased": "2025-06-30T13:39:35.751Z"
+    },
+    "github": {
+      "url": "https://github.com/mrdoob/three.js",
+      "stars": 107697,
+      "issuesTotal": 574,
+      "issuesResolved": 0
+    },
+    "website": "https://threejs.org/"
+  },
+  {
+    "id": 2,
+    "name": "babylonjs",
+    "description": "* We recommend using the [Core ES6-supported version](https://www.npmjs.com/package/@babylonjs/core);",
+    "npm": {
+      "name": "babylonjs",
+      "url": "https://www.npmjs.com/package/babylonjs",
+      "downloads": 53633,
+      "firstReleased": "2014-03-12T13:35:19.363Z",
+      "lastReleased": "2025-07-17T07:28:05.412Z"
+    },
+    "github": {
+      "url": "https://github.com/BabylonJS/Babylon.js",
+      "stars": 24342,
+      "issuesTotal": 34,
+      "issuesResolved": 0
+    },
+    "website": "https://www.babylonjs.com"
+  },
+  {
+    "id": 3,
+    "name": "playcanvas",
+    "description": "PlayCanvas WebGL game engine",
+    "npm": {
+      "name": "playcanvas",
+      "url": "https://www.npmjs.com/package/playcanvas",
+      "downloads": 23244,
+      "firstReleased": "2019-09-05T18:43:59.626Z",
+      "lastReleased": "2025-07-15T14:55:42.096Z"
+    },
+    "github": {
+      "url": "https://github.com/playcanvas/engine",
+      "stars": 10480,
+      "issuesTotal": 583,
+      "issuesResolved": 0
+    },
+    "website": "https://playcanvas.com"
+  },
+  {
+    "id": 4,
+    "name": "aframe",
+    "description": "A web framework for building virtual reality experiences.",
+    "npm": {
+      "name": "aframe",
+      "url": "https://www.npmjs.com/package/aframe",
+      "downloads": 125056,
+      "firstReleased": "2015-10-07T23:53:45.772Z",
+      "lastReleased": "2025-04-01T06:58:09.472Z"
+    },
+    "github": {
+      "url": "https://github.com/aframevr/aframe",
+      "stars": 17254,
+      "issuesTotal": 338,
+      "issuesResolved": 0
+    },
+    "website": "https://aframe.io/"
+  },
+  {
+    "id": 5,
+    "name": "pixi.js",
+    "description": "<p align=\"center\">   <a href=\"https://pixijs.com\" target=\"_blank\" rel=\"noopener noreferrer\">     <img height=\"150\" src=\"https://files.pixijs.download/branding/pixijs-logo-transparent-dark.svg?v=1\" alt=\"PixiJS logo\">   </a> </p> <br/> <p align=\"center\">   ",
+    "npm": {
+      "name": "pixi.js",
+      "url": "https://www.npmjs.com/package/pixi.js",
+      "downloads": 1092316,
+      "firstReleased": "2014-01-05T17:39:21.005Z",
+      "lastReleased": "2025-07-17T13:28:24.240Z"
+    },
+    "github": {
+      "url": "https://github.com/pixijs/pixijs",
+      "stars": 45421,
+      "issuesTotal": 305,
+      "issuesResolved": 0
+    },
+    "website": "http://pixijs.com/"
+  },
+  {
+    "id": 6,
+    "name": "phaser",
+    "description": "A fast, free and fun HTML5 Game Framework for Desktop and Mobile web browsers from the team at Phaser Studio Inc.",
+    "npm": {
+      "name": "phaser",
+      "url": "https://www.npmjs.com/package/phaser",
+      "downloads": 202154,
+      "firstReleased": "2014-02-17T00:23:31.066Z",
+      "lastReleased": "2025-05-23T13:56:10.422Z"
+    },
+    "github": {
+      "url": "https://github.com/phaserjs/phaser",
+      "stars": 38193,
+      "issuesTotal": 105,
+      "issuesResolved": 0
+    },
+    "website": "https://phaser.io"
+  },
+  {
+    "id": 7,
+    "name": "konva",
+    "description": "HTML5 2d canvas library.",
+    "npm": {
+      "name": "konva",
+      "url": "https://www.npmjs.com/package/konva",
+      "downloads": 2489968,
+      "firstReleased": "2015-01-27T08:47:44.192Z",
+      "lastReleased": "2025-07-08T19:21:39.181Z"
+    },
+    "github": {
+      "url": "https://github.com/konvajs/konva",
+      "stars": 13190,
+      "issuesTotal": 37,
+      "issuesResolved": 0
+    },
+    "website": "http://konvajs.org/"
+  },
+  {
+    "id": 8,
+    "name": "fabric.js",
+    "npm": {
+      "name": "fabric.js",
+      "url": "https://www.npmjs.com/package/fabric.js",
+      "downloads": 41,
+      "firstReleased": "2017-03-28T19:52:58.026Z",
+      "lastReleased": "2022-06-17T23:12:46.194Z"
+    },
+    "github": {
+      "url": "https://github.com/bringhub/fabric.js",
+      "stars": 0,
+      "issuesTotal": 0,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/bringhub/fabric.js#readme"
+  },
+  {
+    "id": 9,
+    "name": "d3",
+    "description": "Data-Driven Documents",
+    "npm": {
+      "name": "d3",
+      "url": "https://www.npmjs.com/package/d3",
+      "downloads": 19635339,
+      "firstReleased": "2011-08-18T17:05:26.410Z",
+      "lastReleased": "2025-05-17T15:07:03.565Z"
+    },
+    "github": {
+      "url": "https://github.com/d3/d3",
+      "stars": 111074,
+      "issuesTotal": 21,
+      "issuesResolved": 0
+    },
+    "website": "https://d3js.org"
+  }
+]

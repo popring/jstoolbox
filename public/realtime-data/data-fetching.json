@@ -1,0 +1,173 @@
+[
+  {
+    "id": 1,
+    "name": "@tanstack/react-query",
+    "description": "Hooks for managing, caching and syncing asynchronous and remote data in React",
+    "npm": {
+      "name": "@tanstack/react-query",
+      "url": "https://www.npmjs.com/package/@tanstack/react-query",
+      "downloads": 45071071,
+      "firstReleased": "2022-07-19T13:33:05.988Z",
+      "lastReleased": "2025-07-11T17:00:47.399Z"
+    },
+    "github": {
+      "url": "https://github.com/TanStack/query",
+      "stars": 45907,
+      "issuesTotal": 119,
+      "issuesResolved": 0
+    },
+    "website": "https://tanstack.com/query"
+  },
+  {
+    "id": 2,
+    "name": "swr",
+    "description": "React Hooks library for remote data fetching",
+    "npm": {
+      "name": "swr",
+      "url": "https://www.npmjs.com/package/swr",
+      "downloads": 18806187,
+      "firstReleased": "2018-04-06T02:12:53.541Z",
+      "lastReleased": "2025-07-02T15:37:45.263Z"
+    },
+    "github": {
+      "url": "https://github.com/vercel/swr",
+      "stars": 31700,
+      "issuesTotal": 165,
+      "issuesResolved": 0
+    },
+    "website": "https://swr.vercel.app"
+  },
+  {
+    "id": 3,
+    "name": "apollo-client",
+    "description": "A simple yet functional GraphQL client.",
+    "npm": {
+      "name": "apollo-client",
+      "url": "https://www.npmjs.com/package/apollo-client",
+      "downloads": 2140009,
+      "firstReleased": "2016-04-01T21:12:47.178Z",
+      "lastReleased": "2022-06-13T03:14:43.996Z"
+    },
+    "github": {
+      "url": "https://github.com/apollographql/apollo-client",
+      "stars": 19599,
+      "issuesTotal": 506,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/apollographql/apollo-client#readme"
+  },
+  {
+    "id": 4,
+    "name": "@tanstack/vue-query",
+    "description": "Hooks for managing, caching and syncing asynchronous and remote data in Vue",
+    "npm": {
+      "name": "@tanstack/vue-query",
+      "url": "https://www.npmjs.com/package/@tanstack/vue-query",
+      "downloads": 1011960,
+      "firstReleased": "2022-10-02T20:11:42.071Z",
+      "lastReleased": "2025-07-11T17:00:54.471Z"
+    },
+    "github": {
+      "url": "https://github.com/TanStack/query",
+      "stars": 45907,
+      "issuesTotal": 119,
+      "issuesResolved": 0
+    },
+    "website": "https://tanstack.com/query"
+  },
+  {
+    "id": 5,
+    "name": "urql",
+    "description": "A highly customizable and versatile GraphQL client for React",
+    "npm": {
+      "name": "urql",
+      "url": "https://www.npmjs.com/package/urql",
+      "downloads": 1342928,
+      "firstReleased": "2018-01-17T18:55:35.330Z",
+      "lastReleased": "2025-03-03T21:13:57.582Z"
+    },
+    "github": {
+      "url": "https://github.com/urql-graphql/urql",
+      "stars": 8828,
+      "issuesTotal": 39,
+      "issuesResolved": 0
+    },
+    "website": "https://formidable.com/open-source/urql/docs/"
+  },
+  {
+    "id": 6,
+    "name": "relay",
+    "description": "relay offers three higher order functions to control flow of “node.js-style” functions – chain, combine and parallel.",
+    "npm": {
+      "name": "relay",
+      "url": "https://www.npmjs.com/package/relay",
+      "downloads": 866,
+      "firstReleased": "2013-04-14T20:53:06.817Z",
+      "lastReleased": "2025-05-15T17:59:44.849Z"
+    },
+    "github": {
+      "url": "https://github.com/davidaurelio/relay",
+      "stars": 2,
+      "issuesTotal": 3,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/davidaurelio/relay"
+  },
+  {
+    "id": 7,
+    "name": "react-query",
+    "description": "Hooks for managing, caching and syncing asynchronous and remote data in React",
+    "npm": {
+      "name": "react-query",
+      "url": "https://www.npmjs.com/package/react-query",
+      "downloads": 6313084,
+      "firstReleased": "2014-08-24T19:07:48.154Z",
+      "lastReleased": "2023-01-25T19:44:56.804Z"
+    },
+    "github": {
+      "url": "https://github.com/tannerlinsley/react-query",
+      "stars": 45907,
+      "issuesTotal": 119,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/tannerlinsley/react-query#readme"
+  },
+  {
+    "id": 8,
+    "name": "axios",
+    "description": "Promise based HTTP client for the browser and node.js",
+    "npm": {
+      "name": "axios",
+      "url": "https://www.npmjs.com/package/axios",
+      "downloads": 292575774,
+      "firstReleased": "2014-08-29T23:08:36.810Z",
+      "lastReleased": "2025-06-14T12:11:51.743Z"
+    },
+    "github": {
+      "url": "https://github.com/axios/axios",
+      "stars": 107245,
+      "issuesTotal": 687,
+      "issuesResolved": 0
+    },
+    "website": "https://axios-http.com"
+  },
+  {
+    "id": 9,
+    "name": "ky",
+    "description": "Tiny and elegant HTTP client based on the Fetch API",
+    "npm": {
+      "name": "ky",
+      "url": "https://www.npmjs.com/package/ky",
+      "downloads": 12384355,
+      "firstReleased": "2016-04-15T15:31:41.072Z",
+      "lastReleased": "2025-07-17T08:30:19.380Z"
+    },
+    "github": {
+      "url": "https://github.com/sindresorhus/ky",
+      "stars": 15089,
+      "issuesTotal": 67,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/sindresorhus/ky#readme"
+  }
+]

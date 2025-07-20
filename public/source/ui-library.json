@@ -11,6 +11,13 @@
     "@varlet/ui",
     "vant",
     "@douyinfe/semi-ui",
-    "@arco-design/web-react"
+    "@arco-design/web-react",
+    "@chakra-ui/react",
+    "@mantine/core",
+    "radix-ui",
+    "@headlessui/react",
+    "@floating-ui/react",
+    "@ariakit/react",
+    "react-bootstrap"
   ]
 }

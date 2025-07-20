@@ -1,0 +1,15 @@
+{
+  "name": "form-handling",
+  "packages": [
+    "react-hook-form",
+    "formik",
+    "final-form",
+    "zod",
+    "yup",
+    "vee-validate",
+    "@hookform/resolvers",
+    "react-jsonschema-form",
+    "formstate",
+    "react-final-form"
+  ]
+} 

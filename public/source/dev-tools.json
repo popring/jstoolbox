@@ -1,0 +1,15 @@
+{
+  "name": "dev-tools",
+  "packages": [
+    "eslint",
+    "prettier",
+    "husky",
+    "lint-staged",
+    "typescript",
+    "@babel/core",
+    "postcss",
+    "stylelint",
+    "commitizen",
+    "conventional-changelog"
+  ]
+} 

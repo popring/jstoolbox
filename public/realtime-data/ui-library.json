@@ -188,5 +188,138 @@
       "issuesResolved": 0
     },
     "website": "https://arco.design/"
+  },
+  {
+    "id": 11,
+    "name": "@chakra-ui/react",
+    "description": "Responsive and accessible React UI components built with React and Emotion",
+    "npm": {
+      "name": "@chakra-ui/react",
+      "url": "https://www.npmjs.com/package/@chakra-ui/react",
+      "downloads": 3750696,
+      "firstReleased": "2020-11-13T10:21:49.471Z",
+      "lastReleased": "2025-07-07T14:53:05.906Z"
+    },
+    "github": {
+      "url": "https://github.com/chakra-ui/chakra-ui",
+      "stars": 39392,
+      "issuesTotal": 9,
+      "issuesResolved": 0
+    },
+    "website": "https://chakra-ui.com/"
+  },
+  {
+    "id": 12,
+    "name": "@mantine/core",
+    "description": "React components library focused on usability, accessibility and developer experience",
+    "npm": {
+      "name": "@mantine/core",
+      "url": "https://www.npmjs.com/package/@mantine/core",
+      "downloads": 3181320,
+      "firstReleased": "2021-01-07T16:45:57.560Z",
+      "lastReleased": "2025-07-07T13:18:14.209Z"
+    },
+    "github": {
+      "url": "https://github.com/mantinedev/mantine",
+      "stars": 29203,
+      "issuesTotal": 40,
+      "issuesResolved": 0
+    },
+    "website": "https://mantine.dev/"
+  },
+  {
+    "id": 13,
+    "name": "radix-ui",
+    "description": "[![Radix Primitives Logo](https://raw.githubusercontent.com/radix-ui/primitives/main/primitives.png)](https://radix-ui.com/primitives)",
+    "npm": {
+      "name": "radix-ui",
+      "url": "https://www.npmjs.com/package/radix-ui",
+      "downloads": 1861302,
+      "firstReleased": "2022-08-01T15:59:46.899Z",
+      "lastReleased": "2025-07-17T22:24:37.893Z"
+    },
+    "github": {
+      "url": "https://github.com/radix-ui/primitives",
+      "stars": 17516,
+      "issuesTotal": 657,
+      "issuesResolved": 0
+    },
+    "website": "https://radix-ui.com/primitives"
+  },
+  {
+    "id": 14,
+    "name": "@headlessui/react",
+    "description": "A set of completely unstyled, fully accessible UI components for React, designed to integrate beautifully with Tailwind CSS.",
+    "npm": {
+      "name": "@headlessui/react",
+      "url": "https://www.npmjs.com/package/@headlessui/react",
+      "downloads": 12570132,
+      "firstReleased": "2020-09-24T10:57:33.961Z",
+      "lastReleased": "2025-07-02T20:53:00.162Z"
+    },
+    "github": {
+      "url": "https://github.com/tailwindlabs/headlessui",
+      "stars": 27660,
+      "issuesTotal": 127,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/tailwindlabs/headlessui#readme"
+  },
+  {
+    "id": 15,
+    "name": "@floating-ui/react",
+    "description": "Floating UI for React",
+    "npm": {
+      "name": "@floating-ui/react",
+      "url": "https://www.npmjs.com/package/@floating-ui/react",
+      "downloads": 26402284,
+      "firstReleased": "2022-12-10T23:48:31.423Z",
+      "lastReleased": "2025-06-28T04:28:08.687Z"
+    },
+    "github": {
+      "url": "https://github.com/floating-ui/floating-ui",
+      "stars": 31427,
+      "issuesTotal": 31,
+      "issuesResolved": 0
+    },
+    "website": "https://floating-ui.com/docs/react"
+  },
+  {
+    "id": 16,
+    "name": "@ariakit/react",
+    "description": "Toolkit for building accessible web apps with React",
+    "npm": {
+      "name": "@ariakit/react",
+      "url": "https://www.npmjs.com/package/@ariakit/react",
+      "downloads": 1269366,
+      "firstReleased": "2022-10-08T02:56:13.501Z",
+      "lastReleased": "2025-04-09T03:12:25.434Z"
+    },
+    "github": {
+      "url": "https://github.com/ariakit/ariakit",
+      "stars": 8288,
+      "issuesTotal": 99,
+      "issuesResolved": 0
+    },
+    "website": "https://ariakit.org"
+  },
+  {
+    "id": 17,
+    "name": "react-bootstrap",
+    "description": "Bootstrap 5 components built with React",
+    "npm": {
+      "name": "react-bootstrap",
+      "url": "https://www.npmjs.com/package/react-bootstrap",
+      "downloads": 5982258,
+      "firstReleased": "2014-01-26T23:48:03.822Z",
+      "lastReleased": "2025-05-24T04:39:17.958Z"
+    },
+    "github": {
+      "url": "https://github.com/react-bootstrap/react-bootstrap",
+      "stars": 22578,
+      "issuesTotal": 210,
+      "issuesResolved": 0
+    },
+    "website": "https://react-bootstrap.github.io/"
   }
 ]

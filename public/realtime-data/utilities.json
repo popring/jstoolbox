@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "lodash",
+    "description": "Lodash modular utilities.",
+    "npm": {
+      "name": "lodash",
+      "url": "https://www.npmjs.com/package/lodash",
+      "downloads": 367431135,
+      "firstReleased": "2012-04-23T16:37:11.912Z",
+      "lastReleased": "2025-06-30T15:00:05.999Z"
+    },
+    "github": {
+      "url": "https://github.com/lodash/lodash",
+      "stars": 60740,
+      "issuesTotal": 117,
+      "issuesResolved": 0
+    },
+    "website": "https://lodash.com/"
+  },
+  {
+    "id": 2,
+    "name": "ramda",
+    "description": "A practical functional library for JavaScript programmers.",
+    "npm": {
+      "name": "ramda",
+      "url": "https://www.npmjs.com/package/ramda",
+      "downloads": 53807763,
+      "firstReleased": "2014-05-16T17:40:23.089Z",
+      "lastReleased": "2025-06-22T16:19:23.932Z"
+    },
+    "github": {
+      "url": "https://github.com/ramda/ramda",
+      "stars": 24029,
+      "issuesTotal": 148,
+      "issuesResolved": 0
+    },
+    "website": "https://ramdajs.com/"
+  },
+  {
+    "id": 3,
+    "name": "date-fns",
+    "description": "Modern JavaScript date utility library",
+    "npm": {
+      "name": "date-fns",
+      "url": "https://www.npmjs.com/package/date-fns",
+      "downloads": 140770786,
+      "firstReleased": "2014-10-06T12:10:33.939Z",
+      "lastReleased": "2024-09-17T04:37:03.984Z"
+    },
+    "github": {
+      "url": "https://github.com/date-fns/date-fns",
+      "stars": 35947,
+      "issuesTotal": 837,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/date-fns/date-fns#readme"
+  },
+  {
+    "id": 4,
+    "name": "dayjs",
+    "description": "2KB immutable date time library alternative to Moment.js with the same modern API ",
+    "npm": {
+      "name": "dayjs",
+      "url": "https://www.npmjs.com/package/dayjs",
+      "downloads": 112545359,
+      "firstReleased": "2018-04-10T01:31:28.265Z",
+      "lastReleased": "2025-06-09T02:50:29.627Z"
+    },
+    "github": {
+      "url": "https://github.com/iamkun/dayjs",
+      "stars": 47997,
+      "issuesTotal": 1136,
+      "issuesResolved": 0
+    },
+    "website": "https://day.js.org"
+  },
+  {
+    "id": 5,
+    "name": "axios",
+    "description": "Promise based HTTP client for the browser and node.js",
+    "npm": {
+      "name": "axios",
+      "url": "https://www.npmjs.com/package/axios",
+      "downloads": 292575774,
+      "firstReleased": "2014-08-29T23:08:36.810Z",
+      "lastReleased": "2025-06-14T12:11:51.743Z"
+    },
+    "github": {
+      "url": "https://github.com/axios/axios",
+      "stars": 107245,
+      "issuesTotal": 687,
+      "issuesResolved": 0
+    },
+    "website": "https://axios-http.com"
+  },
+  {
+    "id": 6,
+    "name": "ky",
+    "description": "Tiny and elegant HTTP client based on the Fetch API",
+    "npm": {
+      "name": "ky",
+      "url": "https://www.npmjs.com/package/ky",
+      "downloads": 12384355,
+      "firstReleased": "2016-04-15T15:31:41.072Z",
+      "lastReleased": "2025-07-17T08:30:19.380Z"
+    },
+    "github": {
+      "url": "https://github.com/sindresorhus/ky",
+      "stars": 15089,
+      "issuesTotal": 67,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/sindresorhus/ky#readme"
+  },
+  {
+    "id": 7,
+    "name": "uuid",
+    "description": "RFC9562 UUIDs",
+    "npm": {
+      "name": "uuid",
+      "url": "https://www.npmjs.com/package/uuid",
+      "downloads": 725007951,
+      "firstReleased": "2011-03-31T08:12:51.801Z",
+      "lastReleased": "2025-02-19T18:16:11.787Z"
+    },
+    "github": {
+      "url": "https://github.com/uuidjs/uuid",
+      "stars": 15020,
+      "issuesTotal": 3,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/uuidjs/uuid#readme"
+  },
+  {
+    "id": 8,
+    "name": "classnames",
+    "description": "A simple utility for conditionally joining classNames together",
+    "npm": {
+      "name": "classnames",
+      "url": "https://www.npmjs.com/package/classnames",
+      "downloads": 75233641,
+      "firstReleased": "2014-11-05T01:18:18.680Z",
+      "lastReleased": "2024-12-13T19:05:50.587Z"
+    },
+    "github": {
+      "url": "https://github.com/JedWatson/classnames",
+      "stars": 17766,
+      "issuesTotal": 8,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/JedWatson/classnames#readme"
+  },
+  {
+    "id": 9,
+    "name": "clsx",
+    "description": "A tiny (239B) utility for constructing className strings conditionally.",
+    "npm": {
+      "name": "clsx",
+      "url": "https://www.npmjs.com/package/clsx",
+      "downloads": 139969163,
+      "firstReleased": "2018-12-24T22:41:29.201Z",
+      "lastReleased": "2025-06-27T10:13:06.922Z"
+    },
+    "github": {
+      "url": "https://github.com/lukeed/clsx",
+      "stars": 9239,
+      "issuesTotal": 12,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/lukeed/clsx#readme"
+  },
+  {
+    "id": 10,
+    "name": "nanoid",
+    "description": "A tiny (118 bytes), secure URL-friendly unique string ID generator",
+    "npm": {
+      "name": "nanoid",
+      "url": "https://www.npmjs.com/package/nanoid",
+      "downloads": 278796243,
+      "firstReleased": "2017-08-06T05:04:00.915Z",
+      "lastReleased": "2025-03-18T23:09:23.891Z"
+    },
+    "github": {
+      "url": "https://github.com/ai/nanoid",
+      "stars": 25899,
+      "issuesTotal": 3,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/ai/nanoid#readme"
+  }
+]

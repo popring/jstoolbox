@@ -1,0 +1,189 @@
+[
+  {
+    "id": 1,
+    "name": "vite",
+    "description": "Native-ESM powered web dev build tool",
+    "npm": {
+      "name": "vite",
+      "url": "https://www.npmjs.com/package/vite",
+      "downloads": 133898771,
+      "firstReleased": "2020-04-21T05:05:15.476Z",
+      "lastReleased": "2025-07-17T02:46:21.720Z"
+    },
+    "github": {
+      "url": "https://github.com/vitejs/vite",
+      "stars": 74225,
+      "issuesTotal": 645,
+      "issuesResolved": 0
+    },
+    "website": "https://vite.dev"
+  },
+  {
+    "id": 2,
+    "name": "webpack",
+    "description": "Packs ECMAScript/CommonJs/AMD modules for the browser. Allows you to split your codebase into multiple bundles, which can be loaded on demand. Supports loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
+    "npm": {
+      "name": "webpack",
+      "url": "https://www.npmjs.com/package/webpack",
+      "downloads": 154174265,
+      "firstReleased": "2012-03-11T20:59:59.339Z",
+      "lastReleased": "2025-07-15T13:36:45.337Z"
+    },
+    "github": {
+      "url": "https://github.com/webpack/webpack",
+      "stars": 65448,
+      "issuesTotal": 233,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/webpack/webpack"
+  },
+  {
+    "id": 3,
+    "name": "rollup",
+    "description": "Next-generation ES module bundler",
+    "npm": {
+      "name": "rollup",
+      "url": "https://www.npmjs.com/package/rollup",
+      "downloads": 187199179,
+      "firstReleased": "2015-05-14T22:30:38.015Z",
+      "lastReleased": "2025-07-15T13:10:24.712Z"
+    },
+    "github": {
+      "url": "https://github.com/rollup/rollup",
+      "stars": 25896,
+      "issuesTotal": 601,
+      "issuesResolved": 0
+    },
+    "website": "https://rollupjs.org/"
+  },
+  {
+    "id": 4,
+    "name": "parcel",
+    "description": "Blazing fast, zero configuration web application bundler",
+    "npm": {
+      "name": "parcel",
+      "url": "https://www.npmjs.com/package/parcel",
+      "downloads": 1251352,
+      "firstReleased": "2013-05-02T18:03:30.433Z",
+      "lastReleased": "2025-06-21T00:48:21.818Z"
+    },
+    "github": {
+      "url": "https://github.com/parcel-bundler/parcel",
+      "stars": 43906,
+      "issuesTotal": 580,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/parcel-bundler/parcel#readme"
+  },
+  {
+    "id": 5,
+    "name": "esbuild",
+    "description": "An extremely fast JavaScript and CSS bundler and minifier.",
+    "npm": {
+      "name": "esbuild",
+      "url": "https://www.npmjs.com/package/esbuild",
+      "downloads": 269977365,
+      "firstReleased": "2017-11-26T05:52:58.272Z",
+      "lastReleased": "2025-07-19T19:24:29.071Z"
+    },
+    "github": {
+      "url": "https://github.com/evanw/esbuild",
+      "stars": 39133,
+      "issuesTotal": 558,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/evanw/esbuild#readme"
+  },
+  {
+    "id": 6,
+    "name": "swc",
+    "description": "Alias for @swc/cli",
+    "npm": {
+      "name": "swc",
+      "url": "https://www.npmjs.com/package/swc",
+      "downloads": 55693,
+      "firstReleased": "2017-04-21T04:35:08.291Z",
+      "lastReleased": "2024-01-16T03:07:01.187Z"
+    },
+    "github": {
+      "url": "",
+      "stars": 0,
+      "issuesTotal": 0,
+      "issuesResolved": 0
+    }
+  },
+  {
+    "id": 7,
+    "name": "turbopack",
+    "npm": {
+      "name": "turbopack",
+      "url": "https://www.npmjs.com/package/turbopack",
+      "downloads": 2684,
+      "firstReleased": "2020-12-30T21:11:28.359Z",
+      "lastReleased": "2022-05-22T10:09:37.802Z"
+    },
+    "github": {
+      "url": "",
+      "stars": 0,
+      "issuesTotal": 0,
+      "issuesResolved": 0
+    }
+  },
+  {
+    "id": 8,
+    "name": "gulp",
+    "description": "The streaming build system.",
+    "npm": {
+      "name": "gulp",
+      "url": "https://www.npmjs.com/package/gulp",
+      "downloads": 9142502,
+      "firstReleased": "2013-07-04T23:27:07.828Z",
+      "lastReleased": "2025-06-01T21:54:34.735Z"
+    },
+    "github": {
+      "url": "https://github.com/gulpjs/gulp",
+      "stars": 33064,
+      "issuesTotal": 33,
+      "issuesResolved": 0
+    },
+    "website": "https://gulpjs.com"
+  },
+  {
+    "id": 9,
+    "name": "grunt",
+    "description": "The JavaScript Task Runner",
+    "npm": {
+      "name": "grunt",
+      "url": "https://www.npmjs.com/package/grunt",
+      "downloads": 3899712,
+      "firstReleased": "2012-01-12T13:08:51.247Z",
+      "lastReleased": "2024-11-18T12:21:18.320Z"
+    },
+    "github": {
+      "url": "https://github.com/gruntjs/grunt",
+      "stars": 12271,
+      "issuesTotal": 162,
+      "issuesResolved": 0
+    },
+    "website": "https://gruntjs.com/"
+  },
+  {
+    "id": 10,
+    "name": "browserify",
+    "description": "browser-side require() the node way",
+    "npm": {
+      "name": "browserify",
+      "url": "https://www.npmjs.com/package/browserify",
+      "downloads": 9109124,
+      "firstReleased": "2011-02-03T11:58:51.125Z",
+      "lastReleased": "2024-11-04T16:30:23.243Z"
+    },
+    "github": {
+      "url": "https://github.com/browserify/browserify",
+      "stars": 14690,
+      "issuesTotal": 380,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/browserify/browserify#readme"
+  }
+]

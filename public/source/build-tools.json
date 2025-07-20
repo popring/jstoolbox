@@ -1,0 +1,15 @@
+{
+  "name": "build-tools",
+  "packages": [
+    "vite",
+    "webpack",
+    "rollup",
+    "parcel",
+    "esbuild",
+    "swc",
+    "turbopack",
+    "gulp",
+    "grunt",
+    "browserify"
+  ]
+} 

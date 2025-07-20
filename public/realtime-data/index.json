@@ -36,7 +36,14 @@
     "@varlet/ui",
     "vant",
     "@douyinfe/semi-ui",
-    "@arco-design/web-react"
+    "@arco-design/web-react",
+    "@chakra-ui/react",
+    "@mantine/core",
+    "radix-ui",
+    "@headlessui/react",
+    "@floating-ui/react",
+    "@ariakit/react",
+    "react-bootstrap"
   ],
   "editor": [
     "lexical",
@@ -46,5 +53,99 @@
     "quill",
     "ckeditor",
     "tinymce"
+  ],
+  "build-tools": [
+    "vite",
+    "webpack",
+    "rollup",
+    "parcel",
+    "esbuild",
+    "swc",
+    "turbopack",
+    "gulp",
+    "grunt",
+    "browserify"
+  ],
+  "data-fetching": [
+    "@tanstack/react-query",
+    "swr",
+    "apollo-client",
+    "@tanstack/vue-query",
+    "urql",
+    "relay",
+    "react-query",
+    "axios",
+    "ky"
+  ],
+  "dev-tools": [
+    "eslint",
+    "prettier",
+    "husky",
+    "lint-staged",
+    "typescript",
+    "@babel/core",
+    "postcss",
+    "stylelint",
+    "commitizen",
+    "conventional-changelog"
+  ],
+  "form-handling": [
+    "react-hook-form",
+    "formik",
+    "final-form",
+    "zod",
+    "yup",
+    "vee-validate",
+    "@hookform/resolvers",
+    "react-jsonschema-form",
+    "formstate",
+    "react-final-form"
+  ],
+  "graphics": [
+    "three",
+    "babylonjs",
+    "playcanvas",
+    "aframe",
+    "pixi.js",
+    "phaser",
+    "konva",
+    "fabric.js",
+    "d3"
+  ],
+  "state-management": [
+    "@reduxjs/toolkit",
+    "zustand",
+    "jotai",
+    "valtio",
+    "pinia",
+    "recoil",
+    "mobx",
+    "xstate",
+    "effector",
+    "rematch"
+  ],
+  "testing": [
+    "jest",
+    "vitest",
+    "cypress",
+    "playwright",
+    "@testing-library/react",
+    "@testing-library/vue",
+    "storybook",
+    "mocha",
+    "jasmine",
+    "karma"
+  ],
+  "utilities": [
+    "lodash",
+    "ramda",
+    "date-fns",
+    "dayjs",
+    "axios",
+    "ky",
+    "uuid",
+    "classnames",
+    "clsx",
+    "nanoid"
   ]
 }

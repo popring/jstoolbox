@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "jest",
+    "description": "Delightful JavaScript Testing.",
+    "npm": {
+      "name": "jest",
+      "url": "https://www.npmjs.com/package/jest",
+      "downloads": 164899213,
+      "firstReleased": "2012-02-22T15:25:44.365Z",
+      "lastReleased": "2025-07-02T23:46:11.830Z"
+    },
+    "github": {
+      "url": "https://github.com/jestjs/jest",
+      "stars": 44905,
+      "issuesTotal": 254,
+      "issuesResolved": 0
+    },
+    "website": "https://jestjs.io/"
+  },
+  {
+    "id": 2,
+    "name": "vitest",
+    "description": "Next generation testing framework powered by Vite",
+    "npm": {
+      "name": "vitest",
+      "url": "https://www.npmjs.com/package/vitest",
+      "downloads": 56816085,
+      "firstReleased": "2021-12-03T13:34:59.705Z",
+      "lastReleased": "2025-07-15T14:28:29.833Z"
+    },
+    "github": {
+      "url": "https://github.com/vitest-dev/vitest",
+      "stars": 14667,
+      "issuesTotal": 347,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/vitest-dev/vitest#readme"
+  },
+  {
+    "id": 3,
+    "name": "cypress",
+    "description": "Cypress is a next generation front end testing tool built for the modern web",
+    "npm": {
+      "name": "cypress",
+      "url": "https://www.npmjs.com/package/cypress",
+      "downloads": 28185465,
+      "firstReleased": "2014-03-09T01:07:35.219Z",
+      "lastReleased": "2025-07-15T20:42:42.375Z"
+    },
+    "github": {
+      "url": "https://github.com/cypress-io/cypress",
+      "stars": 48773,
+      "issuesTotal": 1319,
+      "issuesResolved": 0
+    },
+    "website": "https://cypress.io"
+  },
+  {
+    "id": 4,
+    "name": "playwright",
+    "description": "A high-level API to automate web browsers",
+    "npm": {
+      "name": "playwright",
+      "url": "https://www.npmjs.com/package/playwright",
+      "downloads": 95662512,
+      "firstReleased": "2015-01-23T20:49:28.632Z",
+      "lastReleased": "2025-07-20T00:45:08.564Z"
+    },
+    "github": {
+      "url": "https://github.com/microsoft/playwright",
+      "stars": 74959,
+      "issuesTotal": 848,
+      "issuesResolved": 0
+    },
+    "website": "https://playwright.dev"
+  },
+  {
+    "id": 5,
+    "name": "@testing-library/react",
+    "description": "Simple and complete React DOM testing utilities that encourage good testing practices.",
+    "npm": {
+      "name": "@testing-library/react",
+      "url": "https://www.npmjs.com/package/@testing-library/react",
+      "downloads": 70937595,
+      "firstReleased": "2019-05-30T17:36:28.974Z",
+      "lastReleased": "2025-04-02T17:03:39.139Z"
+    },
+    "github": {
+      "url": "https://github.com/testing-library/react-testing-library",
+      "stars": 19336,
+      "issuesTotal": 61,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/testing-library/react-testing-library#readme"
+  },
+  {
+    "id": 6,
+    "name": "@testing-library/vue",
+    "description": "Simple and complete Vue DOM testing utilities that encourage good testing practices.",
+    "npm": {
+      "name": "@testing-library/vue",
+      "url": "https://www.npmjs.com/package/@testing-library/vue",
+      "downloads": 1987784,
+      "firstReleased": "2019-05-31T18:46:44.234Z",
+      "lastReleased": "2024-10-11T16:11:59.523Z"
+    },
+    "github": {
+      "url": "https://github.com/testing-library/vue-testing-library",
+      "stars": 1105,
+      "issuesTotal": 32,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/testing-library/vue-testing-library#readme"
+  },
+  {
+    "id": 7,
+    "name": "storybook",
+    "description": "Storybook framework-agnostic API",
+    "npm": {
+      "name": "storybook",
+      "url": "https://www.npmjs.com/package/storybook",
+      "downloads": 30001274,
+      "firstReleased": "2016-04-04T23:39:56.753Z",
+      "lastReleased": "2025-07-18T11:51:35.630Z"
+    },
+    "github": {
+      "url": "https://github.com/storybookjs/storybook",
+      "stars": 87267,
+      "issuesTotal": 2178,
+      "issuesResolved": 0
+    },
+    "website": "https://storybook.js.org"
+  },
+  {
+    "id": 8,
+    "name": "mocha",
+    "description": "simple, flexible, fun test framework",
+    "npm": {
+      "name": "mocha",
+      "url": "https://www.npmjs.com/package/mocha",
+      "downloads": 62444932,
+      "firstReleased": "2011-11-08T23:08:55.982Z",
+      "lastReleased": "2025-06-24T13:35:20.516Z"
+    },
+    "github": {
+      "url": "https://github.com/mochajs/mocha",
+      "stars": 22803,
+      "issuesTotal": 213,
+      "issuesResolved": 0
+    },
+    "website": "https://mochajs.org/"
+  },
+  {
+    "id": 9,
+    "name": "jasmine",
+    "description": "CLI for Jasmine, a simple JavaScript testing framework for browsers and Node",
+    "npm": {
+      "name": "jasmine",
+      "url": "https://www.npmjs.com/package/jasmine",
+      "downloads": 7316669,
+      "firstReleased": "2014-08-22T20:18:42.737Z",
+      "lastReleased": "2025-07-19T15:43:59.271Z"
+    },
+    "github": {
+      "url": "https://github.com/jasmine/jasmine-npm",
+      "stars": 381,
+      "issuesTotal": 0,
+      "issuesResolved": 0
+    },
+    "website": "http://jasmine.github.io/"
+  },
+  {
+    "id": 10,
+    "name": "karma",
+    "description": "Spectacular Test Runner for JavaScript.",
+    "npm": {
+      "name": "karma",
+      "url": "https://www.npmjs.com/package/karma",
+      "downloads": 15138551,
+      "firstReleased": "2013-03-09T06:49:43.156Z",
+      "lastReleased": "2024-11-06T08:59:02.981Z"
+    },
+    "github": {
+      "url": "https://github.com/karma-runner/karma",
+      "stars": 11972,
+      "issuesTotal": 384,
+      "issuesResolved": 0
+    },
+    "website": "https://karma-runner.github.io/"
+  }
+]

@@ -19,7 +19,7 @@ import {
   Calendar,
 } from 'lucide-react';
 // import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { LinkButton } from '@/components/ui/link-button';
 
 // Format date to show age in years or months
 function formatAge(dateString: string) {
@@ -132,37 +132,37 @@ function PackageItem({ info }: { info: any }) {
         </div>
         <div className='flex gap-2 shrink-0'>
           {info?.github?.url && (
-            <Button
+            <LinkButton
+              href={info.github.url}
               variant='outline'
               size='sm'
               className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
-              onClick={() => window.open(info.github.url, '_blank')}
             >
               <Github className='h-4 w-4' />
               <span className='hidden sm:inline'>GitHub</span>
-            </Button>
+            </LinkButton>
           )}
           {info?.npm?.url && (
-            <Button
+            <LinkButton
+              href={info.npm.url}
               variant='outline'
               size='sm'
               className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
-              onClick={() => window.open(info.npm.url, '_blank')}
             >
               <Download className='h-4 w-4' />
               <span className='hidden sm:inline'>NPM</span>
-            </Button>
+            </LinkButton>
           )}
           {info?.website && (
-            <Button
+            <LinkButton
+              href={info.website}
               variant='outline'
               size='sm'
               className='bg-zinc-1000 gap-2 text-zinc-300 border-zinc-700 hover:bg-zinc-800 hover:text-yellow-400'
-              onClick={() => window.open(info.website, '_blank')}
             >
               <ExternalLink className='h-4 w-4' />
               <span className='hidden sm:inline'>Website</span>
-            </Button>
+            </LinkButton>
           )}
         </div>
       </div>

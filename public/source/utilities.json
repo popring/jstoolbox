@@ -1,0 +1,15 @@
+{
+  "name": "utilities",
+  "packages": [
+    "lodash",
+    "ramda",
+    "date-fns",
+    "dayjs",
+    "axios",
+    "ky",
+    "uuid",
+    "classnames",
+    "clsx",
+    "nanoid"
+  ]
+} 

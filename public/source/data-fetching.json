@@ -1,0 +1,14 @@
+{
+  "name": "data-fetching",
+  "packages": [
+    "@tanstack/react-query",
+    "swr",
+    "apollo-client",
+    "@tanstack/vue-query",
+    "urql",
+    "relay",
+    "react-query",
+    "axios",
+    "ky"
+  ]
+} 

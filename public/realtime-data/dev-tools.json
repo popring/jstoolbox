@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "eslint",
+    "description": "An AST-based pattern checker for JavaScript.",
+    "npm": {
+      "name": "eslint",
+      "url": "https://www.npmjs.com/package/eslint",
+      "downloads": 293824340,
+      "firstReleased": "2013-07-04T17:01:29.347Z",
+      "lastReleased": "2025-07-11T20:34:32.974Z"
+    },
+    "github": {
+      "url": "https://github.com/eslint/eslint",
+      "stars": 26111,
+      "issuesTotal": 89,
+      "issuesResolved": 0
+    },
+    "website": "https://eslint.org"
+  },
+  {
+    "id": 2,
+    "name": "prettier",
+    "description": "Prettier is an opinionated code formatter",
+    "npm": {
+      "name": "prettier",
+      "url": "https://www.npmjs.com/package/prettier",
+      "downloads": 258591057,
+      "firstReleased": "2017-01-10T03:45:38.963Z",
+      "lastReleased": "2025-06-27T02:53:53.358Z"
+    },
+    "github": {
+      "url": "https://github.com/prettier/prettier",
+      "stars": 50743,
+      "issuesTotal": 1462,
+      "issuesResolved": 0
+    },
+    "website": "https://prettier.io"
+  },
+  {
+    "id": 3,
+    "name": "husky",
+    "description": "Modern native Git hooks",
+    "npm": {
+      "name": "husky",
+      "url": "https://www.npmjs.com/package/husky",
+      "downloads": 81972220,
+      "firstReleased": "2014-06-09T01:32:44.741Z",
+      "lastReleased": "2025-01-11T17:19:02.945Z"
+    },
+    "github": {
+      "url": "https://github.com/typicode/husky",
+      "stars": 33818,
+      "issuesTotal": 93,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/typicode/husky#readme"
+  },
+  {
+    "id": 4,
+    "name": "lint-staged",
+    "description": "Lint files staged by git",
+    "npm": {
+      "name": "lint-staged",
+      "url": "https://www.npmjs.com/package/lint-staged",
+      "downloads": 63756589,
+      "firstReleased": "2016-01-15T11:00:29.432Z",
+      "lastReleased": "2025-06-15T10:07:20.765Z"
+    },
+    "github": {
+      "url": "https://github.com/lint-staged/lint-staged",
+      "stars": 14019,
+      "issuesTotal": 53,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/lint-staged/lint-staged#readme"
+  },
+  {
+    "id": 5,
+    "name": "typescript",
+    "description": "TypeScript is a language for application scale JavaScript development",
+    "npm": {
+      "name": "typescript",
+      "url": "https://www.npmjs.com/package/typescript",
+      "downloads": 404224183,
+      "firstReleased": "2012-10-01T15:35:39.553Z",
+      "lastReleased": "2025-07-19T07:15:50.927Z"
+    },
+    "github": {
+      "url": "https://github.com/microsoft/TypeScript",
+      "stars": 105304,
+      "issuesTotal": 6094,
+      "issuesResolved": 0
+    },
+    "website": "https://www.typescriptlang.org/"
+  },
+  {
+    "id": 6,
+    "name": "@babel/core",
+    "description": "Babel compiler core.",
+    "npm": {
+      "name": "@babel/core",
+      "url": "https://www.npmjs.com/package/@babel/core",
+      "downloads": 341112221,
+      "firstReleased": "2017-10-30T18:36:15.121Z",
+      "lastReleased": "2025-07-02T09:04:46.146Z"
+    },
+    "github": {
+      "url": "https://github.com/babel/babel",
+      "stars": 43663,
+      "issuesTotal": 757,
+      "issuesResolved": 0
+    },
+    "website": "https://babel.dev/docs/en/next/babel-core"
+  },
+  {
+    "id": 7,
+    "name": "postcss",
+    "description": "Tool for transforming styles with JS plugins",
+    "npm": {
+      "name": "postcss",
+      "url": "https://www.npmjs.com/package/postcss",
+      "downloads": 471444875,
+      "firstReleased": "2013-11-04T19:57:14.218Z",
+      "lastReleased": "2025-06-16T13:58:02.419Z"
+    },
+    "github": {
+      "url": "https://github.com/postcss/postcss",
+      "stars": 28819,
+      "issuesTotal": 28,
+      "issuesResolved": 0
+    },
+    "website": "https://postcss.org/"
+  },
+  {
+    "id": 8,
+    "name": "stylelint",
+    "description": "A mighty CSS linter that helps you avoid errors and enforce conventions.",
+    "npm": {
+      "name": "stylelint",
+      "url": "https://www.npmjs.com/package/stylelint",
+      "downloads": 26677570,
+      "firstReleased": "2014-12-11T07:23:24.871Z",
+      "lastReleased": "2025-07-18T10:50:25.115Z"
+    },
+    "github": {
+      "url": "https://github.com/stylelint/stylelint",
+      "stars": 11297,
+      "issuesTotal": 173,
+      "issuesResolved": 0
+    },
+    "website": "https://stylelint.io"
+  },
+  {
+    "id": 9,
+    "name": "commitizen",
+    "description": "Git commit, but play nice with conventions.",
+    "npm": {
+      "name": "commitizen",
+      "url": "https://www.npmjs.com/package/commitizen",
+      "downloads": 6713309,
+      "firstReleased": "2015-04-20T17:27:19.076Z",
+      "lastReleased": "2024-09-27T04:18:48.950Z"
+    },
+    "github": {
+      "url": "https://github.com/commitizen/cz-cli",
+      "stars": 17267,
+      "issuesTotal": 191,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/commitizen/cz-cli"
+  },
+  {
+    "id": 10,
+    "name": "conventional-changelog",
+    "description": "Generate a changelog from git metadata.",
+    "npm": {
+      "name": "conventional-changelog",
+      "url": "https://www.npmjs.com/package/conventional-changelog",
+      "downloads": 9912011,
+      "firstReleased": "2014-01-04T21:19:09.255Z",
+      "lastReleased": "2025-07-10T17:31:06.154Z"
+    },
+    "github": {
+      "url": "https://github.com/conventional-changelog/conventional-changelog",
+      "stars": 8165,
+      "issuesTotal": 242,
+      "issuesResolved": 0
+    },
+    "website": "https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog#readme"
+  }
+]
