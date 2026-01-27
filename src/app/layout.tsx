@@ -107,7 +107,7 @@ export default function RootLayout({
           gtag('config', 'G-EVXMWG8Q3Z');
         `
       }} />
-      <body>
+      <body className='bg-slate-950 text-slate-200 antialiased selection:bg-yellow-500/20 selection:text-yellow-400'>
         <StructuredData />
         <Header />
           <div className='bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950'>

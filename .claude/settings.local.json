@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install fuse.js)",
+      "Bash(pnpm add fuse.js)",
+      "Bash(npm run dev)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(git add .)"
+    ]
+  }
+}
