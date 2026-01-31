@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { formatDownloads } from '@/lib/utils';
-import { getCategories } from './service/categories';
+import { getCategories, getCategory } from './service/categories';
 import { Search } from 'lucide-react';
 
 // 分类图标映射
@@ -64,7 +64,6 @@ export default async function Home() {
 
   for (const category of categories) {
     try {
-      const { getCategory } = await import('./service/categories');
       const { data } = await getCategory(category);
       if (data && Array.isArray(data)) {
         // 按 stars 排序
