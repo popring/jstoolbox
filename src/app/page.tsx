@@ -59,7 +59,7 @@ interface PackageInfo {
 export default async function Home() {
   const { categories } = await getCategories();
 
-  // 加载所有分类的数据用于获取 Featured 和各分类 Top 3
+  // 加载所有分类的数据
   const allPackagesByCategory: Record<string, PackageInfo[]> = {};
 
   for (const category of categories) {
@@ -75,12 +75,6 @@ export default async function Home() {
       console.error(`Failed to load category ${category}:`, error);
     }
   }
-
-  // 获取 Featured 包（所有分类中 stars 最高的 3 个）
-  const allPackages = Object.values(allPackagesByCategory).flat();
-  const featuredPackages = allPackages
-    .sort((a, b) => (b.github?.stars || 0) - (a.github?.stars || 0))
-    .slice(0, 3);
 
   return (
     <div className='min-h-screen bg-gray-50 dark:bg-slate-950 transition-colors duration-300'>
@@ -105,7 +99,7 @@ export default async function Home() {
 
             {/* Description */}
             <p className='text-lg text-gray-600 dark:text-slate-300 mb-8'>
-              Discover the best JavaScript packages to enhance your development workflow
+              Discover the best JavaScript packages for your next project
             </p>
 
             {/* Search Box */}
@@ -124,44 +118,28 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured Section */}
-      <section className='py-12 md:py-16'>
-        <div className='container mx-auto px-4'>
-          <div className='flex items-center gap-2 mb-8'>
-            <div className='h-8 w-1 bg-amber-500 rounded-full' />
-            <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Featured</h2>
-          </div>
-
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-            {featuredPackages.map((pkg, index) => (
-              <FeaturedCard key={pkg.name} package={pkg} index={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Categories Section */}
       <section className='py-12 md:py-16 bg-white dark:bg-slate-900'>
         <div className='container mx-auto px-4'>
           <div className='flex items-center gap-2 mb-8'>
             <div className='h-8 w-1 bg-amber-500 rounded-full' />
-            <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Browse by Category</h2>
+            <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Categories</h2>
           </div>
 
-          <div className='space-y-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {categories.map((category) => {
               const packages = allPackagesByCategory[category] || [];
-              const top3Packages = packages.slice(0, 3);
+              const topPackages = packages.slice(0, 3);
 
-              if (top3Packages.length === 0) return null;
+              if (topPackages.length === 0) return null;
 
               return (
-                <CategorySection
+                <CategoryCard
                   key={category}
                   category={category}
                   icon={categoryIcons[category] || '📦'}
                   name={categoryNames[category] || category}
-                  packages={top3Packages}
+                  packages={topPackages}
                   totalCount={packages.length}
                 />
               );
@@ -180,47 +158,7 @@ export default async function Home() {
   );
 }
 
-function FeaturedCard({ package: pkg, index }: { package: PackageInfo; index: number }) {
-  return (
-    <Link
-      href={pkg.github?.url || pkg.npm?.url || '#'}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='group block bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-100 dark:border-slate-700 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300 hover:-translate-y-1'
-    >
-      <div className='flex items-start justify-between mb-4'>
-        <div className='flex items-center gap-3'>
-          <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold ${
-            index === 0 ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400' :
-            index === 1 ? 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-400' :
-            'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400'
-          }`}>
-            {index + 1}
-          </div>
-          <div>
-            <h3 className='font-semibold text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors'>
-              {pkg.name}
-            </h3>
-            <p className='text-xs text-gray-500 dark:text-slate-400'>
-              ⭐ {pkg.github?.stars?.toLocaleString() || 0}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p className='text-sm text-gray-600 dark:text-slate-300 line-clamp-2 mb-4'>
-        {pkg.description || 'No description'}
-      </p>
-
-      <div className='flex items-center justify-between text-xs text-gray-500 dark:text-slate-400'>
-        <span>{formatDownloads(pkg.npm?.downloads || 0)} weekly</span>
-        <span className='group-hover:translate-x-1 transition-transform'>→</span>
-      </div>
-    </Link>
-  );
-}
-
-function CategorySection({
+function CategoryCard({
   category,
   icon,
   name,
@@ -234,68 +172,51 @@ function CategorySection({
   totalCount: number;
 }) {
   return (
-    <div>
-      {/* Category Header */}
-      <div className='flex items-center justify-between mb-6'>
-        <Link
-          href={`/categories/${category}`}
-          className='flex items-center gap-3 group'
-        >
-          <div className='w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform'>
-            {icon}
-          </div>
-          <div>
-            <h3 className='text-lg font-semibold text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors'>
-              {name}
-            </h3>
-            <p className='text-sm text-gray-500 dark:text-slate-400'>
-              {totalCount} packages
-            </p>
-          </div>
-        </Link>
-
-        <Link
-          href={`/categories/${category}`}
-          className='text-sm text-amber-500 hover:text-amber-600 dark:hover:text-amber-400 font-medium flex items-center gap-1'
-        >
-          View All
-          <span className='group-hover:translate-x-1 transition-transform'>→</span>
-        </Link>
+    <Link
+      href={`/categories/${category}`}
+      className='group block bg-gray-50 dark:bg-slate-800/50 rounded-xl p-5 border border-gray-100 dark:border-slate-700 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300'
+    >
+      {/* Header */}
+      <div className='flex items-center gap-3 mb-4'>
+        <div className='w-10 h-10 rounded-lg bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-xl group-hover:scale-110 transition-transform'>
+          {icon}
+        </div>
+        <div>
+          <h3 className='font-semibold text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors'>
+            {name}
+          </h3>
+          <p className='text-xs text-gray-500 dark:text-slate-400'>
+            {totalCount} packages
+          </p>
+        </div>
       </div>
 
-      {/* Top 3 Packages */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+      {/* Preview Packages */}
+      <div className='space-y-2'>
         {packages.map((pkg) => (
-          <PackageCard key={pkg.name} package={pkg} />
+          <div key={pkg.name} className='flex items-center justify-between py-2 border-b border-gray-100 dark:border-slate-700 last:border-0'>
+            <div className='flex-1 min-w-0 mr-3'>
+              <p className='text-sm font-medium text-gray-700 dark:text-gray-300 truncate group-hover:text-amber-500 transition-colors'>
+                {pkg.name}
+              </p>
+              <p className='text-xs text-gray-400 dark:text-slate-500 truncate'>
+                {formatDownloads(pkg.npm?.downloads || 0)} weekly
+              </p>
+            </div>
+            <div className='flex items-center gap-1 text-xs text-gray-400 dark:text-slate-500'>
+              <span>⭐</span>
+              <span>{pkg.github?.stars?.toLocaleString() || 0}</span>
+            </div>
+          </div>
         ))}
       </div>
-    </div>
-  );
-}
 
-function PackageCard({ package: pkg }: { package: PackageInfo }) {
-  return (
-    <Link
-      href={pkg.github?.url || pkg.npm?.url || '#'}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='group block bg-gray-50 dark:bg-slate-800/50 rounded-lg p-4 border border-gray-100 dark:border-slate-700 hover:border-amber-200 dark:hover:border-amber-700 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200'
-    >
-      <div className='flex items-start justify-between mb-2'>
-        <h4 className='font-medium text-gray-900 dark:text-white text-sm group-hover:text-amber-500 transition-colors'>
-          {pkg.name}
-        </h4>
-      </div>
-
-      <p className='text-xs text-gray-500 dark:text-slate-400 line-clamp-2 mb-3'>
-        {pkg.description || 'No description'}
-      </p>
-
-      <div className='flex items-center gap-3 text-xs text-gray-400 dark:text-slate-500'>
-        <span className='flex items-center gap-1'>
-          ⭐ {pkg.github?.stars?.toLocaleString() || 0}
+      {/* View All Link */}
+      <div className='mt-4 pt-3 border-t border-gray-100 dark:border-slate-700'>
+        <span className='text-sm text-amber-500 font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all'>
+          View All {totalCount}+
+          <span className='group-hover:translate-x-1 transition-transform'>→</span>
         </span>
-        <span>{formatDownloads(pkg.npm?.downloads || 0)}/wk</span>
       </div>
     </Link>
   );
