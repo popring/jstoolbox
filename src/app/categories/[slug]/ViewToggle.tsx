@@ -50,9 +50,9 @@ export function ViewToggle({
     <div className='flex flex-col gap-6 w-full'>
       {/* Toggle Buttons - 居中显示 */}
       <div className='flex justify-center'>
-        <div className='flex gap-2 bg-zinc-900/50 rounded-lg p-1 border border-zinc-700'>
+        <div className='flex gap-2 bg-gray-100 dark:bg-slate-800 rounded-lg p-1 border border-gray-200 dark:border-slate-700'>
           <Button
-            variant={preferences.viewMode === 'individual' ? 'yellow' : 'ghostDark'}
+            variant={preferences.viewMode === 'individual' ? 'default' : 'ghost'}
             size='sm'
             className='flex items-center gap-2'
             onClick={() => handleViewModeChange('individual')}
@@ -62,7 +62,7 @@ export function ViewToggle({
             <span className='sm:hidden'>Individual</span>
           </Button>
           <Button
-            variant={preferences.viewMode === 'grouped' ? 'yellow' : 'ghostDark'}
+            variant={preferences.viewMode === 'grouped' ? 'default' : 'ghost'}
             size='sm'
             className='flex items-center gap-2'
             onClick={() => handleViewModeChange('grouped')}

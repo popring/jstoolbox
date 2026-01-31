@@ -47,21 +47,21 @@ export default async function Home() {
   const { categories } = await getCategories();
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-black to-slate-900'>
+    <div className='min-h-screen bg-gray-50 dark:bg-slate-950 transition-colors duration-300'>
       {/* Hero Section */}
       <div className='container mx-auto px-4 pt-28 pb-16 text-center'>
         <div className='animate-fade-in-up'>
-          <div className='relative mx-auto mb-8 h-24 w-24 overflow-hidden rounded-xl bg-yellow-400 shadow-lg shadow-yellow-400/20'>
+          <div className='relative mx-auto mb-8 h-24 w-24 overflow-hidden rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 shadow-lg shadow-amber-500/20'>
             <div className='absolute inset-0 flex items-center justify-center'>
-              <span className='text-6xl font-bold text-black'>JS</span>
+              <span className='text-6xl font-bold text-white'>JS</span>
             </div>
           </div>
 
-          <h1 className='mb-4 bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl'>
+          <h1 className='mb-4 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl'>
             JS Toolbox
           </h1>
 
-          <p className='mx-auto mb-8 max-w-2xl text-lg text-slate-300 sm:text-xl'>
+          <p className='mx-auto mb-8 max-w-2xl text-lg text-gray-600 dark:text-slate-300 sm:text-xl'>
             Find the perfect JavaScript packages to enhance your development
             workflow
           </p>
@@ -85,10 +85,10 @@ export default async function Home() {
       {/* Featured Section */}
       <div className='container mx-auto px-4 py-16'>
         <div className='mb-8 flex items-center justify-between'>
-          <h2 className='text-2xl font-bold text-white'>Featured Packages</h2>
+          <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Featured Packages</h2>
           {/* <Link
             href='/featured'
-            className='flex items-center text-sm text-yellow-400 hover:text-yellow-300'
+            className='flex items-center text-sm text-amber-500 hover:text-amber-600 dark:hover:text-amber-400'
           >
             View all <ChevronRight className='ml-1 h-4 w-4' />
           </Link> */}
@@ -117,35 +117,9 @@ export default async function Home() {
       </div>
 
       {/* Footer */}
-      <footer className='border-t border-slate-800 bg-black py-8'>
-        <div className='container mx-auto px-4 text-center text-sm text-slate-500'>
+      <footer className='border-t border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 transition-colors duration-300'>
+        <div className='container mx-auto px-4 text-center text-sm text-gray-500 dark:text-slate-400'>
           <p>© {new Date().getFullYear()} JS Toolbox. All rights reserved.</p>
-          {/* <div className='mt-2 flex justify-center space-x-4'>
-            <LinkButton
-              href='/about'
-              variant='ghost'
-              size='sm'
-              className='text-slate-500 hover:text-slate-300 p-0 h-auto'
-            >
-              About
-            </LinkButton>
-            <LinkButton
-              href='/contact'
-              variant='ghost'
-              size='sm'
-              className='text-slate-500 hover:text-slate-300 p-0 h-auto'
-            >
-              Contact
-            </LinkButton>
-            <LinkButton
-              href='/privacy'
-              variant='ghost'
-              size='sm'
-              className='text-slate-500 hover:text-slate-300 p-0 h-auto'
-            >
-              Privacy
-            </LinkButton>
-          </div> */}
         </div>
       </footer>
     </div>
@@ -166,16 +140,16 @@ function CategoryCard({
   return (
     <Link
       href={href}
-      className='group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-yellow-500/50 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-yellow-500/5'
+      className='group relative overflow-hidden rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-amber-300 dark:hover:border-amber-700 hover:-translate-y-1'
     >
       <div className='flex flex-col items-center text-center'>
-        <div className='mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500 transition-all duration-300 group-hover:bg-yellow-500 group-hover:text-black text-2xl'>
+        <div className='mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20 text-2xl transition-all duration-300 group-hover:bg-amber-500 group-hover:text-white'>
           {icon}
         </div>
-        <h3 className='mb-1 font-medium text-white capitalize'>{title.replace('-', ' ')}</h3>
-        <p className='text-xs text-slate-400'>{description}</p>
+        <h3 className='mb-1 font-medium text-gray-900 dark:text-white capitalize'>{title.replace('-', ' ')}</h3>
+        <p className='text-xs text-gray-500 dark:text-slate-400'>{description}</p>
       </div>
-      <div className='absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-yellow-400 to-yellow-500 transition-all duration-300 group-hover:w-full'></div>
+      <div className='absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-300 group-hover:w-full'></div>
     </Link>
   );
 }
@@ -192,17 +166,17 @@ function FeaturedCard({
   category: string;
 }) {
   return (
-    <div className='overflow-hidden rounded-xl border border-slate-800 bg-slate-900/50 transition-all duration-300 hover:border-slate-700 hover:shadow-lg'>
+    <div className='overflow-hidden rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1'>
       <div className='p-6'>
-        <div className='mb-1 text-xs font-medium text-yellow-500'>
+        <div className='mb-1 text-xs font-medium text-amber-500'>
           {category}
         </div>
-        <h3 className='mb-2 text-xl font-semibold text-white'>{title}</h3>
-        <p className='mb-4 text-sm text-slate-400'>{description}</p>
-        <div className='flex items-center text-xs text-slate-500'>
+        <h3 className='mb-2 text-xl font-semibold text-gray-900 dark:text-white'>{title}</h3>
+        <p className='mb-4 text-sm text-gray-600 dark:text-slate-400'>{description}</p>
+        <div className='flex items-center text-xs text-gray-500 dark:text-slate-500'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            className='mr-1 h-4 w-4 fill-current text-yellow-500'
+            className='mr-1 h-4 w-4 fill-current text-amber-500'
             viewBox='0 0 20 20'
           >
             <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
@@ -210,8 +184,8 @@ function FeaturedCard({
           {formatNumber(stars)} stars
         </div>
       </div>
-      <div className='flex items-center justify-between border-t border-slate-800 px-6 py-3'>
-        <span className='text-xs text-slate-500'>
+      <div className='flex items-center justify-between border-t border-gray-100 dark:border-slate-800 px-6 py-3 bg-gray-50 dark:bg-slate-900/50'>
+        <span className='text-xs text-gray-500 dark:text-slate-400'>
           Weekly downloads: {formatDownloads(Math.floor(stars * 7.5))}
         </span>
       </div>

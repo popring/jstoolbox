@@ -1,17 +1,18 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { Suspense, useState, useEffect, useMemo } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search, Filter, Grid, List, ExternalLink } from 'lucide-react';
+import { Search, Grid, List, ExternalLink } from 'lucide-react';
 import { searchPackages } from '@/lib/search';
 import { fetchCategories, fetchCategoryPackages } from '@/lib/api/data';
 import { PackageInfo } from '@/app/types/categories';
 import { formatDownloads } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const query = searchParams.get('q') || '';
@@ -69,7 +70,6 @@ export default function SearchPage() {
     // 分类过滤
     if (filterCategory) {
       filtered = filtered.filter(pkg => {
-        // 这里需要根据实际数据结构实现过滤逻辑
         return pkg.name.includes(filterCategory) ||
                pkg.description?.toLowerCase().includes(filterCategory.toLowerCase());
       });
@@ -94,13 +94,13 @@ export default function SearchPage() {
   }, [results, sortBy, filterCategory]);
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950'>
+    <div className='min-h-screen bg-gray-50 dark:bg-slate-950 transition-colors duration-300'>
       <div className='container mx-auto px-4 py-24'>
         {/* Search header */}
         <div className='mb-8'>
           <div className='flex items-center gap-4 mb-4'>
-            <Search className='h-6 w-6 text-yellow-500' />
-            <h1 className='text-3xl font-bold text-white'>
+            <Search className='h-6 w-6 text-amber-500' />
+            <h1 className='text-3xl font-bold text-gray-900 dark:text-white'>
               Search Results
             </h1>
           </div>
@@ -122,12 +122,12 @@ export default function SearchPage() {
               type='text'
               defaultValue={query}
               placeholder='Search packages...'
-              className='w-full h-12 pl-12 pr-4 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-yellow-500/50 focus:bg-slate-800 transition-colors'
+              className='w-full h-12 pl-12 pr-4 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors'
             />
-            <Search className='absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-slate-400' />
+            <Search className='absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-slate-400' />
             <Button
               type='submit'
-              className='absolute right-2 top-1/2 transform -translate-y-1/2 h-8 px-4 bg-yellow-500 hover:bg-yellow-400 text-black text-sm font-medium'
+              className='absolute right-2 top-1/2 transform -translate-y-1/2 h-8 px-4 bg-amber-500 hover:bg-amber-400 text-white text-sm font-medium'
             >
               Search
             </Button>
@@ -135,8 +135,8 @@ export default function SearchPage() {
 
           {/* Search query info */}
           {query && (
-            <p className='mt-2 text-sm text-slate-400'>
-              Showing results for <span className='text-yellow-400 font-medium'>"{query}"</span>
+            <p className='mt-2 text-sm text-gray-500 dark:text-slate-400'>
+              Showing results for <span className='text-amber-500 font-medium'>&quot;{query}&quot;</span>
             </p>
           )}
         </div>
@@ -147,11 +147,11 @@ export default function SearchPage() {
             <div className='flex items-center gap-4'>
               {/* Sort options */}
               <div className='flex items-center gap-2'>
-                <span className='text-sm text-slate-400'>Sort by:</span>
+                <span className='text-sm text-gray-500 dark:text-slate-400'>Sort by:</span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className='px-3 py-1 bg-slate-800 border border-slate-700 rounded text-sm text-white focus:outline-none focus:border-yellow-500/50'
+                  className='px-3 py-1.5 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded text-sm text-gray-900 dark:text-white focus:outline-none focus:border-amber-500'
                 >
                   <option value='relevance'>Relevance</option>
                   <option value='downloads'>Downloads</option>
@@ -162,11 +162,11 @@ export default function SearchPage() {
 
               {/* Category filter */}
               <div className='flex items-center gap-2'>
-                <span className='text-sm text-slate-400'>Category:</span>
+                <span className='text-sm text-gray-500 dark:text-slate-400'>Category:</span>
                 <select
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
-                  className='px-3 py-1 bg-slate-800 border border-slate-700 rounded text-sm text-white focus:outline-none focus:border-yellow-500/50'
+                  className='px-3 py-1.5 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded text-sm text-gray-900 dark:text-white focus:outline-none focus:border-amber-500'
                 >
                   <option value=''>All</option>
                   {categories.map(cat => (
@@ -179,14 +179,14 @@ export default function SearchPage() {
             </div>
 
             {/* View mode */}
-            <div className='flex items-center gap-1 bg-slate-800/50 border border-slate-700 rounded-lg p-0.5'>
+            <div className='flex items-center gap-1 bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg p-0.5'>
               <button
                 onClick={() => setViewMode('grid')}
                 className={cn(
                   'p-1.5 rounded transition-colors',
                   viewMode === 'grid'
-                    ? 'bg-yellow-500/20 text-yellow-500'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-amber-500/20 text-amber-500'
+                    : 'text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-white'
                 )}
               >
                 <Grid className='h-4 w-4' />
@@ -196,8 +196,8 @@ export default function SearchPage() {
                 className={cn(
                   'p-1.5 rounded transition-colors',
                   viewMode === 'list'
-                    ? 'bg-yellow-500/20 text-yellow-500'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-amber-500/20 text-amber-500'
+                    : 'text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-white'
                 )}
               >
                 <List className='h-4 w-4' />
@@ -209,7 +209,7 @@ export default function SearchPage() {
         {/* Loading state */}
         {isLoading && (
           <div className='flex items-center justify-center py-20'>
-            <div className='flex items-center gap-2 text-yellow-500'>
+            <div className='flex items-center gap-2 text-amber-500'>
               <Search className='h-5 w-5 animate-pulse' />
               <span>Loading packages...</span>
             </div>
@@ -219,16 +219,16 @@ export default function SearchPage() {
         {/* No results */}
         {!isLoading && query && results.length === 0 && (
           <div className='text-center py-20'>
-            <Search className='h-12 w-12 text-slate-600 mx-auto mb-4' />
-            <h2 className='text-xl font-medium text-white mb-2'>
+            <Search className='h-12 w-12 text-gray-300 dark:text-slate-600 mx-auto mb-4' />
+            <h2 className='text-xl font-medium text-gray-700 dark:text-slate-300 mb-2'>
               No packages found
             </h2>
-            <p className='text-slate-400 mb-6'>
+            <p className='text-gray-500 dark:text-slate-400 mb-6'>
               Try searching with different keywords or browse categories
             </p>
             <Link
               href='/'
-              className='inline-flex items-center gap-2 px-4 py-2 bg-yellow-500 hover:bg-yellow-400 text-black font-medium rounded-lg transition-colors'
+              className='inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-400 text-white font-medium rounded-lg transition-colors'
             >
               Browse Categories
             </Link>
@@ -254,7 +254,7 @@ export default function SearchPage() {
 
         {/* Result count */}
         {filteredResults.length > 0 && (
-          <div className='mt-8 text-center text-sm text-slate-500'>
+          <div className='mt-8 text-center text-sm text-gray-500 dark:text-slate-400'>
             Showing {filteredResults.length} of {results.length} results
           </div>
         )}
@@ -275,11 +275,11 @@ function PackageCard({
     <>
       {/* Header */}
       <div className='flex items-start justify-between gap-4'>
-        <h3 className='text-lg font-semibold text-white mb-2'>
+        <h3 className='text-lg font-semibold text-gray-900 dark:text-white mb-2'>
           {pkg.name}
         </h3>
         {pkg.github?.stars && pkg.github.stars > 10000 && (
-          <Badge variant='secondary' className='bg-yellow-500/20 text-yellow-400'>
+          <Badge variant='secondary' className='bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400'>
             Popular
           </Badge>
         )}
@@ -287,13 +287,13 @@ function PackageCard({
 
       {/* Description */}
       {pkg.description && (
-        <p className='text-sm text-slate-300 line-clamp-2 mb-4'>
+        <p className='text-sm text-gray-600 dark:text-slate-300 line-clamp-2 mb-4'>
           {pkg.description}
         </p>
       )}
 
       {/* Stats */}
-      <div className='flex items-center gap-4 text-xs text-slate-400 mb-4'>
+      <div className='flex items-center gap-4 text-xs text-gray-500 dark:text-slate-400 mb-4'>
         {pkg.npm?.downloads && (
           <span>
             {formatDownloads(pkg.npm.downloads)} weekly
@@ -316,7 +316,7 @@ function PackageCard({
         {pkg.github?.url && (
           <button
             onClick={() => window.open(pkg.github!.url, '_blank')}
-            className='inline-flex items-center gap-2 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded text-sm text-white transition-colors'
+            className='inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm text-gray-700 dark:text-gray-200 transition-colors'
           >
             <ExternalLink className='h-3 w-3' />
             GitHub
@@ -325,7 +325,7 @@ function PackageCard({
         {pkg.npm?.url && (
           <button
             onClick={() => window.open(pkg.npm!.url, '_blank')}
-            className='inline-flex items-center gap-2 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded text-sm text-white transition-colors'
+            className='inline-flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded text-sm text-gray-700 dark:text-gray-200 transition-colors'
           >
             <ExternalLink className='h-3 w-3' />
             npm
@@ -337,7 +337,7 @@ function PackageCard({
 
   if (viewMode === 'list') {
     return (
-      <div className='bg-slate-900/50 border border-slate-800 rounded-lg p-4 hover:border-slate-700 transition-colors'>
+      <div className='bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-4 hover:shadow-md transition-all duration-300'>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 items-start'>
           <div className='lg:col-span-2'>
             <CardContent />
@@ -348,13 +348,29 @@ function PackageCard({
   }
 
   return (
-    <div className='bg-slate-900/50 border border-slate-800 rounded-lg p-5 hover:border-slate-700 transition-colors'>
+    <div className='bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-lg p-5 hover:shadow-lg transition-all duration-300'>
       <CardContent />
     </div>
   );
 }
 
-// Utility function for classNames
-function cn(...classes: (string | undefined | boolean)[]): string {
-  return classes.filter(Boolean).join(' ');
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className='min-h-screen bg-gray-50 dark:bg-slate-950 transition-colors duration-300'>
+        <div className='container mx-auto px-4 py-24'>
+          <div className='flex items-center gap-4 mb-4'>
+            <Search className='h-6 w-6 text-amber-500' />
+            <h1 className='text-3xl font-bold text-gray-900 dark:text-white'>Search Results</h1>
+          </div>
+          <div className='animate-pulse space-y-4'>
+            <div className='h-12 bg-gray-200 dark:bg-slate-800 rounded-lg max-w-2xl'></div>
+            <div className='h-64 bg-gray-200 dark:bg-slate-800 rounded'></div>
+          </div>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
+  );
 }

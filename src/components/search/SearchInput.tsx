@@ -137,7 +137,7 @@ export function SearchInput({ packages, className }: SearchInputProps) {
       <div className='relative'>
         {/* Search input */}
         <div className='relative group'>
-          <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400 group-focus-within:text-slate-300 transition-colors' />
+          <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-slate-400 group-focus-within:text-amber-500 transition-colors' />
 
           <input
             ref={inputRef}
@@ -158,16 +158,19 @@ export function SearchInput({ packages, className }: SearchInputProps) {
             placeholder='Search packages...'
             className={cn(
               'w-full h-10 pl-10 pr-24',
-              'bg-slate-800/50 border border-slate-700 rounded-lg',
-              'text-white placeholder-slate-400',
-              'focus:outline-none focus:border-yellow-500/50 focus:bg-slate-800',
+              'bg-white dark:bg-slate-800',
+              'border border-gray-300 dark:border-slate-600',
+              'rounded-lg',
+              'text-gray-900 dark:text-white',
+              'placeholder-gray-400 dark:placeholder-slate-400',
+              'focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500',
               'transition-all duration-200'
             )}
           />
 
           {/* Command/K shortcut hint */}
           <div className='absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center gap-1'>
-            <kbd className='hidden sm:flex items-center gap-1 px-1.5 py-0.5 text-xs text-slate-500 bg-slate-700/50 rounded'>
+            <kbd className='hidden sm:flex items-center gap-1 px-1.5 py-0.5 text-xs text-gray-500 dark:text-slate-400 bg-gray-100 dark:bg-slate-700/50 rounded'>
               <Command className='h-3 w-3' />
               K
             </kbd>
@@ -176,7 +179,7 @@ export function SearchInput({ packages, className }: SearchInputProps) {
             {query && (
               <button
                 onClick={handleClear}
-                className='flex items-center justify-center p-0.5 text-slate-400 hover:text-white transition-colors'
+                className='flex items-center justify-center p-0.5 text-gray-400 dark:text-slate-400 hover:text-gray-600 dark:hover:text-white transition-colors'
               >
                 <X className='h-4 w-4' />
               </button>
@@ -186,8 +189,8 @@ export function SearchInput({ packages, className }: SearchInputProps) {
 
         {/* Search history suggestions */}
         {!query && history.length > 0 && isOpen && (
-          <div className='absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-700 rounded-lg shadow-xl z-50 overflow-hidden'>
-            <div className='px-3 py-2 text-xs text-slate-500 border-b border-slate-800'>
+          <div className='absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-lg shadow-xl z-50 overflow-hidden'>
+            <div className='px-3 py-2 text-xs text-gray-500 dark:text-slate-400 border-b border-gray-100 dark:border-slate-800'>
               Recent searches
             </div>
             {history.map((term, index) => (
@@ -197,9 +200,9 @@ export function SearchInput({ packages, className }: SearchInputProps) {
                   setQuery(term);
                   inputRef.current?.focus();
                 }}
-                className='w-full px-4 py-2 text-left text-sm text-slate-300 hover:bg-slate-800/50 transition-colors flex items-center gap-3'
+                className='w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-3'
               >
-                <Search className='h-4 w-4 text-slate-500' />
+                <Search className='h-4 w-4 text-gray-400 dark:text-slate-500' />
                 {term}
               </button>
             ))}

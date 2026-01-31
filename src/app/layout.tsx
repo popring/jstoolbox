@@ -1,13 +1,12 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import type { Metadata } from 'next';
-// import { ThemeProvider } from '@/providers/theme-provider';
+import { ThemeProvider } from '@/providers/theme-provider';
 
 import './globals.css';
 import { Header } from '@/components/page/Header';
 import StructuredData from './structured-data';
 import Script from 'next/script';
-// import Footer from '@/components/page/Footer';
 
 dayjs.extend(relativeTime);
 
@@ -86,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -107,12 +106,19 @@ export default function RootLayout({
           gtag('config', 'G-EVXMWG8Q3Z');
         `
       }} />
-      <body className='bg-slate-950 text-slate-200 antialiased selection:bg-yellow-500/20 selection:text-yellow-400'>
+      <body className='antialiased selection:bg-amber-500/20 selection:text-amber-600'>
         <StructuredData />
-        <Header />
-          <div className='bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950'>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className='min-h-screen'>
             {children}
-          </div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

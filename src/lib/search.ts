@@ -1,8 +1,8 @@
-import Fuse from 'fuse.js';
+import Fuse, { type IFuseOptions } from 'fuse.js';
 import { PackageInfo } from '@/app/types/categories';
 
 // 搜索配置
-const fuseOptions: Fuse.IFuseOptions<PackageInfo> = {
+const fuseOptions: IFuseOptions<PackageInfo> = {
   keys: [
     {
       name: 'name',

@@ -56,7 +56,7 @@ export function SortSelector({ sortField, onFieldChange }: SortSelectorProps) {
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button
-          variant='dark'
+          variant='secondary'
           size='sm'
         >
           <CurrentIcon className='h-4 w-4' />

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getCategories, getCategory } from '../../service/categories';
+import { getCategories } from '../../service/categories';
 
 // GET /api/categories - 获取所有分类
 export async function GET() {

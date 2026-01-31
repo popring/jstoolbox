@@ -21,7 +21,7 @@ export function SortDirectionToggle({
 
   return (
     <Button
-      variant='dark'
+      variant='secondary'
       size='sm'
       onClick={handleToggle}
       title={sortDirection === 'asc' ? 'Switch to Descending' : 'Switch to Ascending'}

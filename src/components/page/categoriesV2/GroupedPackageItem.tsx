@@ -18,6 +18,7 @@ import { LinkButton } from '@/components/ui/link-button';
 import { formatDownloads } from '@/lib/utils';
 import { GroupedPackageInfo } from '@/app/types/categories';
 import { useState } from 'react';
+import { FavoriteButton } from './FavoriteButton';
 
 // Format date to show age in years or months
 function formatAge(dateString: string) {
@@ -47,7 +48,6 @@ function formatLastRelease(dateString: string) {
     const releaseDate = new Date(dateString);
     const now = new Date();
 
-    // Check if the date is in the future
     if (releaseDate > now) {
       return 'Coming soon';
     }
@@ -87,28 +87,26 @@ function StatCard({
 }) {
   return (
     <div
-      className='bg-zinc-800/50 rounded-lg p-3 flex flex-col items-center justify-center text-center hover:bg-zinc-800 transition-colors duration-200'
+      className='bg-gray-50 dark:bg-slate-800 rounded-lg p-3 flex flex-col items-center justify-center text-center border border-gray-100 dark:border-slate-700 hover:border-amber-200 dark:hover:border-amber-700 transition-all duration-200'
       title={tooltip}
     >
       <div className='mb-1'>{icon}</div>
-      <div className='text-base md:text-lg font-bold text-zinc-100'>
+      <div className='text-base md:text-lg font-bold text-gray-900 dark:text-white'>
         {value}
       </div>
-      <div className='text-xs text-zinc-400'>{label}</div>
+      <div className='text-xs text-gray-500 dark:text-slate-400'>{label}</div>
     </div>
   );
 }
 
 function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  // Calculate issue resolution percentage with safety checks
+
   const issuesTotal = group.repositoryIssuesTotal || 0;
   const issuesResolved = group.repositoryIssuesResolved || 0;
   const issueResolutionPercentage =
     issuesTotal > 0 ? Math.round((issuesResolved / issuesTotal) * 100) : 0;
 
-  // Format dates with safety checks
   const age = group.firstReleased
     ? formatAge(group.firstReleased)
     : 'Unknown';
@@ -116,27 +114,27 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
     ? formatLastRelease(group.lastReleased)
     : 'Unknown';
 
-  // Get the most popular package (highest downloads)
-  const mostPopularPackage = group.packages.reduce((prev, current) => 
+  const mostPopularPackage = group.packages.reduce((prev, current) =>
     (current.npm?.downloads || 0) > (prev.npm?.downloads || 0) ? current : prev
   );
 
   return (
-    <div className='bg-gradient-to-br from-zinc-900/90 to-zinc-950/90 border border-zinc-800 rounded-xl p-5 backdrop-blur-sm hover:border-yellow-900/50 transition-all duration-300 shadow-lg shadow-black/20'>
+    <div className='bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-lg transition-all duration-300'>
       <div className='flex flex-col md:flex-row md:items-start justify-between gap-4 mb-5'>
         <div className='flex-1'>
           <div className='flex items-center gap-3 mb-2'>
-            <h3 className='text-xl md:text-2xl font-bold text-yellow-400'>
+            <h3 className='text-xl md:text-2xl font-bold text-gray-900 dark:text-white inline-flex items-center gap-2'>
               {group.repositoryName}
+              <FavoriteButton name={group.repositoryName} size='sm' />
             </h3>
-            <Badge variant='outline' className='bg-zinc-800/50 text-zinc-300 border-zinc-700'>
+            <Badge variant='outline' className='bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-slate-300 border-gray-200 dark:border-slate-700'>
               {group.packages.length} package{group.packages.length > 1 ? 's' : ''}
             </Badge>
           </div>
-          <p className='text-zinc-300 mb-3 text-sm md:text-base'>
+          <p className='text-gray-600 dark:text-slate-300 mb-3 text-sm md:text-base'>
             {mostPopularPackage?.description || 'No description available'}
           </p>
-          <p className='text-zinc-500 text-xs md:text-sm truncate max-w-2xl'>
+          <p className='text-gray-400 dark:text-slate-500 text-xs md:text-sm truncate max-w-2xl'>
             {group.repositoryUrl || ''}
           </p>
         </div>
@@ -144,7 +142,7 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
           {group.repositoryUrl && (
             <LinkButton
               href={group.repositoryUrl}
-              variant='darkDeeper'
+              variant='secondary'
               size='sm'
             >
               <Github className='h-4 w-4' />
@@ -154,7 +152,7 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
           {group.website && (
             <LinkButton
               href={group.website}
-              variant='darkDeeper'
+              variant='secondary'
               size='sm'
             >
               <ExternalLink className='h-4 w-4' />
@@ -166,17 +164,17 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
 
       <div className='grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-4'>
         <StatCard
-          icon={<Download className='h-5 w-5 text-yellow-500' />}
+          icon={<Download className='h-5 w-5 text-amber-500' />}
           label='Total Downloads'
           value={formatDownloads(group.totalDownloads)}
         />
         <StatCard
-          icon={<Star className='h-5 w-5 text-yellow-500' />}
+          icon={<Star className='h-5 w-5 text-amber-500' />}
           label='Stars'
           value={group.repositoryStars.toLocaleString()}
         />
         <StatCard
-          icon={<Clock className='h-5 w-5 text-yellow-500' />}
+          icon={<Clock className='h-5 w-5 text-amber-500' />}
           label='Age'
           value={age}
           tooltip={
@@ -186,7 +184,7 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
           }
         />
         <StatCard
-          icon={<Calendar className='h-5 w-5 text-yellow-500' />}
+          icon={<Calendar className='h-5 w-5 text-amber-500' />}
           label='Last Release'
           value={lastRelease}
           tooltip={
@@ -197,12 +195,11 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
         />
       </div>
 
-      {/* Issues Section - Only show if there are issues */}
       {issuesTotal > 0 && (
-        <div className='bg-zinc-800/30 rounded-lg p-3 md:p-4 mb-4'>
+        <div className='bg-gray-50 dark:bg-slate-800/50 rounded-lg p-3 md:p-4 mb-4'>
           <div className='flex items-center justify-between mb-2'>
             <div className='flex items-center gap-2'>
-              <span className='text-zinc-300 text-sm font-medium'>
+              <span className='text-gray-700 dark:text-slate-300 text-sm font-medium'>
                 Issues Resolution
               </span>
             </div>
@@ -210,23 +207,23 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
               variant='outline'
               className={`text-xs ${
                 issueResolutionPercentage > 70
-                  ? 'bg-green-900/20 text-green-400 border-green-800'
+                  ? 'bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800'
                   : issueResolutionPercentage > 30
-                  ? 'bg-yellow-900/20 text-yellow-400 border-yellow-800'
-                  : 'bg-red-900/20 text-red-400 border-red-800'
+                  ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-800'
+                  : 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 border-red-200 dark:border-red-800'
               }`}
             >
               {issueResolutionPercentage}% Resolved
             </Badge>
           </div>
           <div className='flex items-center gap-2'>
-            <div className='h-2 flex-1 bg-zinc-700 rounded-full overflow-hidden'>
+            <div className='h-2 flex-1 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden'>
               <div
-                className='h-full bg-gradient-to-r from-yellow-500 to-yellow-300'
+                className='h-full bg-gradient-to-r from-amber-500 to-amber-400'
                 style={{ width: `${issueResolutionPercentage}%` }}
               ></div>
             </div>
-            <span className='text-zinc-400 text-xs'>
+            <span className='text-gray-500 dark:text-slate-400 text-xs'>
               {issuesResolved}/{issuesTotal}
             </span>
           </div>
@@ -234,11 +231,11 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
       )}
 
       {/* Packages List */}
-      <div className='border-t border-zinc-800 pt-4'>
+      <div className='border-t border-gray-100 dark:border-slate-800 pt-4'>
         <Button
           variant='ghost'
           size='sm'
-          className='w-full justify-between text-zinc-300 hover:text-yellow-400 hover:bg-zinc-800/50'
+          className='w-full justify-between text-gray-600 dark:text-slate-300 hover:text-amber-500 hover:bg-gray-100 dark:hover:bg-slate-800'
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <span className='flex items-center gap-2'>
@@ -251,26 +248,26 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
             <ChevronRight className='h-4 w-4' />
           )}
         </Button>
-        
+
         {isExpanded && (
           <div className='mt-3 space-y-2'>
             {group.packages.map((pkg, index) => (
               <div
                 key={pkg.id || index}
-                className='bg-zinc-800/30 rounded-lg p-3 flex items-center justify-between'
+                className='bg-gray-50 dark:bg-slate-800/50 rounded-lg p-3 flex items-center justify-between'
               >
                 <div className='flex-1'>
                   <div className='flex items-center gap-2 mb-1'>
-                    <span className='text-sm font-medium text-zinc-200'>
+                    <span className='text-sm font-medium text-gray-900 dark:text-white'>
                       {pkg.name}
                     </span>
                     {pkg.npm?.downloads && (
-                      <Badge variant='outline' className='text-xs bg-zinc-700/50 text-zinc-300 border-zinc-600'>
+                      <Badge variant='outline' className='text-xs bg-white dark:bg-slate-700 text-gray-600 dark:text-slate-300 border-gray-200 dark:border-slate-600'>
                         {formatDownloads(pkg.npm.downloads)} downloads
                       </Badge>
                     )}
                   </div>
-                  <p className='text-xs text-zinc-400 line-clamp-2'>
+                  <p className='text-xs text-gray-500 dark:text-slate-400 line-clamp-2'>
                     {pkg.description}
                   </p>
                 </div>
@@ -280,7 +277,7 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
                       href={pkg.npm.url}
                       variant='ghost'
                       size='sm'
-                      className='h-8 w-8 p-0 text-zinc-400 hover:text-yellow-400 hover:bg-zinc-700/50'
+                      className='h-8 w-8 p-0 text-gray-400 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 hover:bg-gray-100 dark:hover:bg-slate-700'
                       title='View on NPM'
                     >
                       <Download className='h-3 w-3' />
@@ -296,4 +293,4 @@ function GroupedPackageItem({ group }: { group: GroupedPackageInfo }) {
   );
 }
 
-export { GroupedPackageItem }; 
+export { GroupedPackageItem };

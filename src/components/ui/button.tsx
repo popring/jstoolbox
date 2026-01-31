@@ -1,22 +1,17 @@
 /**
  * Button Component Variants
- * 
+ *
  * Available variants:
- * - default: Primary button with primary colors
+ * - default: Primary button with primary colors (amber)
  * - destructive: Red button for destructive actions
  * - outline: Bordered button with background
  * - secondary: Secondary button with muted colors
  * - ghost: Transparent button with hover effects
  * - link: Text button that looks like a link
- * - dark: Dark theme button with zinc-900 background and yellow hover
- * - darkDeeper: Deeper dark theme button with zinc-1000 background
- * - yellow: Yellow highlight button for active states
- * - ghostDark: Dark ghost button with zinc colors and yellow hover
- * 
+ *
  * Usage:
- * <Button variant="dark" size="sm">Dark Button</Button>
- * <Button variant="yellow" size="sm">Active Button</Button>
- * <Button variant="darkDeeper" size="sm">Deep Dark Button</Button>
+ * <Button variant="default" size="sm">Default Button</Button>
+ * <Button variant="secondary" size="sm">Secondary Button</Button>
  */
 
 import * as React from "react"
@@ -26,28 +21,20 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+          "bg-amber-500 text-white shadow hover:bg-amber-400 dark:hover:bg-amber-600",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+          "bg-red-500 text-white shadow-sm hover:bg-red-600 dark:bg-red-900 dark:hover:bg-red-800",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "border border-gray-300 dark:border-slate-600 bg-transparent shadow-sm hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-900 dark:text-gray-100",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-zinc-800/50 hover:text-zinc-200",
-        link: "text-primary underline-offset-4 hover:underline",
-        // 新增暗色主题变体
-        dark: "bg-zinc-900/50 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-400",
-        // 新增更深的暗色变体
-        darkDeeper: "bg-zinc-1000 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:text-yellow-400",
-        // 新增黄色高亮变体
-        yellow: "bg-yellow-500 text-black hover:bg-yellow-400",
-        // 新增暗色幽灵变体
-        ghostDark: "text-zinc-300 hover:bg-zinc-800 hover:text-yellow-400",
+          "bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-gray-100 shadow-sm hover:bg-gray-200 dark:hover:bg-slate-700",
+        ghost: "hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-700 dark:text-gray-300",
+        link: "text-amber-500 underline-offset-4 hover:underline",
       },
       size: {
         default: "h-9 px-4 py-2",

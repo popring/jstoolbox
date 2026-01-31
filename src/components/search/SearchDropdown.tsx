@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { formatDownloads } from '@/lib/utils';
 import { Search, X, ExternalLink } from 'lucide-react';
 import { PackageInfo } from '@/app/types/categories';
@@ -88,7 +87,7 @@ export function SearchDropdown({
       {!isLoading && results.length === 0 && query && (
         <div className='p-4 text-center text-slate-400'>
           <X className='h-5 w-5 mx-auto mb-2' />
-          <p className='text-sm'>No packages found for "{query}"</p>
+          <p className='text-sm'>No packages found for &quot;{query}&quot;</p>
           <p className='text-xs mt-1'>Try searching with different keywords</p>
         </div>
       )}

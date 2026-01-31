@@ -5,7 +5,13 @@
       "Bash(pnpm add fuse.js)",
       "Bash(npm run dev)",
       "Bash(curl -s http://localhost:3000)",
-      "Bash(git add .)"
+      "Bash(git add .)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: implement global search functionality\n\n- Add fuzzy search with fuse.js\n- Create search dropdown with real-time results and highlighting\n- Implement search history with localStorage\n- Add dedicated search page with filters and sorting\n- Create API routes for client-side data fetching\n- Add keyboard shortcuts \\(Cmd/Ctrl + K\\) and navigation\n- Responsive design for mobile and desktop\n\nCo-Authored-By: Claude \\(zai-org/GLM-4.6\\) <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(pnpm build)",
+      "Bash(pnpm list:*)",
+      "Bash(git add:*)"
     ]
   }
 }
