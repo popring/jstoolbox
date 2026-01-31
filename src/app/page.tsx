@@ -1,10 +1,7 @@
-import {
-  // ChevronRight,
-} from 'lucide-react';
 import Link from 'next/link';
-// import { LinkButton } from '@/components/ui/link-button';
 import { formatDownloads } from '@/lib/utils';
 import { getCategories } from './service/categories';
+import { Search } from 'lucide-react';
 
 // 分类图标映射
 const categoryIcons: Record<string, string> = {
@@ -24,100 +21,158 @@ const categoryIcons: Record<string, string> = {
   'graphics': '🎮',
 };
 
-// 分类描述映射
-const categoryDescriptions: Record<string, string> = {
-  'ui-library': 'UI component libraries',
-  'build-tools': 'Build and bundling tools',
-  'testing': 'Testing frameworks & tools',
-  'state-management': 'State management solutions',
-  'data-fetching': 'Data fetching libraries',
-  'utilities': 'Utility libraries',
-  'animation': 'Animation libraries',
-  'css': 'CSS frameworks & tools',
-  'icon': 'Icon libraries',
-  'image': 'Image handling libraries',
-  'editor': 'Rich text editors',
-  'dev-tools': 'Development tools',
-  'form-handling': 'Form handling libraries',
-  'graphics': 'Graphics & 3D libraries',
+// 分类显示名称映射
+const categoryNames: Record<string, string> = {
+  'ui-library': 'UI Library',
+  'build-tools': 'Build Tools',
+  'testing': 'Testing',
+  'state-management': 'State Management',
+  'data-fetching': 'Data Fetching',
+  'utilities': 'Utilities',
+  'animation': 'Animation',
+  'css': 'CSS',
+  'icon': 'Icon Library',
+  'image': 'Image',
+  'editor': 'Editor',
+  'dev-tools': 'Dev Tools',
+  'form-handling': 'Form Handling',
+  'graphics': 'Graphics',
 };
 
+interface PackageInfo {
+  name: string;
+  description: string;
+  github: {
+    url: string;
+    stars: number;
+  };
+  npm: {
+    downloads: number;
+    url: string;
+    firstReleased: string;
+    lastReleased: string;
+  };
+  website?: string;
+  category?: string;
+}
+
 export default async function Home() {
-  // 获取所有分类
   const { categories } = await getCategories();
+
+  // 加载所有分类的数据用于获取 Featured 和各分类 Top 3
+  const allPackagesByCategory: Record<string, PackageInfo[]> = {};
+
+  for (const category of categories) {
+    try {
+      const { getCategory } = await import('./service/categories');
+      const { data } = await getCategory(category);
+      if (data && Array.isArray(data)) {
+        // 按 stars 排序
+        allPackagesByCategory[category] = data.sort((a, b) =>
+          (b.github?.stars || 0) - (a.github?.stars || 0)
+        );
+      }
+    } catch (error) {
+      console.error(`Failed to load category ${category}:`, error);
+    }
+  }
+
+  // 获取 Featured 包（所有分类中 stars 最高的 3 个）
+  const allPackages = Object.values(allPackagesByCategory).flat();
+  const featuredPackages = allPackages
+    .sort((a, b) => (b.github?.stars || 0) - (a.github?.stars || 0))
+    .slice(0, 3);
 
   return (
     <div className='min-h-screen bg-gray-50 dark:bg-slate-950 transition-colors duration-300'>
       {/* Hero Section */}
-      <div className='container mx-auto px-4 pt-28 pb-16 text-center'>
-        <div className='animate-fade-in-up'>
-          <div className='relative mx-auto mb-8 h-24 w-24 overflow-hidden rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 shadow-lg shadow-amber-500/20'>
-            <div className='absolute inset-0 flex items-center justify-center'>
-              <span className='text-6xl font-bold text-white'>JS</span>
+      <section className='relative overflow-hidden bg-white dark:bg-slate-900 border-b border-gray-100 dark:border-slate-800'>
+        <div className='absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-50/50 via-transparent to-transparent dark:from-amber-900/10 dark:to-transparent' />
+        <div className='container mx-auto px-4 py-16 md:py-24 relative'>
+          <div className='text-center max-w-3xl mx-auto'>
+            {/* Logo */}
+            <div className='relative mx-auto mb-6 h-20 w-20 overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-500 shadow-xl shadow-amber-500/20'>
+              <div className='absolute inset-0 flex items-center justify-center'>
+                <span className='text-5xl font-bold text-white'>JS</span>
+              </div>
             </div>
+
+            {/* Title */}
+            <h1 className='text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4'>
+              <span className='bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 bg-clip-text text-transparent'>
+                JS Toolbox
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className='text-lg text-gray-600 dark:text-slate-300 mb-8'>
+              Discover the best JavaScript packages to enhance your development workflow
+            </p>
+
+            {/* Search Box */}
+            <form action='/search' className='max-w-xl mx-auto'>
+              <div className='relative group'>
+                <Search className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 group-focus-within:text-amber-500 transition-colors' />
+                <input
+                  type='text'
+                  name='q'
+                  placeholder='Search packages...'
+                  className='w-full h-12 pl-12 pr-4 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 transition-all duration-200'
+                />
+              </div>
+            </form>
           </div>
-
-          <h1 className='mb-4 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl'>
-            JS Toolbox
-          </h1>
-
-          <p className='mx-auto mb-8 max-w-2xl text-lg text-gray-600 dark:text-slate-300 sm:text-xl'>
-            Find the perfect JavaScript packages to enhance your development
-            workflow
-          </p>
-
         </div>
-
-        {/* Categories */}
-        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-          {categories.map((category) => (
-            <CategoryCard
-              key={category}
-              href={`/categories/${category}`}
-              title={category}
-              icon={categoryIcons[category] || '📦'}
-              description={categoryDescriptions[category] || 'JavaScript tools'}
-            />
-          ))}
-        </div>
-      </div>
+      </section>
 
       {/* Featured Section */}
-      <div className='container mx-auto px-4 py-16'>
-        <div className='mb-8 flex items-center justify-between'>
-          <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Featured Packages</h2>
-          {/* <Link
-            href='/featured'
-            className='flex items-center text-sm text-amber-500 hover:text-amber-600 dark:hover:text-amber-400'
-          >
-            View all <ChevronRight className='ml-1 h-4 w-4' />
-          </Link> */}
-        </div>
+      <section className='py-12 md:py-16'>
+        <div className='container mx-auto px-4'>
+          <div className='flex items-center gap-2 mb-8'>
+            <div className='h-8 w-1 bg-amber-500 rounded-full' />
+            <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Featured</h2>
+          </div>
 
-        <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          <FeaturedCard
-            title='three'
-            description='3D library that makes WebGL easy to use'
-            stars={88000}
-            category='Animation'
-          />
-          <FeaturedCard
-            title='tailwind'
-            description='Utility-first CSS framework for rapid UI development'
-            stars={72000}
-            category='CSS'
-          />
-          <FeaturedCard
-            title='react-query'
-            description='Hooks for fetching, caching and updating data'
-            stars={35000}
-            category='Data Fetching'
-          />
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+            {featuredPackages.map((pkg, index) => (
+              <FeaturedCard key={pkg.name} package={pkg} index={index} />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className='py-12 md:py-16 bg-white dark:bg-slate-900'>
+        <div className='container mx-auto px-4'>
+          <div className='flex items-center gap-2 mb-8'>
+            <div className='h-8 w-1 bg-amber-500 rounded-full' />
+            <h2 className='text-2xl font-bold text-gray-900 dark:text-white'>Browse by Category</h2>
+          </div>
+
+          <div className='space-y-12'>
+            {categories.map((category) => {
+              const packages = allPackagesByCategory[category] || [];
+              const top3Packages = packages.slice(0, 3);
+
+              if (top3Packages.length === 0) return null;
+
+              return (
+                <CategorySection
+                  key={category}
+                  category={category}
+                  icon={categoryIcons[category] || '📦'}
+                  name={categoryNames[category] || category}
+                  packages={top3Packages}
+                  totalCount={packages.length}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className='border-t border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 transition-colors duration-300'>
+      <footer className='border-t border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-950 py-8'>
         <div className='container mx-auto px-4 text-center text-sm text-gray-500 dark:text-slate-400'>
           <p>© {new Date().getFullYear()} JS Toolbox. All rights reserved.</p>
         </div>
@@ -126,73 +181,123 @@ export default async function Home() {
   );
 }
 
-function CategoryCard({
-  href,
-  title,
-  icon,
-  description,
-}: {
-  href: string;
-  title: string;
-  icon: string;
-  description: string;
-}) {
+function FeaturedCard({ package: pkg, index }: { package: PackageInfo; index: number }) {
   return (
     <Link
-      href={href}
-      className='group relative overflow-hidden rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-amber-300 dark:hover:border-amber-700 hover:-translate-y-1'
+      href={pkg.github?.url || pkg.npm?.url || '#'}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='group block bg-white dark:bg-slate-800 rounded-xl p-6 border border-gray-100 dark:border-slate-700 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-lg hover:shadow-amber-500/5 transition-all duration-300 hover:-translate-y-1'
     >
-      <div className='flex flex-col items-center text-center'>
-        <div className='mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-900/20 text-2xl transition-all duration-300 group-hover:bg-amber-500 group-hover:text-white'>
-          {icon}
+      <div className='flex items-start justify-between mb-4'>
+        <div className='flex items-center gap-3'>
+          <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-xl font-bold ${
+            index === 0 ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400' :
+            index === 1 ? 'bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-slate-400' :
+            'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400'
+          }`}>
+            {index + 1}
+          </div>
+          <div>
+            <h3 className='font-semibold text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors'>
+              {pkg.name}
+            </h3>
+            <p className='text-xs text-gray-500 dark:text-slate-400'>
+              ⭐ {pkg.github?.stars?.toLocaleString() || 0}
+            </p>
+          </div>
         </div>
-        <h3 className='mb-1 font-medium text-gray-900 dark:text-white capitalize'>{title.replace('-', ' ')}</h3>
-        <p className='text-xs text-gray-500 dark:text-slate-400'>{description}</p>
       </div>
-      <div className='absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-300 group-hover:w-full'></div>
+
+      <p className='text-sm text-gray-600 dark:text-slate-300 line-clamp-2 mb-4'>
+        {pkg.description || 'No description'}
+      </p>
+
+      <div className='flex items-center justify-between text-xs text-gray-500 dark:text-slate-400'>
+        <span>{formatDownloads(pkg.npm?.downloads || 0)} weekly</span>
+        <span className='group-hover:translate-x-1 transition-transform'>→</span>
+      </div>
     </Link>
   );
 }
 
-function FeaturedCard({
-  title,
-  description,
-  stars,
+function CategorySection({
   category,
+  icon,
+  name,
+  packages,
+  totalCount,
 }: {
-  title: string;
-  description: string;
-  stars: number;
   category: string;
+  icon: string;
+  name: string;
+  packages: PackageInfo[];
+  totalCount: number;
 }) {
   return (
-    <div className='overflow-hidden rounded-xl border border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1'>
-      <div className='p-6'>
-        <div className='mb-1 text-xs font-medium text-amber-500'>
-          {category}
-        </div>
-        <h3 className='mb-2 text-xl font-semibold text-gray-900 dark:text-white'>{title}</h3>
-        <p className='mb-4 text-sm text-gray-600 dark:text-slate-400'>{description}</p>
-        <div className='flex items-center text-xs text-gray-500 dark:text-slate-500'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='mr-1 h-4 w-4 fill-current text-amber-500'
-            viewBox='0 0 20 20'
-          >
-            <path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z' />
-          </svg>
-          {formatNumber(stars)} stars
-        </div>
+    <div>
+      {/* Category Header */}
+      <div className='flex items-center justify-between mb-6'>
+        <Link
+          href={`/categories/${category}`}
+          className='flex items-center gap-3 group'
+        >
+          <div className='w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform'>
+            {icon}
+          </div>
+          <div>
+            <h3 className='text-lg font-semibold text-gray-900 dark:text-white group-hover:text-amber-500 transition-colors'>
+              {name}
+            </h3>
+            <p className='text-sm text-gray-500 dark:text-slate-400'>
+              {totalCount} packages
+            </p>
+          </div>
+        </Link>
+
+        <Link
+          href={`/categories/${category}`}
+          className='text-sm text-amber-500 hover:text-amber-600 dark:hover:text-amber-400 font-medium flex items-center gap-1'
+        >
+          View All
+          <span className='group-hover:translate-x-1 transition-transform'>→</span>
+        </Link>
       </div>
-      <div className='flex items-center justify-between border-t border-gray-100 dark:border-slate-800 px-6 py-3 bg-gray-50 dark:bg-slate-900/50'>
-        <span className='text-xs text-gray-500 dark:text-slate-400'>
-          Weekly downloads: {formatDownloads(Math.floor(stars * 7.5))}
-        </span>
+
+      {/* Top 3 Packages */}
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+        {packages.map((pkg) => (
+          <PackageCard key={pkg.name} package={pkg} />
+        ))}
       </div>
     </div>
   );
 }
 
-function formatNumber(num: number) {
-  return num >= 1000 ? `${(num / 1000).toFixed(1)}k` : num;
+function PackageCard({ package: pkg }: { package: PackageInfo }) {
+  return (
+    <Link
+      href={pkg.github?.url || pkg.npm?.url || '#'}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='group block bg-gray-50 dark:bg-slate-800/50 rounded-lg p-4 border border-gray-100 dark:border-slate-700 hover:border-amber-200 dark:hover:border-amber-700 hover:bg-white dark:hover:bg-slate-800 transition-all duration-200'
+    >
+      <div className='flex items-start justify-between mb-2'>
+        <h4 className='font-medium text-gray-900 dark:text-white text-sm group-hover:text-amber-500 transition-colors'>
+          {pkg.name}
+        </h4>
+      </div>
+
+      <p className='text-xs text-gray-500 dark:text-slate-400 line-clamp-2 mb-3'>
+        {pkg.description || 'No description'}
+      </p>
+
+      <div className='flex items-center gap-3 text-xs text-gray-400 dark:text-slate-500'>
+        <span className='flex items-center gap-1'>
+          ⭐ {pkg.github?.stars?.toLocaleString() || 0}
+        </span>
+        <span>{formatDownloads(pkg.npm?.downloads || 0)}/wk</span>
+      </div>
+    </Link>
+  );
 }
